@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>余香&amp;blog</title>
+    <title>SecretScraper | 余香&amp;blog</title>
     <meta name="author" content="余香" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -36,7 +36,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -146,32 +148,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/aaa.png"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>余香&amp;blog</h1>
-                <h3>222qqqqq</h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>SecretScraper</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2024/07/15/secretscraper%E6%95%8F%E6%84%9F%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F/">
-        <h2 class="post-title">SecretScraper</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -181,10 +162,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/VG7w_P6K19HKGouJJlgNEg">敏感信息扫描工具推荐 SecretScraper (qq.com)</a></p>
+    
+    <div class="content" v-pre>
+        <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/VG7w_P6K19HKGouJJlgNEg">敏感信息扫描工具推荐 SecretScraper (qq.com)</a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">安装：pip install secretscraper</span><br><span class="line">更新：pip install --upgrade secretscraper</span><br></pre></td></tr></table></figure>
 <h2 id="基本用法"><a class="markdownIt-Anchor" href="#基本用法">#</a> 基本用法</h2>
 <h2 id="单一目标"><a class="markdownIt-Anchor" href="#单一目标">#</a> 单一目标</h2>
@@ -196,139 +176,13 @@
 <figure class="highlight plaintext"><figcaption><span>false</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">verbose: false</span><br><span class="line">debug: false</span><br><span class="line">loglevel: critical</span><br><span class="line">logpath: log</span><br><span class="line">handler_type: re</span><br><span class="line"></span><br><span class="line">proxy: &quot;&quot; # http://127.0.0.1:7890</span><br><span class="line">max_depth: 1 # 0 for no limit</span><br><span class="line">max_page_num: 1000 # 0 for no limit</span><br><span class="line">timeout: 5</span><br><span class="line">follow_redirects: true</span><br><span class="line">workers_num: 1000</span><br><span class="line">headers:</span><br><span class="line">  Accept: &quot;*/*&quot;</span><br><span class="line">  Cookie: &quot;&quot;</span><br><span class="line">  User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36 SE 2.X MetaSr 1.0</span><br><span class="line"></span><br><span class="line">urlFind:</span><br><span class="line">  - &quot;[\&quot;&#x27;‘“`]\\s&#123;0,6&#125;(https&#123;0,1&#125;:[-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]&#123;2,250&#125;?)\\s&#123;0,6&#125;[\&quot;&#x27;‘“`]&quot;</span><br><span class="line">  - &quot;=\\s&#123;0,6&#125;(https&#123;0,1&#125;:[-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]&#123;2,250&#125;)&quot;</span><br><span class="line">  - &quot;[\&quot;&#x27;‘“`]\\s&#123;0,6&#125;([#,.]&#123;0,2&#125;/[-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]&#123;2,250&#125;?)\\s&#123;0,6&#125;[\&quot;&#x27;‘“`]&quot;</span><br><span class="line">  - &quot;\&quot;([-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]+?[/]&#123;1&#125;[-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]+?)\&quot;&quot;</span><br><span class="line">  - &quot;href\\s&#123;0,6&#125;=\\s&#123;0,6&#125;[\&quot;&#x27;‘“`]&#123;0,1&#125;\\s&#123;0,6&#125;([-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]&#123;2,250&#125;)|action\\s&#123;0,6&#125;=\\s&#123;0,6&#125;[\&quot;&#x27;‘“`]&#123;0,1&#125;\\s&#123;0,6&#125;([-a-zA-Z0-9()@:%_\\+.~#?&amp;//=&#123;&#125;]&#123;2,250&#125;)&quot;</span><br><span class="line">jsFind:</span><br><span class="line">  - (https&#123;0,1&#125;:[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;2,100&#125;?[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;3&#125;[.]js)</span><br><span class="line">  - &#x27;[&quot;&#x27;&#x27;‘“`]\s&#123;0,6&#125;(/&#123;0,1&#125;[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;2,100&#125;?[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;3&#125;[.]js)&#x27;</span><br><span class="line">  - =\s&#123;0,6&#125;[&quot;,&#x27;,’,”]&#123;0,1&#125;\s&#123;0,6&#125;(/&#123;0,1&#125;[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;2,100&#125;?[-a-zA-Z0-9（）@:%_\+.~#?&amp;//=]&#123;3&#125;[.]js)</span><br><span class="line"></span><br><span class="line">dangerousPath:</span><br><span class="line">  - logout</span><br><span class="line">  - update</span><br><span class="line">  - remove</span><br><span class="line">  - insert</span><br><span class="line">  - delete</span><br><span class="line"></span><br><span class="line">rules:</span><br><span class="line">  - name: Swagger</span><br><span class="line">    regex: \b[\w/]+?((swagger-ui.html)|(\&quot;swagger\&quot;:)|(Swagger UI)|(swaggerUi)|(swaggerVersion))\b</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: ID Card</span><br><span class="line">    regex: \b((\d&#123;8&#125;(0\d|10|11|12)([0-2]\d|30|31)\d&#123;3&#125;)|(\d&#123;6&#125;(18|19|20)\d&#123;2&#125;(0[1-9]|10|11|12)([0-2]\d|30|31)\d&#123;3&#125;(\d|X|x)))\b</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Phone</span><br><span class="line">    regex: &quot;[&#x27;\&quot;](1(3([0-35-9]\\d|4[1-8])|4[14-9]\\d|5([\\d]\\d|7[1-79])|66\\d|7[2-35-8]\\d|8\\d&#123;2&#125;|9[89]\\d)\\d&#123;7&#125;)[&#x27;\&quot;]&quot;</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: JS Map</span><br><span class="line">    regex: \b([\w/]+?\.js\.map)</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: URL as a Value</span><br><span class="line">    regex: (\b\w+?=(https?)(://|%3a%2f%2f))</span><br><span class="line">    loaded: false</span><br><span class="line">  - name: Email</span><br><span class="line">    regex: &quot;[&#x27;\&quot;]([\\w]+(?:\\.[\\w]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?)[&#x27;\&quot;]&quot;</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Internal IP</span><br><span class="line">    regex: &#x27;[^0-9]((127\.0\.0\.1)|(10\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;)|(172\.((1[6-9])|(2\d)|(3[01]))\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;)|(192\.168\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;))&#x27;</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Cloud Key</span><br><span class="line">    regex: \b((accesskeyid)|(accesskeysecret)|\b(LTAI[a-z0-9]&#123;12,20&#125;))\b</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Shiro</span><br><span class="line">    regex: (=deleteMe|rememberMe=)</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Suspicious API Key</span><br><span class="line">    regex: &quot;[\&quot;&#x27;][0-9a-zA-Z]&#123;32&#125;[&#x27;\&quot;]&quot;</span><br><span class="line">    loaded: true</span><br><span class="line">  - name: Jwt</span><br><span class="line">    regex: &quot;[&#x27;\&quot;](ey[A-Za-z0-9_-]&#123;10,&#125;\\.[A-Za-z0-9._-]&#123;10,&#125;|ey[A-Za-z0-9_\\/+-]&#123;10,&#125;\\.[A-Za-z0-9._\\/+-]&#123;10,&#125;)[&#x27;\&quot;]&quot;</span><br><span class="line">    loaded: true</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//github.com/PadishahIII/SecretScrape</span></span><br></pre></td></tr></table></figure>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/07/15/secretscraper%E6%95%8F%E6%84%9F%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/04/06/%E7%AC%AC%E4%B8%80/">
-        <h2 class="post-title">第一</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/4/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="序言"><a class="markdownIt-Anchor" href="#序言">#</a> 序言</h1>
-<blockquote>
-<p>这是一个明媚的清晨</p>
-<blockquote>
-<p>每天都是一个最好的开始</p>
-</blockquote>
-</blockquote>
-<p><code>markdown</code> <br>
-222222</p>
-<p>111</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/04/06/%E7%AC%AC%E4%B8%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/04/03/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/4/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start">#</a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post">#</a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server">#</a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files">#</a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites">#</a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/04/03/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
     
     
     
     
-</div>
-
-    </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">余香</div>
-        <div class="description">
-            <p>Description<br>
-…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -360,6 +214,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
