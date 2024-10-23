@@ -5,8 +5,24 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 15 Jul 2024 22:19:05 +0800</pubDate>
-        <lastBuildDate>Mon, 15 Jul 2024 22:19:05 +0800</lastBuildDate>
+        <pubDate>Wed, 23 Oct 2024 15:19:36 +0800</pubDate>
+        <lastBuildDate>Wed, 23 Oct 2024 15:19:36 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/23/python/</guid>
+            <title>python</title>
+            <link>http://example.com/2024/10/23/python/</link>
+            <pubDate>Wed, 23 Oct 2024 15:19:36 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241023152135256.png&#34; alt=&#34;image-20241023152135256&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/01/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/</guid>
+            <title>未授权访问</title>
+            <link>http://example.com/2024/08/01/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/</link>
+            <pubDate>Thu, 01 Aug 2024 14:47:36 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;20240801144932.png&#34; alt=&#34;图片描述&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/07/15/secretscraper%E6%95%8F%E6%84%9F%E7%9B%AE%E5%BD%95%E6%89%AB%E6%8F%8F/</guid>
             <title>SecretScraper111</title>
@@ -48,19 +64,125 @@
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/04/06/%E7%AC%AC%E4%B8%80/</guid>
-            <title>第一</title>
+            <title>ecryptTools综合解密</title>
             <link>http://example.com/2024/04/06/%E7%AC%AC%E4%B8%80/</link>
             <pubDate>Sat, 06 Apr 2024 22:19:05 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;序言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#序言&#34;&gt;#&lt;/a&gt; 序言&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是一个明媚的清晨&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;每天都是一个最好的开始&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;code&gt;markdown&lt;/code&gt; &lt;br&gt;
-222222&lt;/p&gt;
-&lt;p&gt;111&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 align=&#34;center&#34; &gt;DecryptTools综合解密&lt;/h1&gt;
+&lt;h3 align=&#34;center&#34; &gt;一款针对加解密综合利用后渗透工具&lt;/h3&gt;
+&lt;h2 id=&#34;️-免责声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#️-免责声明&#34;&gt;#&lt;/a&gt; 👮🏻‍♀️ 免责声明&lt;/h2&gt;
+&lt;p&gt;由于传播、利用 DecryptTools 综合解密工具提供的功能而造成的&lt;strong&gt;任何直接或者间接的后果及损失&lt;/strong&gt;，均由使用者本人负责，本人&lt;strong&gt;不为此承担任何责任&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; &lt;strong&gt;前言&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;为什么会写这一款综合加解密工具，因为在很多比赛如果算&lt;strong&gt;拿下靶标&lt;/strong&gt;不仅&lt;strong&gt;需要获取服务器权限还需要登录网站后台&lt;/strong&gt;这时候很多系统&lt;strong&gt;要么数据库连接字符串加密，要么登陆用户加密&lt;/strong&gt;而这款工具就是为了解决问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;加解密功能&lt;/strong&gt;：该工具不仅有&lt;strong&gt;解密&lt;/strong&gt;还提供&lt;strong&gt;多种加密&lt;/strong&gt;方式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置文件信息功能&lt;/strong&gt;：为了在&lt;strong&gt;比赛中尽可能节约时间和提供一个后渗透功能。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备忘录功能：&lt;strong&gt;是为了&lt;/strong&gt;保存用户自己有一些 trick 点方便查看，同时也保证自己 trick 不被公开化&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;工具展示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#工具展示&#34;&gt;#&lt;/a&gt; 工具展示&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;支持22种加解密密码查询功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#支持22种加解密密码查询功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;支持 22 种加解密 + 密码查询功能&lt;/strong&gt;&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;万户 OA&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用友 NC&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;金蝶 EAS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;蓝凌 OA&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;致远 OA&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;宏景 ERP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;湖南强智&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;金和 jc6&lt;/s&gt;    瑞友天翼&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;金和 C6&lt;/s&gt;     Navicat&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;华天动力&lt;/s&gt;  FinalShell&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;亿赛通&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;帆软报表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;H3C CAS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Weblogic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;金蝶云星空&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新华三 IMC&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;金盘 OPAC&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;海康威视 IVMS 8700&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;海康威视 IP Camera&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JBOSS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SpringEnc&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Druid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;密码查询功能&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;️-工具加解密&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#️-工具加解密&#34;&gt;#&lt;/a&gt; 🕳️ &lt;strong&gt;工具加解密&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;img/001.jpg&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314101957484.png&#34; alt=&#34;image-20240314101957484&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314102628068.png&#34; alt=&#34;image-20240314102628068&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314100601432.png&#34; alt=&#34;image-20240314100601432&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314101802393.png&#34; alt=&#34;image-20240314101802393&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314103701954.png&#34; alt=&#34;image-20240314103701954&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240319204146156.png&#34; alt=&#34;image-20240319204146156&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240319204112679.png&#34; alt=&#34;image-20240319204112679&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240319204054241.png&#34; alt=&#34;image-20240319204054241&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;️-备忘录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#️-备忘录&#34;&gt;#&lt;/a&gt; 🕳️ &lt;strong&gt;备忘录&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;保存的内容均在同级目录 &lt;code&gt;config.properties&lt;/code&gt;  文件中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314103149582.png&#34; alt=&#34;image-20240314103149582&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;README/image-20240314103345377.png&#34; alt=&#34;image-20240314103345377&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;需解决问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#需解决问题&#34;&gt;#&lt;/a&gt; &lt;strong&gt;需解决问题&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;目前整体框架全部已完成，细节部分未完善&lt;/strong&gt;。如果有师傅需求添加&lt;strong&gt;新的系统&lt;/strong&gt;（最好能提供必较完善的信息）可以&lt;strong&gt; Issues&lt;/strong&gt; 提或者直接联系我。如果&lt;strong&gt;采纳&lt;/strong&gt;了师傅们提供的信息，我会在&lt;strong&gt;致谢名单&lt;/strong&gt;添加上各位&lt;strong&gt;师傅 ID 以表感谢&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;参考文章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考文章&#34;&gt;#&lt;/a&gt; 参考文章&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/kexianting/p/11689289.html&#34;&gt;https://www.cnblogs.com/kexianting/p/11689289.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jas502n/spring-ENC&#34;&gt;https://github.com/jas502n/spring-ENC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/chrisjd20/hikvision_CVE-2017-7921_auth_bypass_config_decryptor/&#34;&gt;https://github.com/chrisjd20/hikvision_CVE-2017-7921_auth_bypass_config_decryptor/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Rvn0xsy/PassDecode-jar&#34;&gt;https://github.com/Rvn0xsy/PassDecode-jar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.hedysx.com/2807.html&#34;&gt;https://www.hedysx.com/2807.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/zhutougg/LandrayDES&#34;&gt;https://github.com/zhutougg/LandrayDES&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/2204689&#34;&gt;https://cloud.tencent.com/developer/article/2204689&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/TideSec/Decrypt_Weblogic_Password&#34;&gt;https://github.com/TideSec/Decrypt_Weblogic_Password&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/baogod404/HikvisionDecode&#34;&gt;https://github.com/baogod404/HikvisionDecode&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/TalentKrico/navicat_password_decrypt&#34;&gt;https://github.com/TalentKrico/navicat_password_decrypt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jas502n/FinalShellDecodePass/blob/main/FinalShellDecodePass.java&#34;&gt;https://github.com/jas502n/FinalShellDecodePass/blob/main/FinalShellDecodePass.java&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/BaizeSec/bylibrary/blob/main/docs/%E9%80%9F%E6%9F%A5%E8%A1%A8/%E5%B8%B8%E8%A7%81%E4%BA%A7%E5%93%81%E5%BC%B1%E5%8F%A3%E4%BB%A4.md&#34;&gt;https://github.com/BaizeSec/bylibrary/blob/main/docs/ 速查表 / 常见产品弱口令.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/056b.jpg&#34;&gt;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/056b.jpg&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
