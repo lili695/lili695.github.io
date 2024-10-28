@@ -5,8 +5,16 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 28 Oct 2024 10:24:04 +0800</pubDate>
-        <lastBuildDate>Mon, 28 Oct 2024 10:24:04 +0800</lastBuildDate>
+        <pubDate>Mon, 28 Oct 2024 16:33:09 +0800</pubDate>
+        <lastBuildDate>Mon, 28 Oct 2024 16:33:09 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/28/3/</guid>
+            <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
+            <link>http://example.com/2024/10/28/3/</link>
+            <pubDate>Mon, 28 Oct 2024 16:33:09 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;ss&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/10/28/huggingfaceRCE/</guid>
             <title>huggingface/transformers RCE</title>

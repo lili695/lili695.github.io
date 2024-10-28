@@ -3,7 +3,15 @@
     <id>http://example.com</id>
     <title>余香</title>
     <link href="http://example.com" />
-    <updated>2024-10-28T02:24:04.261Z</updated>
+    <updated>2024-10-28T08:33:09.466Z</updated>
+    <entry>
+        <id>http://example.com/2024/10/28/3/</id>
+        <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
+        <link rel="alternate" href="http://example.com/2024/10/28/3/"/>
+        <content type="html">&lt;p&gt;ss&lt;/p&gt;
+</content>
+        <updated>2024-10-28T08:33:09.466Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/10/28/huggingfaceRCE/</id>
         <title>huggingface/transformers RCE</title>
