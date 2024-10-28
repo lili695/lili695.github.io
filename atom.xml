@@ -8,7 +8,7 @@
         <id>http://example.com/2024/10/28/huggingfaceRCE/</id>
         <title>huggingface/transformers RCE</title>
         <link rel="alternate" href="http://example.com/2024/10/28/huggingfaceRCE/"/>
-        <content type="html">&lt;h1 id=&#34;huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;#&lt;/a&gt; huggingface/transformers RCE 漏洞分析 （CVE-2024-3568）&lt;/h1&gt;
+        <content type="html">&lt;h1 id=&#34;huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;#&lt;/a&gt; huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）&lt;/h1&gt;
 &lt;h2 id=&#34;1-缘起&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-缘起&#34;&gt;#&lt;/a&gt; 1、缘起&lt;/h2&gt;
 &lt;p&gt;刚开始研究⼤模型安全的时候就看到 huggingface/transformers 有这个 load_repo_checkpoint 的漏洞，不过 当时看到说是利⽤起来⽐较困难就没有再深⼊研究（世上⽆难事，只要肯放弃），直到周五（2024-10-18）的时 候，看到各个技术群⾥都在转发字节跳动实习⽣对⼤模型投毒的聊天记录，故事情节相当精彩刺激，后来在知乎热 榜上也看到出现⾮常多的讨论，有兴趣的读者可⾃⾏吃⽠： &lt;a href=&#34;https://www.zhihu.com/question/1296528119&#34;&gt;字节跳动大模型训练被实习生恶意注入破坏代码，涉事者已被辞退，攻击带来的影响有多大？暴露出哪些问题？ - 知乎 (zhihu.com)&lt;/a&gt; 既然这个漏洞都已经能够在实际环境中产⽣危害了，感觉是有必要深⼊了解分析⼀下了&lt;/p&gt;
 &lt;h2 id=&#34;2-漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-漏洞复现&#34;&gt;#&lt;/a&gt; 2、漏洞复现&lt;/h2&gt;
