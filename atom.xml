@@ -5,9 +5,9 @@
     <link href="http://example.com" />
     <updated>2024-10-28T08:33:09.466Z</updated>
     <entry>
-        <id>http://example.com/2024/10/28/3/</id>
+        <id>http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</id>
         <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
-        <link rel="alternate" href="http://example.com/2024/10/28/3/"/>
+        <link rel="alternate" href="http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/"/>
         <content type="html">&lt;h1 id=&#34;方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;#&lt;/a&gt; 方正全媒体采编系统存在 syn.do 信息泄露漏洞&lt;/h1&gt;
 &lt;h2 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h2&gt;
 &lt;p&gt;​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。&lt;/p&gt;
@@ -100,7 +100,8 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;经过启明星辰 ADLab 的测试和验证，发现低版本的 ESXi 同样受影响。实测的 ESXi 影响版本：&lt;/p&gt;
+&lt;p&gt;经过启明星辰 ADLab 的测试和验证，发现低版本的 ESXi 同样受影响。实测的 ESXi 影响版本&lt;br&gt;
+：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -225,7 +226,7 @@
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/e5da5caf050ecbf1ea65b559e8b33a1a.png&#34; alt=&#34;e5da5caf050ecbf1ea65b559e8b33a1a&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/56be2c204852bc6f54137d4750d686a8.png&#34; alt=&#34;56be2c204852bc6f54137d4750d686a8&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/da9a9506cc31bb6ca884b9a3966d3fdf.png&#34; alt=&#34;da9a9506cc31bb6ca884b9a3966d3fdf&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（2）登录 ESXi 尝试。&lt;/p&gt;
+&lt;p&gt;（2）登录 ESXi 尝试&lt;/p&gt;
 &lt;p&gt;​	用户 test 属于 ESX Admins 组，能够成功登录&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b0a5ecb77d69e60a05f63ca91aaf48b.png&#34; alt=&#34;4b0a5ecb77d69e60a05f63ca91aaf48b&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​	用户 test2 属于 g1 组，登录失败，提示操作权限被拒绝。&lt;/p&gt;
