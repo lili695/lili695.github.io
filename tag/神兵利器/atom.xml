@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>余香 • Posts by &#34;神兵利器&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2024-11-05T11:32:55.000Z</updated>
+    <category term="漏洞复现" />
+    <category term="神兵利器" />
+    <entry>
+        <id>http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</id>
+        <title>RmEye-戎码之眼</title>
+        <link rel="alternate" href="http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/"/>
+        <content type="html">&lt;h1 id=&#34;rmeye&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye&#34;&gt;#&lt;/a&gt; RmEye&lt;/h1&gt;
+&lt;p&gt;RmEye 是一个 window 上的基于 att&amp;amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR&lt;/p&gt;
+&lt;h2 id=&#34;功能特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能特点&#34;&gt;#&lt;/a&gt; 功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 att&amp;amp;ck 设计。所有设计只是为了符合 att&amp;amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)&lt;/li&gt;
+&lt;li&gt;轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.&lt;/li&gt;
+&lt;li&gt;行为检出，让免杀成为过去式。基于 att&amp;amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.&lt;/li&gt;
+&lt;li&gt;高扩展性。可随需求定制功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;#&lt;/a&gt; RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RmEye 没有流量监控&lt;/li&gt;
+&lt;li&gt;RmEye 仅覆盖 20% 左右的 datasource&lt;/li&gt;
+&lt;li&gt;RmEye 没有联动 WAF、IPS/IDS&lt;/li&gt;
+&lt;li&gt;RmEye 没有实时拦截功能&lt;/li&gt;
+&lt;li&gt;对 RPC、COM、ALPC 基本无能为力&lt;/li&gt;
+&lt;li&gt;不支持更高级的扩展检测，如检测脚本、下发规则，主机链&lt;/li&gt;
+&lt;li&gt;受限于 Sysmon, 很多 att&amp;amp;ck 的 T 没有覆盖，也无法覆盖.&lt;/li&gt;
+&lt;li&gt;没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具&lt;/li&gt;
+&lt;li&gt;github 链接：&lt;a href=&#34;https://github.com/RoomaSec/RmEye&#34;&gt;https://github.com/RoomaSec/RmEye&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;运行客户端&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png&#34; alt=&#34;20241105194255&#34;&gt;&lt;br&gt;
+ 下载 release ( &lt;a href=&#34;https://github.com/RoomaSec/RmEye/releases&#34;&gt;https://github.com/RoomaSec/RmEye/releases&lt;/a&gt; ), 里面有客户端，服务端自行 clone 本项目&lt;br&gt;
+服务端是 python3 编写，安装完依赖库后输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;python webserver.py&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可部署&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png&#34; alt=&#34;20241105194408&#34;&gt;&lt;br&gt;
+ 服务端部署后，修改 config.py 里面的&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 检出阈值,越高越难检出但是也会越准确  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;MAX_THREAT_SCORE = 170&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 授权访问主站的IP列表.如果不在后台里面则不能访问后台  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ALLOW_ACCESS_IP = [&amp;#x27;127.0.0.1&amp;#x27;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址&lt;br&gt;
+客户端则编辑 config.ini&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[communication]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;server = http://192.168.111.189:5000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 server 改成你的服务端的地址&lt;br&gt;
+然后分发三个文件给客户端并且放在同一目录:&lt;br&gt;
+config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe&lt;br&gt;
+ 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye&lt;br&gt;
+ 访问 &lt;a href=&#34;http://xn--ip-fr5c86lx7z:5000&#34;&gt;http:// 服务器 ip:5000&lt;/a&gt; (flask 默认端口) 查看后台&lt;br&gt;
+当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的&lt;/p&gt;
+&lt;h2 id=&#34;检出截图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检出截图&#34;&gt;#&lt;/a&gt; 检出截图&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png&#34; alt=&#34;20241105194549&#34;&gt;&lt;br&gt;
+ 威胁列表&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png&#34; alt=&#34;20241105194613&#34;&gt;&lt;br&gt;
+ 详细进程&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png&#34; alt=&#34;20241105194641&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;卸载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#卸载&#34;&gt;#&lt;/a&gt; 卸载&lt;/h2&gt;
+&lt;p&gt;卸载 RmEye: 在 RmEye 目录下执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SysEye /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果您需要卸载 sysmon 执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sysmon /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可干净卫生的卸载掉 RmEye&lt;/p&gt;
+&lt;h2 id=&#34;ioc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ioc&#34;&gt;#&lt;/a&gt; IOC&lt;/h2&gt;
+&lt;p&gt;目前 RmEye 使用的是&lt;a href=&#34;https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:&#34;&gt; https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &amp;quot;apikey&amp;quot;:&lt;/a&gt; &amp;quot;010d4868aef799750e2828fdf17a4d98&amp;quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用&lt;/p&gt;
+&lt;h2 id=&#34;第三方引用库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三方引用库&#34;&gt;#&lt;/a&gt; 第三方引用库&lt;/h2&gt;
+&lt;p&gt;1、sysmon &lt;a href=&#34;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&#34;&gt;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&lt;/a&gt;&lt;br&gt;
+2、rule_engine &lt;a href=&#34;https://github.com/zeroSteiner/rule-engine&#34;&gt;https://github.com/zeroSteiner/rule-engine&lt;/a&gt;&lt;br&gt;
+3、yara &lt;a href=&#34;https://github.com/VirusTotal/yara&#34;&gt;https://github.com/VirusTotal/yara&lt;/a&gt;&lt;br&gt;
+4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) &lt;a href=&#34;https://github.com/SwiftOnSecurity/sysmon-config&#34;&gt;https://github.com/SwiftOnSecurity/sysmon-config&lt;/a&gt;&lt;br&gt;
+ 请遵守相关库的开源协议。相关法律风险本项目不负任何责任&lt;/p&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2024-11-05T11:32:55.000Z</updated>
+    </entry>
+</feed>
