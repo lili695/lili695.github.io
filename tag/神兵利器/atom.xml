@@ -3,9 +3,50 @@
     <id>http://example.com</id>
     <title>余香 • Posts by &#34;神兵利器&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-11-05T11:32:55.000Z</updated>
+    <updated>2024-11-10T15:12:11.000Z</updated>
     <category term="漏洞复现" />
     <category term="神兵利器" />
+    <category term="应急响应" />
+    <entry>
+        <id>http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</id>
+        <title>Pycharmd等永久激活</title>
+        <link rel="alternate" href="http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/"/>
+        <content type="html">&lt;h1 id=&#34;win版本支持20212-2024&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win版本支持20212-2024&#34;&gt;#&lt;/a&gt; win 版本支持 2021.2-2024&lt;/h1&gt;
+&lt;p&gt;文章来自：&lt;a href=&#34;https://shimo.im/docs/5xkGoDX7eRHRW9kX/read&#34;&gt;https://shimo.im/docs/5xkGoDX7eRHRW9kX/read&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载压缩包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#下载压缩包&#34;&gt;#&lt;/a&gt; 下载压缩包&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;https://pan.baidu.com/s/1bENAlp5e0lSyAzuoKrjZoA
+密码为：abcd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;解压&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解压&#34;&gt;#&lt;/a&gt; 解压&lt;/h2&gt;
+&lt;p&gt;解压后放到目录，比如 D 盘不要放下载目录，不要放桌面）&lt;br&gt;
+注意激活成功后文件不要删除，不要改名，不要移动，路径文件夹不能有中文和中文符号（包含上级）&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231650.png&#34; alt=&#34;20241110231650&#34;&gt;&lt;br&gt;
+ 打开解压的文件夹&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231751.png&#34; alt=&#34;20241110231751&#34;&gt;&lt;br&gt;
+ 打开 scripts 文件夹&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231809.png&#34; alt=&#34;20241110231809&#34;&gt;&lt;br&gt;
+ 运行 install 脚本（需要激活的软件必须关了）&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231834.png&#34; alt=&#34;20241110231834&#34;&gt;&lt;br&gt;
+ 若有弹窗则点是，无则忽略&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231931.png&#34; alt=&#34;20241110231931&#34;&gt;&lt;br&gt;
+ 点击确认&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231944.png&#34; alt=&#34;20241110231944&#34;&gt;&lt;br&gt;
+ 等待 5 分钟弹出 success&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231957.png&#34; alt=&#34;20241110231957&#34;&gt;&lt;br&gt;
+ 目录下 的 Activation_Code 找到与你需要激活软件相同名字的文本全选复制&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232017.png&#34; alt=&#34;20241110232017&#34;&gt;&lt;br&gt;
+ 对应的应用图&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232031.png&#34; alt=&#34;20241110232031&#34;&gt;&lt;br&gt;
+ 激活&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232045.png&#34; alt=&#34;20241110232045&#34;&gt;&lt;br&gt;
+ 点击 continue 或 close 则激活成功&lt;br&gt;
+此方法激活少部分软件显示 2025 到期，实际永久不掉，放心使用&lt;br&gt;
+若显示 Key is invalid Help 激活无效 (如下图)，重启电脑在填入激活码&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232113.png&#34; alt=&#34;20241110232113&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2024-11-10T15:12:11.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</id>
         <title>RmEye-戎码之眼</title>
