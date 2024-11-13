@@ -3,10 +3,74 @@
     <id>http://example.com</id>
     <title>余香 • Posts by &#34;神兵利器&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-11-10T15:12:11.000Z</updated>
+    <updated>2024-11-12T02:19:30.000Z</updated>
     <category term="漏洞复现" />
     <category term="神兵利器" />
     <category term="应急响应" />
+    <entry>
+        <id>http://example.com/2024/11/12/natpass/</id>
+        <title>natpass 主机管理工具</title>
+        <link rel="alternate" href="http://example.com/2024/11/12/natpass/"/>
+        <content type="html">&lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署&#34;&gt;#&lt;/a&gt; 部署&lt;/h2&gt;
+&lt;p&gt;部署过程共分为三部分：服务器端、受控端和控制端三部分组成。当然，服务端和控制端可以为同一台设备。首先，我们到中根据系统下载包。&lt;br&gt;
+项目地址：&lt;a href=&#34;https://github.com/lwch/natpass/releases&#34;&gt;https://github.com/lwch/natpass/releases&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解压&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tar -zxvf natpass_0.13.0_linux_amd64.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;部署服务端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署服务端&#34;&gt;#&lt;/a&gt; 部署服务端&lt;/h2&gt;
+&lt;p&gt;进入软件目录，执行下面命令。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;./np-svr --conf server.yaml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112101939.png&#34; alt=&#34;20241112101939&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部署控制端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署控制端&#34;&gt;#&lt;/a&gt; 部署控制端&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;./np-cli --conf local.yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体的配置在 local.yaml 文件中，如端口等。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104251.png&#34; alt=&#34;20241112104251&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#访问&#34;&gt;#&lt;/a&gt; 访问&lt;/h2&gt;
+&lt;p&gt;在以上操作成功后即可在浏览器中通过 local.yaml 中配置的端口号进行访问，默认地址：&lt;a href=&#34;http://127.0.0.1:8080&#34;&gt;http://127.0.0.1:8080&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104329.png&#34; alt=&#34;20241112104329&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;受控端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#受控端&#34;&gt;#&lt;/a&gt; 受控端&lt;/h2&gt;
+&lt;p&gt;受控端，我以 Windows11 为例。首先现在 Windows 平台的安装包。修改 remote.yaml 中的 server 地址。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104426.png&#34; alt=&#34;20241112104426&#34;&gt;&lt;br&gt;
+ 使用以下命令启动客户端程序&lt;br&gt;
+ np-cli.exe --conf remote.yaml&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104503.png&#34; alt=&#34;20241112104503&#34;&gt;&lt;br&gt;
+ 至此，所有配置均已完成。&lt;/p&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;p&gt;点击 shell 连接&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104541.png&#34; alt=&#34;20241112104541&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104650.png&#34; alt=&#34;20241112104650&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vnc连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vnc连接&#34;&gt;#&lt;/a&gt; Vnc 连接&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104738.png&#34; alt=&#34;20241112104738&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;利用 natpass 我们能很便捷的完成不同平台多台电脑直接的统一管理。使用很便捷，小伙伴们有需要的，可以收藏哦！但部分功能尚未完善，如文件管理。期待作者的更新！&lt;/p&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2024-11-12T02:19:30.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</id>
+        <title>日常小工具集合</title>
+        <link rel="alternate" href="http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"/>
+        <content type="html">&lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
+&lt;h2 id=&#34;查询真实ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询真实ip&#34;&gt;#&lt;/a&gt; 查询真实 ip：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://search.censys.io/search?resource=hosts&#34;&gt;https://search.censys.io/search?resource=hosts&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png&#34; alt=&#34;20241111091858&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ip提取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ip提取&#34;&gt;#&lt;/a&gt; IP 提取：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://potato.gold/navbar/tool/&#34;&gt;https://potato.gold/navbar/tool/&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png&#34; alt=&#34;20241111092147&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2024-11-11T01:13:24.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</id>
         <title>Pycharmd等永久激活</title>
