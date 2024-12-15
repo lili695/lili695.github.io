@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>余香 • Posts by &#34;日常小工具&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 11 Nov 2024 09:13:24 +0800</pubDate>
+        <lastBuildDate>Mon, 11 Nov 2024 09:13:24 +0800</lastBuildDate>
+        <category>漏洞复现</category>
+        <category>神兵利器</category>
+        <category>应急响应</category>
+        <category>日常小工具</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</guid>
+            <title>日常小工具集合</title>
+            <link>http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</link>
+            <category>日常小工具</category>
+            <pubDate>Mon, 11 Nov 2024 09:13:24 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
+&lt;h2 id=&#34;查询真实ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询真实ip&#34;&gt;#&lt;/a&gt; 查询真实 ip：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://search.censys.io/search?resource=hosts&#34;&gt;https://search.censys.io/search?resource=hosts&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png&#34; alt=&#34;20241111091858&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ip提取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ip提取&#34;&gt;#&lt;/a&gt; IP 提取：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://potato.gold/navbar/tool/&#34;&gt;https://potato.gold/navbar/tool/&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png&#34; alt=&#34;20241111092147&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;查看wifi密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看wifi密码&#34;&gt;#&lt;/a&gt; 查看 wifi 密码&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;netsh wlan show profiles
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152751.png&#34; alt=&#34;20241205152751&#34;&gt;&lt;br&gt;
+name = 输入 wifi 名称&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh wlan show profiles name=FL-5G-1393 key=clear&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152913.png&#34; alt=&#34;20241205152913&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

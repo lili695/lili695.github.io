@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "余香 • All posts by \"日常小工具\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/",
+            "url": "http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/",
+            "title": "日常小工具集合",
+            "date_published": "2024-11-11T01:13:24.000Z",
+            "content_html": "<h1 id=\"日常小工具集合\"><a class=\"markdownIt-Anchor\" href=\"#日常小工具集合\">#</a> 日常小工具集合</h1>\n<h2 id=\"查询真实ip\"><a class=\"markdownIt-Anchor\" href=\"#查询真实ip\">#</a> 查询真实 ip：</h2>\n<ul>\n<li><a href=\"https://search.censys.io/search?resource=hosts\">https://search.censys.io/search?resource=hosts</a><br>\n<img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png\" alt=\"20241111091858\"></li>\n</ul>\n<h2 id=\"ip提取\"><a class=\"markdownIt-Anchor\" href=\"#ip提取\">#</a> IP 提取：</h2>\n<ul>\n<li><a href=\"https://potato.gold/navbar/tool/\">https://potato.gold/navbar/tool/</a><br>\n<img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png\" alt=\"20241111092147\"></li>\n</ul>\n<h2 id=\"查看wifi密码\"><a class=\"markdownIt-Anchor\" href=\"#查看wifi密码\">#</a> 查看 wifi 密码</h2>\n<pre><code>netsh wlan show profiles\n</code></pre>\n<p><img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152751.png\" alt=\"20241205152751\"><br>\nname = 输入 wifi 名称</p>\n<figure class=\"highlight plaintext\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">netsh wlan show profiles name=FL-5G-1393 key=clear</span><br></pre></td></tr></table></figure>\n<p><img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152913.png\" alt=\"20241205152913\"></p>\n",
+            "tags": [
+                "日常小工具"
+            ]
+        }
+    ]
+}

@@ -7,6 +7,7 @@
     <category term="漏洞复现" />
     <category term="神兵利器" />
     <category term="应急响应" />
+    <category term="日常小工具" />
     <entry>
         <id>http://example.com/2024/11/12/natpass/</id>
         <title>natpass 主机管理工具</title>
@@ -51,25 +52,6 @@
 </content>
         <category term="神兵利器" />
         <updated>2024-11-12T02:19:30.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</id>
-        <title>日常小工具集合</title>
-        <link rel="alternate" href="http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"/>
-        <content type="html">&lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
-&lt;h2 id=&#34;查询真实ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询真实ip&#34;&gt;#&lt;/a&gt; 查询真实 ip：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://search.censys.io/search?resource=hosts&#34;&gt;https://search.censys.io/search?resource=hosts&lt;/a&gt;&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png&#34; alt=&#34;20241111091858&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ip提取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ip提取&#34;&gt;#&lt;/a&gt; IP 提取：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://potato.gold/navbar/tool/&#34;&gt;https://potato.gold/navbar/tool/&lt;/a&gt;&lt;br&gt;
-&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png&#34; alt=&#34;20241111092147&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="神兵利器" />
-        <updated>2024-11-11T01:13:24.000Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</id>
