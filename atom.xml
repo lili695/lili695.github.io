@@ -4,10 +4,10 @@
     <title>余香</title>
     <link href="http://example.com" />
     <updated>2024-12-26T06:00:58.580Z</updated>
-    <category term="神兵利器" />
     <category term="漏洞复现" />
-    <category term="日常小工具" />
+    <category term="神兵利器" />
     <category term="应急响应" />
+    <category term="日常小工具" />
     <entry>
         <id>http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</id>
         <title>HTTP请求走私漏洞</title>

