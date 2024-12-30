@@ -7,10 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Thu, 26 Dec 2024 14:00:58 +0800</pubDate>
         <lastBuildDate>Thu, 26 Dec 2024 14:00:58 +0800</lastBuildDate>
-        <category>漏洞复现</category>
         <category>神兵利器</category>
-        <category>应急响应</category>
+        <category>漏洞复现</category>
         <category>日常小工具</category>
+        <category>应急响应</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</guid>
             <title>HTTP请求走私漏洞</title>
