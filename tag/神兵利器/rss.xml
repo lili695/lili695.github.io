@@ -88,7 +88,8 @@ Content-Length 标头：它指定消息体的以字节为单位的长度。例�
             <link>http://example.com/2024/11/12/natpass/</link>
             <category>神兵利器</category>
             <pubDate>Tue, 12 Nov 2024 10:19:30 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-9md5yd.jpeg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署&#34;&gt;#&lt;/a&gt; 部署&lt;/h2&gt;

@@ -83,7 +83,8 @@ Content-Length 标头：它指定消息体的以字节为单位的长度。例�
         <id>http://example.com/2024/11/12/natpass/</id>
         <title>natpass 主机管理工具</title>
         <link rel="alternate" href="http://example.com/2024/11/12/natpass/"/>
-        <content type="html">&lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
+        <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-9md5yd.jpeg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;主机管理工具-natpass&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主机管理工具-natpass&#34;&gt;#&lt;/a&gt; 主机管理工具 - Natpass&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;如果你有多台电脑该如何统一管理呢？natpass可以轻松解决以上问题。它是一款新一代主机管理工具，支持shell管理，支持远程桌面管理，支持多种操作系统和web平台。当然，也可以利用此工具进行渗透测试。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#部署&#34;&gt;#&lt;/a&gt; 部署&lt;/h2&gt;
@@ -128,7 +129,8 @@ Content-Length 标头：它指定消息体的以字节为单位的长度。例�
         <id>http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/</id>
         <title>日常小工具集合</title>
         <link rel="alternate" href="http://example.com/2024/11/11/%E6%97%A5%E5%B8%B8%E5%B0%8F%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"/>
-        <content type="html">&lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
+        <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-wyeop7.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;日常小工具集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#日常小工具集合&#34;&gt;#&lt;/a&gt; 日常小工具集合&lt;/h1&gt;
 &lt;h2 id=&#34;查询真实ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询真实ip&#34;&gt;#&lt;/a&gt; 查询真实 ip：&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://search.censys.io/search?resource=hosts&#34;&gt;https://search.censys.io/search?resource=hosts&lt;/a&gt;&lt;br&gt;
