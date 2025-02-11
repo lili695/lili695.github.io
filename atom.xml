@@ -4,10 +4,10 @@
     <title>余香</title>
     <link href="http://example.com" />
     <updated>2025-02-10T07:25:51.000Z</updated>
+    <category term="日常小工具" />
     <category term="漏洞复现" />
     <category term="神兵利器" />
     <category term="应急响应" />
-    <category term="日常小工具" />
     <entry>
         <id>http://example.com/2025/02/10/OSINT%E5%9B%BE%E7%89%87%E5%AE%9A%E4%BD%8D/</id>
         <title>OSINT图片定位</title>

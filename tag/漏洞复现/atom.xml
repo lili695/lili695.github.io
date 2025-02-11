@@ -4,10 +4,10 @@
     <title>余香 • Posts by &#34;漏洞复现&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-11-11T01:00:02.000Z</updated>
+    <category term="日常小工具" />
     <category term="漏洞复现" />
     <category term="神兵利器" />
     <category term="应急响应" />
-    <category term="日常小工具" />
     <entry>
         <id>http://example.com/2024/11/11/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E%E5%90%88%E9%9B%86/</id>
         <title>未授权访问漏洞合集</title>
