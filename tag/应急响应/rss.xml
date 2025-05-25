@@ -5,12 +5,27 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 10 Nov 2024 23:31:21 +0800</pubDate>
-        <lastBuildDate>Sun, 10 Nov 2024 23:31:21 +0800</lastBuildDate>
+        <pubDate>Tue, 11 Feb 2025 16:02:07 +0800</pubDate>
+        <lastBuildDate>Tue, 11 Feb 2025 16:02:07 +0800</lastBuildDate>
         <category>日常小工具</category>
         <category>漏洞复现</category>
         <category>神兵利器</category>
         <category>应急响应</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/02/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%B7%A5%E5%85%B7/</guid>
+            <title>应急响应工具</title>
+            <link>http://example.com/2025/02/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%B7%A5%E5%85%B7/</link>
+            <category>应急响应</category>
+            <pubDate>Tue, 11 Feb 2025 16:02:07 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-8ojeey.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;windows动态分析工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows动态分析工具&#34;&gt;#&lt;/a&gt; Windows 动态分析工具&lt;/h1&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ApateDNS	一款免费的 DNS 服务器,可以用来分析和监控 DNS 查询。	https://archive.org/details/apateDNS&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;X64DBG	一款强大的开源调试器,可用于分析和调试 64 位 Windows 应用程序。	https://github.com/x64dbg/x64dbg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Regshot	一个免费的注册表快照工具,可以比较两个注册表快照并查找差异。	https://sourceforge.net/projects/regshot/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;NetworkMonitor	一款免费的网络分析工具,可以捕获和分析网络流量。	https://www.microsoft.com/download/details.aspx?id=4865&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ProcessExplorer	一个免费的进程管理工具,可以深入了解正在运行的进程。	https://learn.microsoft.com/en-us/sysinternals/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ProcessMonitor	一个免费的高级监视实用程序,可以监视文件系统、注册表和进程活动。	https://learn.microsoft.com/en-us/sysinternals/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ProcessHacker	一个强大的免费开源进程管理工具,可以监视和管理系统进程。	https://processhacker.sourceforge.io/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;火绒剑独立版	杀毒软件、系统分析工具	https://github.com/szdyg/HRSword&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;everything	高效文件查找软件	https://www.voidtools.com/zh-cn/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;LastActivityView	查看系统运行所有痕迹	https://www.nirsoft.net/utils/computer_activity_view.html&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Autoruns	查看系统自启目录	https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;python-oletools	ole文件处理、提取工具	https://github.com/decalage2/oletools&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;proxifier	流量代理工具（5EZ8G-C3WL5-B56YG-SCXM9-6QZAP）	https://www.proxifier.com/download/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;reqable	API调试工具	https://reqable.com/zh-CN/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;linux动态分析工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux动态分析工具&#34;&gt;#&lt;/a&gt; Linux 动态分析工具&lt;/h1&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Sysmon for Linux	系统活动监视工具	https://github.com/Sysinternals/SysmonForLinux?tab=readme-ov-file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Whoamifuck	常规排查分析工具	https://github.com/enomothem/Whoamifuck&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;GScan	应急排查自动化python工具	https://github.com/shengshengli/GScan&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;中间件日志分析工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中间件日志分析工具&#34;&gt;#&lt;/a&gt; 中间件日志分析工具&lt;/h1&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;nginx_log_check	Nginx日志分析工具	https://github.com/al0ne/nginx_log_check&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/11/10/whohk/</guid>
             <title>whohk 应急响应工具</title>

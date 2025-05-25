@@ -5,6 +5,16 @@
     "home_page_url": "http://example.com",
     "items": [
         {
+            "id": "http://example.com/2025/02/11/%E5%BC%80%E6%BA%90%E6%94%BB%E9%98%B2%E6%AD%A6%E5%99%A8/",
+            "url": "http://example.com/2025/02/11/%E5%BC%80%E6%BA%90%E6%94%BB%E9%98%B2%E6%AD%A6%E5%99%A8/",
+            "title": "开源攻防武器",
+            "date_published": "2025-02-11T01:05:36.000Z",
+            "content_html": "<p><img src=\"https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-z8mq8y.jpg\" alt=\"device\"></p>\n<h1 id=\"all-defense-tool\"><a class=\"markdownIt-Anchor\" href=\"#all-defense-tool\">#</a> All-Defense-Tool</h1>\n<p>本项目集结了互联网优秀的开源攻防武器，包含信息收集工具（自动化利用工具、资产发现工具、目录扫描工具、子域名收集工具、指纹识别工具、端口扫描工具、各种插件….etc…），漏洞利用工具（各大 CMS、OA 利用工具、中间件利用工具、反序列化利用工具、数据库利用工具等项目………），内网渗透工具（隧道代理、密码提取、木马免杀、域渗透……）、应急响应工具、甲方运维工具、等其他安全攻防资料整理，供攻防双方使用。</p>\n",
+            "tags": [
+                "神兵利器"
+            ]
+        },
+        {
             "id": "http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/",
             "url": "http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/",
             "title": "HTTP请求走私漏洞",

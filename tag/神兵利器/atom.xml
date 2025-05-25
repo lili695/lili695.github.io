@@ -3,11 +3,22 @@
     <id>http://example.com</id>
     <title>余香 • Posts by &#34;神兵利器&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-12-26T06:00:58.580Z</updated>
+    <updated>2025-02-11T01:05:36.000Z</updated>
     <category term="日常小工具" />
     <category term="漏洞复现" />
     <category term="神兵利器" />
     <category term="应急响应" />
+    <entry>
+        <id>http://example.com/2025/02/11/%E5%BC%80%E6%BA%90%E6%94%BB%E9%98%B2%E6%AD%A6%E5%99%A8/</id>
+        <title>开源攻防武器</title>
+        <link rel="alternate" href="http://example.com/2025/02/11/%E5%BC%80%E6%BA%90%E6%94%BB%E9%98%B2%E6%AD%A6%E5%99%A8/"/>
+        <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/wallhaven-z8mq8y.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;all-defense-tool&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#all-defense-tool&#34;&gt;#&lt;/a&gt; All-Defense-Tool&lt;/h1&gt;
+&lt;p&gt;本项目集结了互联网优秀的开源攻防武器，包含信息收集工具（自动化利用工具、资产发现工具、目录扫描工具、子域名收集工具、指纹识别工具、端口扫描工具、各种插件….etc…），漏洞利用工具（各大 CMS、OA 利用工具、中间件利用工具、反序列化利用工具、数据库利用工具等项目………），内网渗透工具（隧道代理、密码提取、木马免杀、域渗透……）、应急响应工具、甲方运维工具、等其他安全攻防资料整理，供攻防双方使用。&lt;/p&gt;
+</content>
+        <category term="神兵利器" />
+        <updated>2025-02-11T01:05:36.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</id>
         <title>HTTP请求走私漏洞</title>
